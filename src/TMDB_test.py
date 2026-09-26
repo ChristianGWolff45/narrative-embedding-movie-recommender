@@ -30,3 +30,6 @@ print(movie["title"])
 print(movie["overview"])
 print([keyword["name"] for keyword in movie["keywords"]["keywords"]])
 print([person["name"] for person in movie["credits"]["cast"][:5]])
+
+print()
+print()
