@@ -68,12 +68,6 @@ def _best_title_hit(hits: list[int], records: list[dict]) -> int:
     return max(hits, key=lambda index: records[index].get("n_ratings") or 0)
 
 
-def _encode_text(text: str) -> np.ndarray:
-    from embed_movies import embed_texts
-
-    return embed_texts([text])[0]
-
-
 def _top_indices(scores: np.ndarray, k: int, exclude: set[int]) -> list[int]:
     if exclude:
         scores = scores.copy()
@@ -86,44 +80,89 @@ def _top_indices(scores: np.ndarray, k: int, exclude: set[int]) -> list[int]:
     return sorted(chosen.tolist(), key=lambda index: scores[index], reverse=True)
 
 
+class Recommender:
+    """Loaded catalog and encoder. One instance serves many queries."""
+
+    def __init__(self) -> None:
+        self.records, self.embeddings = load_index()
+        self.titles = _title_index(self.records)
+        self._model = None
+
+    def resolve_title(self, title: str) -> int | None:
+        hits = self.titles.get(normalize_title(title), [])
+        if not hits:
+            return None
+        return _best_title_hit(hits, self.records)
+
+    def encode(self, text: str) -> np.ndarray:
+        if self._model is None:
+            from fastembed import TextEmbedding
+
+            self._model = TextEmbedding(MODEL_NAME)
+        vector = np.asarray(next(iter(self._model.embed([text]))), dtype=np.float32)
+        norm = float(np.linalg.norm(vector))
+        if norm == 0.0:
+            return vector
+        return vector / norm
+
+    def neighbors(self, query_vector: np.ndarray, k: int, exclude: set[int]) -> list[tuple[float, int]]:
+        scores = self.embeddings @ query_vector
+        return [(float(scores[index]), index) for index in _top_indices(scores, k, exclude)]
+
+    def similar_to_title(self, title: str, k: int = 10) -> list[tuple[float, int]] | None:
+        index = self.resolve_title(title)
+        if index is None:
+            return None
+        return self.neighbors(self.embeddings[index], k, {index})
+
+    def from_likes(self, titles: list[str], k: int = 10) -> tuple[list[int], list[tuple[float, int]]]:
+        indices = []
+        for title in titles:
+            index = self.resolve_title(title)
+            if index is None:
+                raise SystemExit(f"No catalog movie matched {title!r}.")
+            indices.append(index)
+        query_vector = self.embeddings[indices].mean(axis=0)
+        query_vector = query_vector / np.linalg.norm(query_vector)
+        return indices, self.neighbors(query_vector, k, set(indices))
+
+    def match_text(self, text: str, k: int = 10) -> list[tuple[float, int]]:
+        return self.neighbors(self.encode(text), k, set())
+
+
+def _print_hits(engine: Recommender, hits: list[tuple[float, int]]) -> None:
+    print()
+    for rank, (score, index) in enumerate(hits, start=1):
+        record = engine.records[index]
+        genres = record.get("genres") or "Unknown genre"
+        print(f"{rank:>2}. {score:.3f}  {_label(record)} | {genres}")
+
+
 def recommend(query: str | None, likes: list[str], k: int, as_text: bool) -> None:
     _configure_stdout()
-    records, embeddings = load_index()
-    titles = _title_index(records)
+    engine = Recommender()
 
     if likes:
-        indices = []
-        for title in likes:
-            hits = titles.get(normalize_title(title), [])
-            if not hits:
-                raise SystemExit(f"No catalog movie matched {title!r}.")
-            indices.append(_best_title_hit(hits, records))
-        query_vector = embeddings[indices].mean(axis=0)
-        query_vector = query_vector / np.linalg.norm(query_vector)
-        exclude = set(indices)
-        print("Based on " + ", ".join(_label(records[index]) for index in indices))
-    elif query:
-        hits = [] if as_text else titles.get(normalize_title(query), [])
-        if hits:
-            index = _best_title_hit(hits, records)
-            query_vector = embeddings[index]
-            exclude = {index}
-            print(f"Movies similar to {_label(records[index])}")
-            if records[index].get("director"):
-                print(f"Director: {records[index]['director']}")
-        else:
-            print(f"Movies matching: {query}")
-            query_vector = _encode_text(query)
-            exclude = set()
-    else:
+        indices, hits = engine.from_likes(likes, k)
+        print("Based on " + ", ".join(_label(engine.records[index]) for index in indices))
+        _print_hits(engine, hits)
+        return
+
+    if not query:
         raise SystemExit("Pass a movie title, a description, or at least one --like title.")
 
-    scores = embeddings @ query_vector
-    print()
-    for rank, index in enumerate(_top_indices(scores, k, exclude), start=1):
-        record = records[index]
-        genres = record.get("genres") or "Unknown genre"
-        print(f"{rank:>2}. {scores[index]:.3f}  {_label(record)} | {genres}")
+    title_hits = None if as_text else engine.similar_to_title(query, k)
+    if title_hits is not None:
+        index = engine.resolve_title(query)
+        record = engine.records[index]
+        print(f"Movies similar to {_label(record)}")
+        if record.get("director"):
+            print(f"Director: {record['director']}")
+        _print_hits(engine, title_hits)
+        return
+
+    print(f"Movies matching: {query}")
+    _print_hits(engine, engine.match_text(query, k))
 
 
 def main() -> None:
