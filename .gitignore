@@ -1,4 +1,4 @@
 .env
 data/cache/
 data/processed/
-ratings.csv
+data/raw/ml-32m
