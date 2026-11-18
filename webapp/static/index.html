@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f2f1eb">
+    <meta name="description" content="Search movies and get recommendations from selected titles.">
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="/static/app.css">
+    <script defer src="/static/app.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to movie recommender</a>
+    <header class="site-header" id="top">
+      <a class="brand" href="#top" aria-label="Movie Recommender home">
+        <span class="brand-name">Movie Recommender</span>
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#finder">Finder</a>
+        <a href="#method">Method</a>
+        <a href="#credits">Credits</a>
+      </nav>
+      <div class="collection-status" id="collection-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span id="collection-label">Loading</span>
+        <strong id="movie-count">—</strong>
+        <span>movies</span>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="finder shell" id="finder" aria-labelledby="finder-title">
+        <div class="finder-main">
+          <h1 id="finder-title" class="page-title">Movie recommender</h1>
+          <p class="section-intro">Search titles and select up to three movies.</p>
+
+          <label class="field-label" for="film-search">Search movies</label>
+          <div class="search-wrap">
+            <span class="search-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.4 4.4"></path></svg>
+            </span>
+            <input id="film-search" type="search" autocomplete="off" placeholder="Search by title" aria-controls="search-results" aria-expanded="false">
+            <span class="search-hint" aria-hidden="true">⌘ K</span>
+            <div class="suggestions" id="search-results" role="region" aria-label="Movie matches" hidden></div>
+          </div>
+
+          <div class="selected-block">
+            <div class="selected-heading"><span>Selected movies</span><span id="seed-count">0 / 3</span></div>
+            <div class="selected-films" id="selected-films" aria-live="polite">
+              <p class="empty-selection">No movies selected.</p>
+            </div>
+          </div>
+
+          <div class="quick-picks" id="quick-picks">
+            <span class="quick-label">Popular titles</span>
+            <div class="quick-pick-list" id="featured-films">
+              <span class="loading-note">Loading titles…</span>
+            </div>
+          </div>
+
+          <div class="results-head">
+            <div>
+              <h2 class="section-title results-title">Recommendations</h2>
+              <p class="section-intro" id="result-description">Select at least one movie.</p>
+            </div>
+            <div class="results-actions">
+              <div class="mode-switch" role="group" aria-label="Recommendation profile">
+                <button type="button" class="mode-button is-active" data-mode="single" aria-pressed="true">Single profile</button>
+                <button type="button" class="mode-button" data-mode="multi" id="multi-mode" aria-pressed="false" disabled>Narrative profile</button>
+              </div>
+              <button class="primary-button" type="button" id="find-button" disabled>Recommend</button>
+            </div>
+          </div>
+
+          <div class="results-grid" id="results-grid" aria-live="polite" aria-busy="false">
+            <div class="results-empty">
+              <p class="empty-title">Select at least one movie.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="mix-panel" aria-labelledby="mix-title">
+          <div class="mix-panel-top">
+            <h2 id="mix-title">Narrative weights</h2>
+            <span class="mix-status" id="mix-status">Loading</span>
+          </div>
+          <p class="mix-intro">Set each dimension from 0 to 3.</p>
+          <div class="label-progress" id="label-progress">
+            <div class="progress-copy"><span id="progress-label">Profiles</span><span id="progress-value">0%</span></div>
+            <div class="progress-track" role="progressbar" aria-label="Narrative profiles completed" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progressbar"><span id="progress-fill"></span></div>
+            <p id="progress-detail">Loading profiles.</p>
+          </div>
+          <div class="weight-list" id="weight-list">
+            <div class="weight-row">
+              <label for="weight-plot"><span>Plot</span><output for="weight-plot" id="value-plot">1.0</output></label>
+              <input id="weight-plot" data-weight="plot" type="range" min="0" max="3" step="0.1" value="1" disabled>
+            </div>
+            <div class="weight-row">
+              <label for="weight-themes"><span>Themes</span><output for="weight-themes" id="value-themes">1.0</output></label>
+              <input id="weight-themes" data-weight="themes" type="range" min="0" max="3" step="0.1" value="1" disabled>
+            </div>
+            <div class="weight-row">
+              <label for="weight-characters"><span>Characters</span><output for="weight-characters" id="value-characters">1.0</output></label>
+              <input id="weight-characters" data-weight="characters" type="range" min="0" max="3" step="0.1" value="1" disabled>
+            </div>
+            <div class="weight-row">
+              <label for="weight-tone"><span>Tone</span><output for="weight-tone" id="value-tone">1.0</output></label>
+              <input id="weight-tone" data-weight="tone" type="range" min="0" max="3" step="0.1" value="1" disabled>
+            </div>
+            <div class="weight-row">
+              <label for="weight-narrative_structure"><span>Structure</span><output for="weight-narrative_structure" id="value-narrative_structure">1.0</output></label>
+              <input id="weight-narrative_structure" data-weight="narrative_structure" type="range" min="0" max="3" step="0.1" value="1" disabled>
+            </div>
+          </div>
+          <p class="mix-footnote">Weights control each dimension’s contribution to similarity.</p>
+          <div class="method-link"><a href="#method">Evaluation details <span aria-hidden="true">→</span></a></div>
+        </aside>
+      </section>
+
+      <section class="approach shell" id="method" aria-labelledby="method-title">
+        <div class="approach-heading">
+          <h2 id="method-title">Method</h2>
+        </div>
+        <div class="approach-copy">
+          <p>Recommendations use cosine similarity. Relevance is the share of query-film fans who rated a recommended film at least 4/5. Diversity is pairwise genre Jaccard distance. Both are offline proxies.</p>
+          <div class="method-stats" id="method-stats">
+            <div><strong id="model-name">all-MiniLM-L6-v2</strong><span>TEXT ENCODER</span></div>
+            <div><strong id="evaluation-state">Not evaluated</strong><span>OFFLINE EVALUATION</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="credits">
+      <div class="footer-inner shell">
+        <p class="footer-note">Ratings: MovieLens 32M. Film metadata and images: TMDB.</p>
+        <div class="tmdb-credit">
+          <a href="https://www.themoviedb.org/" target="_blank" rel="noreferrer" aria-label="The Movie Database (TMDB)">
+            <img src="/static/tmdb.svg" alt="TMDB">
+          </a>
+          <p>This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+        </div>
+      </div>
+    </footer>
+    <div class="sr-only" id="announcer" role="status" aria-live="polite" aria-atomic="true"></div>
+  </body>
+</html>

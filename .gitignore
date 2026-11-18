@@ -1,4 +1,18 @@
 .env
-data/cache/
-data/processed/
-data/raw/ml-32m
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+build/
+dist/
+
+# MovieLens inputs, fetched metadata, and labels
+data/
+
+# Generated model vectors
+artifacts/
+
+# Per-run labeling state and logs
+runs/

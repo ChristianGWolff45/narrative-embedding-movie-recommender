@@ -1,7 +1,2 @@
-pandas
-numpy
-requests
-python-dotenv
-fastembed
-tokenizers
-huggingface_hub
+# Core data, embedding, and evaluation dependencies are maintained in pyproject.toml.
+-e .

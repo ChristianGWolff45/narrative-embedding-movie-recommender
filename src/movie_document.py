@@ -48,6 +48,17 @@ def _top_cast(cast, limit: int = 5) -> str:
     return _join_names(people, limit=limit)
 
 
+def _cast_people(cast, limit: int = 12) -> list[dict[str, str]]:
+    people = [person for person in cast or [] if isinstance(person, dict)]
+    people.sort(key=lambda person: person.get("order") if isinstance(person.get("order"), int) else 10**9)
+    result = []
+    for person in people[:limit]:
+        name = _clean(person.get("name"))
+        if name:
+            result.append({"name": name, "character": _clean(person.get("character"))})
+    return result
+
+
 def _directors(crew) -> str:
     people = [person for person in crew or [] if isinstance(person, dict)]
     directors = [person for person in people if person.get("job") == "Director"]
@@ -72,7 +83,10 @@ def fields_from_tmdb(movie: dict) -> dict[str, str]:
         "keywords": _keywords(movie),
         "director": _directors(credits.get("crew")),
         "top_cast": _top_cast(credits.get("cast")),
+        "cast": _cast_people(credits.get("cast")),
         "release_date": _clean(movie.get("release_date")),
+        "poster_path": _clean(movie.get("poster_path")),
+        "backdrop_path": _clean(movie.get("backdrop_path")),
     }
     fields["document"] = document_from_fields(
         title=fields["title"],
