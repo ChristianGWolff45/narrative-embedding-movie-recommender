@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+cd "$(dirname "$0")/.."
+prefix="${1:?run prefix required}"
+while true; do
+  if .venv/bin/python -c 'import json, pathlib, sys; p=sorted(pathlib.Path("runs").glob(sys.argv[1]+"-gpu*/status.json")); sys.exit(0 if len(p)==4 and all(json.loads(x.read_text())["status"]=="completed" for x in p) else 1)' "$prefix"; then
+    bin/merge-shards > "runs/${prefix}-merge.log" 2>&1
+    exit 0
+  fi
+  sleep 30
+done

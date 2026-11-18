@@ -8,6 +8,7 @@ import os
 import sys
 import threading
 import time
+from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import pandas as pd
@@ -18,6 +19,7 @@ from config import CATALOG_PATH, LINKS_PATH, PROCESSED_DIR, RATING_COUNTS_PATH, 
 from movie_document import fields_from_tmdb
 
 load_dotenv(ROOT / ".env")
+load_dotenv(Path.home() / ".config" / "csce585-labeler" / ".env", override=False)
 
 
 class RateLimiter:
@@ -100,10 +102,23 @@ def write_catalog(records: dict[int, dict]) -> None:
     temporary.replace(CATALOG_PATH)
 
 
-def _fetch_payload(session: requests.Session, token: str, tmdb_id: int, limiter: RateLimiter) -> dict | None:
+def _fetch_payload(
+    session: requests.Session,
+    tmdb_id: int,
+    limiter: RateLimiter,
+    *,
+    api_key: str | None,
+    bearer_token: str | None,
+) -> dict | None:
     url = f"https://api.themoviedb.org/3/movie/{tmdb_id}"
-    headers = {"Authorization": f"Bearer {token}", "accept": "application/json"}
+    headers = {"accept": "application/json"}
     params = {"language": "en-US", "append_to_response": "credits,keywords"}
+    if bearer_token:
+        headers["Authorization"] = f"Bearer {bearer_token}"
+    elif api_key:
+        params["api_key"] = api_key
+    else:
+        raise RuntimeError("TMDB credentials are missing")
     for attempt in range(5):
         limiter.wait()
         try:
@@ -135,15 +150,20 @@ def _record_from_payload(payload: dict, movie_id: int, tmdb_id: int, n_ratings: 
         "movieId": movie_id,
         "tmdbId": tmdb_id,
         "n_ratings": n_ratings,
+        "artwork_checked": True,
         **fields,
     }
 
 
 def fetch_catalog(min_ratings: int = 500, limit: int | None = None, workers: int = 8) -> int:
     _configure_stdout()
-    token = os.getenv("TMDB_READ_TOKEN")
-    if not token:
-        raise SystemExit("TMDB_READ_TOKEN is missing from .env")
+    bearer_token = os.getenv("TMDB_READ_TOKEN") or os.getenv("TMDB_BEARER_TOKEN")
+    api_key = os.getenv("TMDB_API_KEY") or None
+    if not bearer_token and not api_key:
+        raise SystemExit(
+            "TMDB credential is missing. Set TMDB_READ_TOKEN, TMDB_BEARER_TOKEN, "
+            "or TMDB_API_KEY in .env or ~/.config/csce585-labeler/.env"
+        )
 
     selected = select_movies(min_ratings, limit)
     catalog = load_catalog()
@@ -164,7 +184,13 @@ def fetch_catalog(min_ratings: int = 500, limit: int | None = None, workers: int
         if session is None:
             session = requests.Session()
             thread_state.session = session
-        payload = _fetch_payload(session, token, int(row.tmdbId), limiter)
+        payload = _fetch_payload(
+            session,
+            int(row.tmdbId),
+            limiter,
+            api_key=api_key,
+            bearer_token=bearer_token,
+        )
         if payload is None:
             return None
         return _record_from_payload(payload, int(row.movieId), int(row.tmdbId), int(row.n_ratings))
@@ -179,7 +205,7 @@ def fetch_catalog(min_ratings: int = 500, limit: int | None = None, workers: int
                     record = future.result()
                 except Exception as error:
                     failures += 1
-                    print(f"Fetch error: {error}", flush=True)
+                    print(f"Fetch error ({type(error).__name__}); continuing", flush=True)
                     continue
                 if record is None:
                     failures += 1
