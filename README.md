@@ -22,7 +22,7 @@ Then open `http://127.0.0.1:8765`. On COMECH-2080, run as `jvaught2` from `~/mar
 bin/web --host 100.64.182.86 --port 8765
 ```
 
-The app starts with the single-film profile. Once the full narrative artifact and evaluation report exist, it enables the story-mix controls automatically.
+The app starts with the single-film profile. Once the full narrative artifact and evaluation report exist, it enables the story-mix controls automatically. Genre and year filters apply to both profiles.
 
 ## Build or refresh the collection
 
@@ -69,11 +69,31 @@ Then build narrative vectors and run the research comparison:
 bin/reconstruct build \
   --input data/processed/movie_lens_labels.jsonl \
   --output artifacts/movie_embeddings.npz
-bin/evaluate --queries 200 --k 10
-bin/reconstruct benchmark --artifact artifacts/movie_embeddings.npz --queries 200
+bin/evaluate --queries 200 --k 10 5 20
+bin/reconstruct benchmark --artifact artifacts/movie_embeddings.npz
 ```
 
-The evaluator compares single and weighted narrative retrieval against genre, popularity, and rating-count-matched random baselines. Relevance is an offline co-like proxy: the share of users who rated a query film at least 4/5 who also rated a recommendation at least 4/5. Diversity is pairwise Jaccard distance over genre sets. These measures do not replace a viewer study.
+## Evaluation
+
+The evaluator compares single and weighted narrative retrieval against genre, popularity, and rating-count-matched random baselines. Relevance is an offline co-like proxy: the share of users who rated a query film at least 4/5 who also rated a recommendation at least 4/5. Diversity is pairwise Jaccard distance over genre sets. These measures do not replace a viewer study, and no viewer study was run.
+
+**Relevance and diversity** (`bin/evaluate`, written to `reports/evaluation.json`):
+
+- *Headline test:* equal narrative weights at the first `--k` (10). The narrative profile is compared against every baseline on the same query films. Each comparison reports the mean paired difference, a 95% bootstrap confidence interval, a sign-flip permutation p-value, win/tie/loss counts, and a Holm-adjusted p-value across the headline family.
+- *Exploratory sweep:* every `--k` value crossed with the weight profiles: equal, each dimension alone, and `--random-profiles` random weightings (default 10). Each cell is compared against the single and genre baselines, with Holm adjustment across the whole sweep. Use `--no-sweep` for the headline only.
+
+**Systems cost** (`bin/reconstruct benchmark`, written to `reports/reconstruction_benchmark.json`):
+
+- Per-request latency (mean, p50, p95, p99) for single, equal-weight narrative, and random slider weightings. Each request is timed separately, the way the web server answers it.
+- p95 latency for k = 5, 10, 20 and 50.
+- Catalog scaling up to 87,585 films (the TMDB catalog size from Milestone 1). Sizes above the real catalog use random unit vectors and are labeled `synthetic`.
+- Vector memory, peak process memory, and compressed storage of the narrative arrays relative to the single array.
+- One-time costs: LLM labeling speed from `runs/*/status.json`, and per-dimension encoding time, which `bin/reconstruct build` records in `artifacts/movie_embeddings.build.json`.
+- **Budget check:** pass/fail against p95 ≤ 100 ms for a narrative request with random weights and ≤ 256 MB of vectors in RAM. Change these with `--latency-budget-ms` and `--memory-budget-mb`.
+
+**Load test** (`bin/loadtest`, written to `reports/loadtest.json`): start `bin/web`, then run `bin/loadtest`. It sends open-loop `/api/recommend` requests at 5–400 requests per second in both modes. Latency includes HTTP and queueing time. The report gives the highest rate that stays within the latency budget.
+
+**Tests:** `uv pip install --python .venv/bin/python -e '.[dev]'`, then `.venv/bin/python -m pytest`. The tests build a synthetic catalog, ratings and artifact, so no real data is needed.
 
 ## Design and data credits
 

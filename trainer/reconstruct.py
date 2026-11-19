@@ -7,6 +7,8 @@ import time
 
 import numpy as np
 
+from .benchmark import add_arguments as add_benchmark_arguments, run as run_benchmark
+
 
 DEFAULT_ENCODER = "sentence-transformers/all-MiniLM-L6-v2"
 
@@ -117,16 +119,38 @@ def build(args: argparse.Namespace) -> None:
             raise SystemExit("Labels contain a MovieLens ID missing from the GitHub baseline catalog.") from exc
         arrays: dict[str, np.ndarray] = {"single": np.asarray(baseline[order], dtype=np.float32)}
         print(f"reusing {len(order):,} aligned single embeddings from {baseline_path}", flush=True)
+        timings = {"single": None}
     else:
+        single_started = time.perf_counter()
         arrays = {"single": encoder.encode(single_texts, args.batch_size)}
+        timings = {"single": time.perf_counter() - single_started}
         print("baseline embedding file not found; encoded the single-text fallback", flush=True)
     for name, texts in multi_texts.items():
         print(f"encoding {name}", flush=True)
+        dimension_started = time.perf_counter()
         arrays[name] = encoder.encode(texts, args.batch_size)
+        timings[name] = time.perf_counter() - dimension_started
     output = Path(args.output)
     output.parent.mkdir(parents=True, exist_ok=True)
     np.savez_compressed(output, **arrays)
     output.with_suffix(".metadata.json").write_text(json.dumps(metadata, ensure_ascii=False), encoding="utf-8")
+    narrative_seconds = sum(timings[name] for name in multi_texts)
+    output.with_suffix(".build.json").write_text(
+        json.dumps(
+            {
+                "movies": len(records),
+                "model_id": args.model_id,
+                "batch_size": args.batch_size,
+                "encode_seconds": timings,
+                "narrative_encode_seconds": narrative_seconds,
+                "narrative_ms_per_film": narrative_seconds / len(records) * 1000,
+                "note": "single is null when the baseline vectors were reused instead of re-encoded",
+            },
+            indent=2,
+        )
+        + "\n",
+        encoding="utf-8",
+    )
     print(f"wrote {output} in {time.perf_counter() - started:.1f}s", flush=True)
 
 
@@ -151,47 +175,6 @@ def recommend(args: argparse.Namespace) -> None:
     top = np.argsort(scores)[-args.k :][::-1]
     for rank, index in enumerate(top, 1):
         print(f"{rank:2d}. {metadata[index]['title']}\t{scores[index]:.4f}\t{metadata[index]['tmdb_id']}")
-
-
-def benchmark(args: argparse.Namespace) -> None:
-    artifact = Path(args.artifact)
-    data = np.load(artifact)
-    rng = np.random.default_rng(585)
-    count = data["single"].shape[0]
-    queries = rng.integers(0, count, size=args.queries)
-    started = time.perf_counter()
-    single_scores = data["single"][queries] @ data["single"].T
-    np.argpartition(single_scores, -10, axis=1)[:, -10:]
-    single_seconds = time.perf_counter() - started
-    started = time.perf_counter()
-    multi_scores = sum(
-        data[name][queries] @ data[name].T
-        for name in ("plot", "themes", "characters", "tone", "narrative_structure")
-    ) / 5.0
-    np.argpartition(multi_scores, -10, axis=1)[:, -10:]
-    multi_seconds = time.perf_counter() - started
-    result = {
-        "movies": int(count),
-        "queries": args.queries,
-        "single_mean_ms": single_seconds / args.queries * 1000,
-        "multi_mean_ms": multi_seconds / args.queries * 1000,
-        "single_qps": args.queries / single_seconds,
-        "multi_qps": args.queries / multi_seconds,
-        "single_artifact_bytes": (
-            Path(args.baseline_embeddings).stat().st_size
-            if Path(args.baseline_embeddings).exists()
-            else None
-        ),
-        "multi_artifact_bytes": artifact.stat().st_size,
-    }
-    if result["single_artifact_bytes"]:
-        result["storage_ratio_multi_to_single"] = (
-            result["multi_artifact_bytes"] / result["single_artifact_bytes"]
-        )
-    print(json.dumps(result, indent=2))
-    report = Path(args.report)
-    report.parent.mkdir(parents=True, exist_ok=True)
-    report.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
 
 
 def compare(args: argparse.Namespace) -> None:
@@ -232,11 +215,8 @@ def main() -> None:
     recommend_parser.add_argument("--structure", type=float, default=1.0)
     recommend_parser.set_defaults(function=recommend)
     benchmark_parser = sub.add_parser("benchmark")
-    benchmark_parser.add_argument("--artifact", default="artifacts/movie_embeddings.npz")
-    benchmark_parser.add_argument("--baseline-embeddings", default="data/processed/embeddings.npy")
-    benchmark_parser.add_argument("--queries", type=int, default=200)
-    benchmark_parser.add_argument("--report", default="reports/reconstruction_benchmark.json")
-    benchmark_parser.set_defaults(function=benchmark)
+    add_benchmark_arguments(benchmark_parser)
+    benchmark_parser.set_defaults(function=run_benchmark)
     compare_parser = sub.add_parser("compare")
     compare_parser.add_argument("first")
     compare_parser.add_argument("second")

@@ -57,6 +57,71 @@ def _movie_view(record: dict, score: float | None = None) -> dict:
     }
 
 
+MIN_YEAR, MAX_YEAR = 1870, 2100
+
+
+def _year_of(record: dict) -> int:
+    release_date = str(record.get("release_date") or "")
+    return int(release_date[:4]) if YEAR.match(release_date) else 0
+
+
+def parse_filters(value, known_genres: set[str]) -> dict:
+    """Validate the optional filters object from a recommend request."""
+    if value in (None, {}):
+        return {}
+    if not isinstance(value, dict):
+        raise ValueError("Filters must be an object.")
+    result: dict = {}
+    for key in ("genres", "excludeGenres"):
+        items = value.get(key) or []
+        if isinstance(items, str):
+            items = [items]
+        if not isinstance(items, list) or len(items) > 30:
+            raise ValueError("Genre filters must be a short list.")
+        names = [str(item) for item in items if str(item)]
+        unknown = [name for name in names if name not in known_genres]
+        if unknown:
+            raise ValueError(f"Unknown genre: {unknown[0]}.")
+        if names:
+            result[key] = names
+    for key in ("yearMin", "yearMax"):
+        raw = value.get(key)
+        if raw in (None, ""):
+            continue
+        try:
+            year = int(raw)
+        except (TypeError, ValueError) as exc:
+            raise ValueError("Years must be whole numbers.") from exc
+        if not MIN_YEAR <= year <= MAX_YEAR:
+            raise ValueError(f"Years must be between {MIN_YEAR} and {MAX_YEAR}.")
+        result[key] = year
+    if result.get("yearMin", MIN_YEAR) > result.get("yearMax", MAX_YEAR):
+        raise ValueError("The start year must not be after the end year.")
+    if set(result.get("genres", [])) & set(result.get("excludeGenres", [])):
+        raise ValueError("A genre cannot be both required and excluded.")
+    return result
+
+
+def filter_mask(genre_sets: list[set[str]], years: np.ndarray, filters: dict) -> np.ndarray | None:
+    """Boolean mask of films allowed by the filters, or None when nothing is filtered."""
+    if not filters:
+        return None
+    mask = np.ones(len(genre_sets), dtype=bool)
+    include = set(filters.get("genres", []))
+    exclude = set(filters.get("excludeGenres", []))
+    if include or exclude:
+        mask &= np.fromiter(
+            ((not include or bool(genres & include)) and not (genres & exclude) for genres in genre_sets),
+            dtype=bool,
+            count=len(genre_sets),
+        )
+    if "yearMin" in filters:
+        mask &= years >= filters["yearMin"]
+    if "yearMax" in filters:
+        mask &= (years <= filters["yearMax"]) & (years > 0)
+    return mask
+
+
 class RecommenderApp:
     def __init__(self) -> None:
         if not EMBEDDINGS_PATH.exists():
@@ -69,6 +134,9 @@ class RecommenderApp:
             for index, record in enumerate(self.records)
             if record.get("tmdbId") is not None
         }
+        self.genre_sets = [set(_genres(record)) for record in self.records]
+        self.genre_list = sorted(set().union(*self.genre_sets)) if self.genre_sets else []
+        self.years = np.asarray([_year_of(record) for record in self.records], dtype=np.int32)
         self.multi_data: dict[str, np.ndarray] | None = None
         self.multi_metadata: list[dict] = []
         self.multi_to_catalog: list[int] = []
@@ -167,6 +235,8 @@ class RecommenderApp:
                 "updatedAt": latest.get("updated_at"),
             } if latest else None,
             "evaluation": evaluation,
+            "genres": self.genre_list,
+            "yearRange": [int(known.min()), int(known.max())] if (known := self.years[self.years > 0]).size else None,
             "featured": [_movie_view(row) for row in featured],
         }
 
@@ -200,12 +270,14 @@ class RecommenderApp:
         return vector / norm if norm else vector
 
     @staticmethod
-    def _top(scores: np.ndarray, count: int, excluded: set[int]) -> list[int]:
+    def _top(scores: np.ndarray, count: int, excluded: set[int], allowed: np.ndarray | None = None) -> list[int]:
         values = scores.copy()
+        if allowed is not None:
+            values[~allowed] = -np.inf
         for index in excluded:
             if 0 <= index < len(values):
                 values[index] = -np.inf
-        amount = min(count, len(values) - len(excluded))
+        amount = min(count, int(np.isfinite(values).sum()))
         if amount < 1:
             return []
         choices = np.argpartition(values, -amount)[-amount:]
@@ -251,10 +323,14 @@ class RecommenderApp:
                 raise ValueError("Profile weights must be between 0 and 3.")
             weights[name] = value
 
+        filters = parse_filters(payload.get("filters"), set(self.genre_list))
+        allowed = filter_mask(self.genre_sets, self.years, filters)
+        matching = int(allowed.sum()) if allowed is not None else len(self.records)
+
         if mode == "single":
             query = self._normalize(self.embeddings[seed_indices].mean(axis=0))
             scores = self.embeddings @ query
-            top = self._top(scores, count, set(seed_indices))
+            top = self._top(scores, count, set(seed_indices), allowed)
             catalog_indices = top
             ranked_scores = scores[top]
         else:
@@ -274,7 +350,8 @@ class RecommenderApp:
                 if weight:
                     query = self._normalize(self.multi_data[name][multi_seeds].mean(axis=0))
                     scores += (weight / total_weight) * (self.multi_data[name] @ query)
-            top = self._top(scores, count, set(multi_seeds))
+            multi_allowed = allowed[self.multi_to_catalog] if allowed is not None else None
+            top = self._top(scores, count, set(multi_seeds), multi_allowed)
             catalog_indices = [self.multi_to_catalog[index] for index in top]
             ranked_scores = scores[top]
 
@@ -286,6 +363,8 @@ class RecommenderApp:
             ],
             "seeds": [_movie_view(self.records[index]) for index in seed_indices],
             "weights": weights if mode == "multi" else None,
+            "filters": filters,
+            "matchingCount": matching,
             "method": "Five narrative vectors blended by cosine similarity" if mode == "multi" else "Single movie-document vector",
         }
 

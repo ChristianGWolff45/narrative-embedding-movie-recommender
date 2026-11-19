@@ -47,8 +47,9 @@ fi
 bin/reconstruct build \
   --input data/processed/movie_lens_labels.jsonl \
   --output artifacts/movie_embeddings.npz
-bin/evaluate --queries 200 --k 10
-bin/reconstruct benchmark --artifact artifacts/movie_embeddings.npz --queries 200
+bin/evaluate --queries 200 --k 10 5 20
+bin/reconstruct benchmark --artifact artifacts/movie_embeddings.npz
 
 echo "Finished the MovieLens movie recommender."
 echo "Open reports/evaluation.json and reports/reconstruction_benchmark.json for the results."
+echo "For the HTTP load test, start bin/web and then run bin/loadtest."

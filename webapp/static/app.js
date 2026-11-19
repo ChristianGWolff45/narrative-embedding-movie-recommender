@@ -273,12 +273,16 @@
           mode: state.mode,
           count: 12,
           weights: selectedWeights,
+          filters: readFilters(),
         }),
       });
       renderResults(data.results || []);
       const seedNames = state.seeds.map(movie => movie.title).join(", ");
       const profile = data.mode === "multi" ? "Narrative profile" : "Single profile";
-      $("#result-description").textContent = `${profile}: ${seedNames}`;
+      const filtered = data.filters && Object.keys(data.filters).length
+        ? ` · ${Number(data.matchingCount || 0).toLocaleString()} films match filters`
+        : "";
+      $("#result-description").textContent = `${profile}: ${seedNames}${filtered}`;
       announce(`${(data.results || []).length} recommendations loaded.`);
     } catch (error) {
       showEmptyResults(error.message, "Recommendation error");
@@ -288,6 +292,48 @@
       findButton.disabled = state.seeds.length === 0;
       findButton.classList.remove("is-loading");
       findButton.firstChild.textContent = "Recommend";
+    }
+  }
+
+  function readFilters() {
+    const filters = {};
+    const include = $("#filter-genre").value;
+    const exclude = $("#filter-exclude").value;
+    if (include) filters.genres = [include];
+    if (exclude) filters.excludeGenres = [exclude];
+    ["yearMin", "yearMax"].forEach(key => {
+      const input = $(`[data-filter="${key}"]`);
+      const value = input.value.trim();
+      if (value && input.checkValidity()) filters[key] = Number(value);
+    });
+    return filters;
+  }
+
+  function updateFilterSummary() {
+    const filters = readFilters();
+    const parts = [];
+    if (filters.genres) parts.push(filters.genres[0]);
+    if (filters.excludeGenres) parts.push(`no ${filters.excludeGenres[0]}`);
+    if (filters.yearMin || filters.yearMax) parts.push(`${filters.yearMin || "…"}–${filters.yearMax || "…"}`);
+    $("#filter-summary").textContent = parts.length ? parts.join(" · ") : "No filters";
+    $("#filter-clear").disabled = parts.length === 0;
+    $$("[data-filter^='year']").forEach(input => {
+      input.setAttribute("aria-invalid", String(Boolean(input.value) && !input.checkValidity()));
+    });
+  }
+
+  function populateFilters(data) {
+    const genres = data.genres || [];
+    [["#filter-genre", "Any genre"], ["#filter-exclude", "None"]].forEach(([selector, emptyLabel]) => {
+      const select = $(selector);
+      if (select.options.length > 1) return;
+      select.replaceChildren(new Option(emptyLabel, ""), ...genres.map(name => new Option(name, name)));
+    });
+    if (Array.isArray(data.yearRange)) {
+      $$("[data-filter^='year']").forEach(input => {
+        input.min = String(data.yearRange[0]);
+        input.max = String(data.yearRange[1]);
+      });
     }
   }
 
@@ -354,6 +400,7 @@
     status.classList.toggle("is-ready", Number(data.movieCount) > 0);
     $("#collection-label").textContent = Number(data.movieCount) > 0 ? "Ready" : "Loading";
     renderFeatured(data.featured || []);
+    populateFilters(data);
 
     const percent = Math.min(100, Math.max(0, Number(data.labelPercent || 0)));
     $("#progress-value").textContent = `${percent}%`;
@@ -428,7 +475,22 @@
     }, 250);
   }));
 
+  $$("[data-filter]").forEach(control => control.addEventListener("input", () => {
+    updateFilterSummary();
+    window.clearTimeout(state.recommendationTimer);
+    state.recommendationTimer = window.setTimeout(() => {
+      if (state.seeds.length) runRecommendations();
+    }, 350);
+  }));
+  $("#filter-clear").addEventListener("click", () => {
+    $$("[data-filter]").forEach(control => { control.value = ""; });
+    updateFilterSummary();
+    announce("Filters cleared.");
+    if (state.seeds.length) runRecommendations();
+  });
+
   updateWeights();
+  updateFilterSummary();
   refreshStatus();
   window.setInterval(refreshStatus, 15_000);
 })();

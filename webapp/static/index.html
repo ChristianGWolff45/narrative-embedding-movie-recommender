@@ -113,6 +113,32 @@
             </div>
           </div>
           <p class="mix-footnote">Weights control each dimension’s contribution to similarity.</p>
+          <fieldset class="filter-block" id="filter-block">
+            <legend>Filters</legend>
+            <p class="filter-intro">Apply to both profiles.</p>
+            <div class="filter-row">
+              <label for="filter-genre">Include genre</label>
+              <select id="filter-genre" data-filter="genres"><option value="">Any genre</option></select>
+            </div>
+            <div class="filter-row">
+              <label for="filter-exclude">Exclude genre</label>
+              <select id="filter-exclude" data-filter="excludeGenres"><option value="">None</option></select>
+            </div>
+            <div class="filter-years">
+              <div class="filter-row">
+                <label for="filter-year-min">From year</label>
+                <input id="filter-year-min" data-filter="yearMin" type="number" inputmode="numeric" min="1870" max="2100" step="1" placeholder="Any">
+              </div>
+              <div class="filter-row">
+                <label for="filter-year-max">To year</label>
+                <input id="filter-year-max" data-filter="yearMax" type="number" inputmode="numeric" min="1870" max="2100" step="1" placeholder="Any">
+              </div>
+            </div>
+            <div class="filter-actions">
+              <span id="filter-summary" aria-live="polite">No filters</span>
+              <button type="button" class="filter-clear" id="filter-clear" disabled>Clear</button>
+            </div>
+          </fieldset>
           <div class="method-link"><a href="#method">Evaluation details <span aria-hidden="true">→</span></a></div>
         </aside>
       </section>
