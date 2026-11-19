@@ -1,0 +1,148 @@
+{
+  "url": "[redacted private Tailscale address]",
+  "duration_seconds_per_rate": 5.0,
+  "latency_budget_ms": 100.0,
+  "note": "Open loop; latency includes queueing from the scheduled send time and HTTP/JSON overhead.",
+  "results": [
+    {
+      "mode": "single",
+      "offered_rps": 5.0,
+      "requests": 25,
+      "achieved_rps": 5.202252771255799,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 25,
+        "mean_ms": 4.173264726996422,
+        "p50_ms": 4.046210087835789,
+        "p95_ms": 5.9133710339665395,
+        "p99_ms": 6.25352494418621,
+        "max_ms": 6.323156878352165,
+        "serial_qps": 239.62055259305802
+      }
+    },
+    {
+      "mode": "single",
+      "offered_rps": 20.0,
+      "requests": 100,
+      "achieved_rps": 20.185034639067144,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 100,
+        "mean_ms": 3.6366146616637707,
+        "p50_ms": 3.595511894673109,
+        "p95_ms": 5.760891316458583,
+        "p99_ms": 6.6564755141735725,
+        "max_ms": 19.191022962331772,
+        "serial_qps": 274.981017522075
+      }
+    },
+    {
+      "mode": "single",
+      "offered_rps": 50.0,
+      "requests": 250,
+      "achieved_rps": 50.181476828747435,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 250,
+        "mean_ms": 3.078409343957901,
+        "p50_ms": 2.738309558480978,
+        "p95_ms": 5.165559984743594,
+        "p99_ms": 6.502492018043988,
+        "max_ms": 7.03857559710741,
+        "serial_qps": 324.84308883831
+      }
+    },
+    {
+      "mode": "single",
+      "offered_rps": 100.0,
+      "requests": 500,
+      "achieved_rps": 100.1342282996279,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 500,
+        "mean_ms": 2.7429734468460083,
+        "p50_ms": 2.5023226626217365,
+        "p95_ms": 4.9804610665887585,
+        "p99_ms": 6.995296925306319,
+        "max_ms": 10.776874609291553,
+        "serial_qps": 364.5678747455044
+      }
+    },
+    {
+      "mode": "multi",
+      "offered_rps": 5.0,
+      "requests": 25,
+      "achieved_rps": 5.199001443248949,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 25,
+        "mean_ms": 6.390097737312317,
+        "p50_ms": 6.379446946084499,
+        "p95_ms": 8.730307593941689,
+        "p99_ms": 9.478134065866469,
+        "max_ms": 9.698158130049706,
+        "serial_qps": 156.49212908918688
+      }
+    },
+    {
+      "mode": "multi",
+      "offered_rps": 20.0,
+      "requests": 100,
+      "achieved_rps": 20.17694703378464,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 100,
+        "mean_ms": 6.37877631932497,
+        "p50_ms": 5.304449703544378,
+        "p95_ms": 11.358509445562959,
+        "p99_ms": 14.229125212877996,
+        "max_ms": 15.451881103217602,
+        "serial_qps": 156.76988029356457
+      }
+    },
+    {
+      "mode": "multi",
+      "offered_rps": 50.0,
+      "requests": 250,
+      "achieved_rps": 50.087223532472194,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 250,
+        "mean_ms": 7.0121960155665874,
+        "p50_ms": 5.988820921629667,
+        "p95_ms": 12.694601528346539,
+        "p99_ms": 20.828832145780307,
+        "max_ms": 28.39754894375801,
+        "serial_qps": 142.60867747850597
+      }
+    },
+    {
+      "mode": "multi",
+      "offered_rps": 100.0,
+      "requests": 500,
+      "achieved_rps": 100.10986822603337,
+      "errors": 0,
+      "error_rate": 0.0,
+      "latency": {
+        "count": 500,
+        "mean_ms": 5.717362314462662,
+        "p50_ms": 4.728870466351509,
+        "p95_ms": 10.880952607840298,
+        "p99_ms": 15.723641226068137,
+        "max_ms": 19.476212561130524,
+        "serial_qps": 174.90582982127899
+      }
+    }
+  ],
+  "max_rate_within_budget": {
+    "single": 100.0,
+    "multi": 100.0
+  }
+}

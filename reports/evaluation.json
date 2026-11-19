@@ -1,0 +1,4675 @@
+{
+  "artifact": "artifacts/movie_embeddings.npz",
+  "movies": 6194,
+  "queries_requested": 200,
+  "queries_evaluated": 200,
+  "paired_queries": 174,
+  "k": 10,
+  "k_values": [
+    10,
+    5,
+    20
+  ],
+  "like_threshold": 4.0,
+  "min_overlap": 30,
+  "seed": 0,
+  "weights": {
+    "plot": 1.0,
+    "themes": 1.0,
+    "characters": 1.0,
+    "tone": 1.0,
+    "narrative_structure": 1.0
+  },
+  "headline_profile": "equal",
+  "relevance_definition": "fraction of query fans who also rated a recommendation >= like_threshold",
+  "diversity_definition": "pairwise Jaccard distance between recommended genre sets",
+  "statistics": "Paired by query. mean_difference = narrative minus baseline; 95% percentile bootstrap CI; two-sided sign-flip permutation p-value; Holm-adjusted within the headline family and separately across the exploratory sweep.",
+  "methods": {
+    "single": {
+      "recommendation_coverage": 0.7115,
+      "scored_recommendations": 1423,
+      "possible_recommendations": 2000,
+      "mean_shared_raters_for_scored_recommendations": 482.75263527758256,
+      "co_like_rate": {
+        "mean": 0.5446710905160869,
+        "p10": 0.40265439825143884,
+        "median": 0.5386456250527654,
+        "p90": 0.6992539175214322
+      },
+      "genre_intra_list_diversity": {
+        "mean": 0.6452539682539683,
+        "p10": 0.47533333333333333,
+        "median": 0.6690740740740742,
+        "p90": 0.7947671957671958
+      },
+      "mean_unique_genres_per_list": 7.83,
+      "co_like_rate_paired": {
+        "mean": 0.5368017891514869,
+        "p10": 0.40183385347300954,
+        "median": 0.5289031814291528,
+        "p90": 0.685330287308071
+      },
+      "paired_query_count": 174
+    },
+    "genre": {
+      "recommendation_coverage": 0.7025,
+      "scored_recommendations": 1405,
+      "possible_recommendations": 2000,
+      "mean_shared_raters_for_scored_recommendations": 343.24839857651244,
+      "co_like_rate": {
+        "mean": 0.5139844279632088,
+        "p10": 0.3497602055895282,
+        "median": 0.5229812819594337,
+        "p90": 0.6692924560297844
+      },
+      "genre_intra_list_diversity": {
+        "mean": 0.0500399470899471,
+        "p10": 0.0,
+        "median": 0.0,
+        "p90": 0.2394444444444443
+      },
+      "mean_unique_genres_per_list": 2.795,
+      "co_like_rate_paired": {
+        "mean": 0.5033466836144541,
+        "p10": 0.3473633377705427,
+        "median": 0.5116993984356857,
+        "p90": 0.6452653673257682
+      },
+      "paired_query_count": 174
+    },
+    "popular": {
+      "recommendation_coverage": 0.9855,
+      "scored_recommendations": 1971,
+      "possible_recommendations": 2000,
+      "mean_shared_raters_for_scored_recommendations": 1554.5920852359209,
+      "co_like_rate": {
+        "mean": 0.7771659507122688,
+        "p10": 0.7213417621292906,
+        "median": 0.7835340315733901,
+        "p90": 0.8261643804378734
+      },
+      "genre_intra_list_diversity": {
+        "mean": 0.8413333333333335,
+        "p10": 0.8414814814814815,
+        "median": 0.8414814814814815,
+        "p90": 0.8414814814814815
+      },
+      "mean_unique_genres_per_list": 10.995,
+      "co_like_rate_paired": {
+        "mean": 0.7755456224537423,
+        "p10": 0.7196522292250801,
+        "median": 0.7832276441538466,
+        "p90": 0.8260485127861769
+      },
+      "paired_query_count": 174
+    },
+    "random_matched": {
+      "recommendation_coverage": 0.6065,
+      "scored_recommendations": 1213,
+      "possible_recommendations": 2000,
+      "mean_shared_raters_for_scored_recommendations": 318.53668590272054,
+      "co_like_rate": {
+        "mean": 0.47072936734296345,
+        "p10": 0.3212664967138478,
+        "median": 0.4725680029085213,
+        "p90": 0.6215382817444653
+      },
+      "genre_intra_list_diversity": {
+        "mean": 0.8338820105820105,
+        "p10": 0.7795370370370371,
+        "median": 0.8362962962962963,
+        "p90": 0.8881851851851853
+      },
+      "mean_unique_genres_per_list": 11.515,
+      "co_like_rate_paired": {
+        "mean": 0.4649029129779208,
+        "p10": 0.31400691213343873,
+        "median": 0.4658185987504426,
+        "p90": 0.6015224577421872
+      },
+      "paired_query_count": 174
+    },
+    "multi": {
+      "recommendation_coverage": 0.676,
+      "scored_recommendations": 1352,
+      "possible_recommendations": 2000,
+      "mean_shared_raters_for_scored_recommendations": 421.1664201183432,
+      "co_like_rate": {
+        "mean": 0.5253794272295895,
+        "p10": 0.38077913615535053,
+        "median": 0.5211151156629733,
+        "p90": 0.682702084849649
+      },
+      "genre_intra_list_diversity": {
+        "mean": 0.5888330687830688,
+        "p10": 0.40285185185185185,
+        "median": 0.597962962962963,
+        "p90": 0.7534074074074074
+      },
+      "mean_unique_genres_per_list": 7.41,
+      "co_like_rate_paired": {
+        "mean": 0.5150105330652356,
+        "p10": 0.37845354874261605,
+        "median": 0.5141337885043835,
+        "p90": 0.6545219540475841
+      },
+      "paired_query_count": 174
+    }
+  },
+  "comparisons": {
+    "single": {
+      "co_like_rate": {
+        "n": 185,
+        "mean_difference": -0.01902982359353618,
+        "ci_low": -0.035406550471136854,
+        "ci_high": -0.0025713575999454616,
+        "confidence": 0.95,
+        "p_value": 0.027597240275972403,
+        "wins": 76,
+        "ties": 0,
+        "losses": 109,
+        "effect_size_dz": -0.16564475282493307,
+        "p_value_holm": 0.055194480551944806
+      },
+      "genre_diversity": {
+        "n": 200,
+        "mean_difference": -0.05642089947089946,
+        "ci_low": -0.07759582341269841,
+        "ci_high": -0.035545462962962945,
+        "confidence": 0.95,
+        "p_value": 9.999000099990002e-05,
+        "wins": 69,
+        "ties": 0,
+        "losses": 131,
+        "effect_size_dz": -0.37601298043129516,
+        "p_value_holm": 0.0007999200079992001
+      }
+    },
+    "genre": {
+      "co_like_rate": {
+        "n": 185,
+        "mean_difference": 0.013544318398393821,
+        "ci_low": -0.004785673623344649,
+        "ci_high": 0.032225662308753525,
+        "confidence": 0.95,
+        "p_value": 0.16148385161483853,
+        "wins": 94,
+        "ties": 0,
+        "losses": 91,
+        "effect_size_dz": 0.1046804738211818,
+        "p_value_holm": 0.16148385161483853
+      },
+      "genre_diversity": {
+        "n": 200,
+        "mean_difference": 0.5387931216931218,
+        "ci_low": 0.5178614583333334,
+        "ci_high": 0.5594908763227514,
+        "confidence": 0.95,
+        "p_value": 9.999000099990002e-05,
+        "wins": 200,
+        "ties": 0,
+        "losses": 0,
+        "effect_size_dz": 3.603830086452604,
+        "p_value_holm": 0.0007999200079992001
+      }
+    },
+    "popular": {
+      "co_like_rate": {
+        "n": 189,
+        "mean_difference": -0.2505454745084741,
+        "ci_low": -0.2678421929212252,
+        "ci_high": -0.2332786661925034,
+        "confidence": 0.95,
+        "p_value": 9.999000099990002e-05,
+        "wins": 4,
+        "ties": 0,
+        "losses": 185,
+        "effect_size_dz": -2.027426977244646,
+        "p_value_holm": 0.0007999200079992001
+      },
+      "genre_diversity": {
+        "n": 200,
+        "mean_difference": -0.25250026455026453,
+        "ci_low": -0.2712226951058201,
+        "ci_high": -0.23463559193121694,
+        "confidence": 0.95,
+        "p_value": 9.999000099990002e-05,
+        "wins": 0,
+        "ties": 0,
+        "losses": 200,
+        "effect_size_dz": -1.9242848399622072,
+        "p_value_holm": 0.0007999200079992001
+      }
+    },
+    "random_matched": {
+      "co_like_rate": {
+        "n": 178,
+        "mean_difference": 0.048263431118728384,
+        "ci_low": 0.02865847954892108,
+        "ci_high": 0.06793720227791925,
+        "confidence": 0.95,
+        "p_value": 9.999000099990002e-05,
+        "wins": 112,
+        "ties": 0,
+        "losses": 66,
+        "effect_size_dz": 0.3557422167485573,
+        "p_value_holm": 0.0007999200079992001
+      },
+      "genre_diversity": {
+        "n": 200,
+        "mean_difference": -0.24504894179894177,
+        "ci_low": -0.2643722619047618,
+        "ci_high": -0.22623716931216925,
+        "confidence": 0.95,
+        "p_value": 9.999000099990002e-05,
+        "wins": 4,
+        "ties": 0,
+        "losses": 196,
+        "effect_size_dz": -1.7976361965091128,
+        "p_value_holm": 0.0007999200079992001
+      }
+    }
+  },
+  "baselines_by_k": {
+    "10": {
+      "single": {
+        "recommendation_coverage": 0.7115,
+        "scored_recommendations": 1423,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 482.75263527758256,
+        "co_like_rate": {
+          "mean": 0.5446710905160869,
+          "p10": 0.40265439825143884,
+          "median": 0.5386456250527654,
+          "p90": 0.6992539175214322
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6452539682539683,
+          "p10": 0.47533333333333333,
+          "median": 0.6690740740740742,
+          "p90": 0.7947671957671958
+        },
+        "mean_unique_genres_per_list": 7.83,
+        "co_like_rate_paired": {
+          "mean": 0.5368017891514869,
+          "p10": 0.40183385347300954,
+          "median": 0.5289031814291528,
+          "p90": 0.685330287308071
+        },
+        "paired_query_count": 174
+      },
+      "genre": {
+        "recommendation_coverage": 0.7025,
+        "scored_recommendations": 1405,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 343.24839857651244,
+        "co_like_rate": {
+          "mean": 0.5139844279632088,
+          "p10": 0.3497602055895282,
+          "median": 0.5229812819594337,
+          "p90": 0.6692924560297844
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.0500399470899471,
+          "p10": 0.0,
+          "median": 0.0,
+          "p90": 0.2394444444444443
+        },
+        "mean_unique_genres_per_list": 2.795,
+        "co_like_rate_paired": {
+          "mean": 0.5033466836144541,
+          "p10": 0.3473633377705427,
+          "median": 0.5116993984356857,
+          "p90": 0.6452653673257682
+        },
+        "paired_query_count": 174
+      },
+      "popular": {
+        "recommendation_coverage": 0.9855,
+        "scored_recommendations": 1971,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 1554.5920852359209,
+        "co_like_rate": {
+          "mean": 0.7771659507122688,
+          "p10": 0.7213417621292906,
+          "median": 0.7835340315733901,
+          "p90": 0.8261643804378734
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.8413333333333335,
+          "p10": 0.8414814814814815,
+          "median": 0.8414814814814815,
+          "p90": 0.8414814814814815
+        },
+        "mean_unique_genres_per_list": 10.995,
+        "co_like_rate_paired": {
+          "mean": 0.7755456224537423,
+          "p10": 0.7196522292250801,
+          "median": 0.7832276441538466,
+          "p90": 0.8260485127861769
+        },
+        "paired_query_count": 174
+      },
+      "random_matched": {
+        "recommendation_coverage": 0.6065,
+        "scored_recommendations": 1213,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 318.53668590272054,
+        "co_like_rate": {
+          "mean": 0.47072936734296345,
+          "p10": 0.3212664967138478,
+          "median": 0.4725680029085213,
+          "p90": 0.6215382817444653
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.8338820105820105,
+          "p10": 0.7795370370370371,
+          "median": 0.8362962962962963,
+          "p90": 0.8881851851851853
+        },
+        "mean_unique_genres_per_list": 11.515,
+        "co_like_rate_paired": {
+          "mean": 0.4649029129779208,
+          "p10": 0.31400691213343873,
+          "median": 0.4658185987504426,
+          "p90": 0.6015224577421872
+        },
+        "paired_query_count": 174
+      }
+    },
+    "5": {
+      "single": {
+        "recommendation_coverage": 0.701,
+        "scored_recommendations": 701,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 620.0499286733238,
+        "co_like_rate": {
+          "mean": 0.5578067996178749,
+          "p10": 0.3830954209583589,
+          "median": 0.5563619319106616,
+          "p90": 0.7434993648121359
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6062303571428571,
+          "p10": 0.32700000000000007,
+          "median": 0.6333333333333334,
+          "p90": 0.8184523809523808
+        },
+        "mean_unique_genres_per_list": 5.805
+      },
+      "genre": {
+        "recommendation_coverage": 0.714,
+        "scored_recommendations": 714,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 306.33613445378154,
+        "co_like_rate": {
+          "mean": 0.5180723579672402,
+          "p10": 0.32798122703422394,
+          "median": 0.5323237277320787,
+          "p90": 0.6793623743913022
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.0309702380952381,
+          "p10": 0.0,
+          "median": 0.0,
+          "p90": 0.15
+        },
+        "mean_unique_genres_per_list": 2.64
+      },
+      "popular": {
+        "recommendation_coverage": 0.987,
+        "scored_recommendations": 987,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 1663.820668693009,
+        "co_like_rate": {
+          "mean": 0.7974213342367632,
+          "p10": 0.7356169458187526,
+          "median": 0.8051797155420826,
+          "p90": 0.8478171236364968
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7933333333333331,
+          "p10": 0.7933333333333333,
+          "median": 0.7933333333333333,
+          "p90": 0.7933333333333333
+        },
+        "mean_unique_genres_per_list": 7.0
+      },
+      "random_matched": {
+        "recommendation_coverage": 0.61,
+        "scored_recommendations": 610,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 355.84098360655736,
+        "co_like_rate": {
+          "mean": 0.46876317463659695,
+          "p10": 0.2958555342017409,
+          "median": 0.4677064765300059,
+          "p90": 0.62442513082819
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.8252769841269841,
+          "p10": 0.7050000000000001,
+          "median": 0.8433333333333334,
+          "p90": 0.9136666666666666
+        },
+        "mean_unique_genres_per_list": 8.22
+      }
+    },
+    "20": {
+      "single": {
+        "recommendation_coverage": 0.709,
+        "scored_recommendations": 2836,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 445.77997179125526,
+        "co_like_rate": {
+          "mean": 0.5437960579836567,
+          "p10": 0.4215686459717798,
+          "median": 0.5362808076564105,
+          "p90": 0.6766014394101771
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6743591165413534,
+          "p10": 0.5388771929824561,
+          "median": 0.6928070175438596,
+          "p90": 0.7884912280701755
+        },
+        "mean_unique_genres_per_list": 10.14
+      },
+      "genre": {
+        "recommendation_coverage": 0.70925,
+        "scored_recommendations": 2837,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 325.0504053577723,
+        "co_like_rate": {
+          "mean": 0.5191190737223559,
+          "p10": 0.36740242094352127,
+          "median": 0.5245217865601401,
+          "p90": 0.6569906583854881
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.07344035087719299,
+          "p10": 0.0,
+          "median": 0.0,
+          "p90": 0.2969824561403509
+        },
+        "mean_unique_genres_per_list": 3.26
+      },
+      "popular": {
+        "recommendation_coverage": 0.98225,
+        "scored_recommendations": 3929,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 1465.2552812420463,
+        "co_like_rate": {
+          "mean": 0.771198314368771,
+          "p10": 0.7118420213896394,
+          "median": 0.7778962953281118,
+          "p90": 0.8255817570123568
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7878561403508771,
+          "p10": 0.7878070175438596,
+          "median": 0.7878070175438596,
+          "p90": 0.7878070175438596
+        },
+        "mean_unique_genres_per_list": 13.0
+      },
+      "random_matched": {
+        "recommendation_coverage": 0.617,
+        "scored_recommendations": 2468,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 319.7034035656402,
+        "co_like_rate": {
+          "mean": 0.4753109920590361,
+          "p10": 0.3578433490999403,
+          "median": 0.4766892820855409,
+          "p90": 0.5966974226681057
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.8294823830409357,
+          "p10": 0.7929649122807019,
+          "median": 0.8343358395989975,
+          "p90": 0.8656290726817043
+        },
+        "mean_unique_genres_per_list": 14.295
+      }
+    }
+  },
+  "sweep": [
+    {
+      "profile": "plot_only",
+      "weights": {
+        "plot": 1.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.6705,
+        "scored_recommendations": 1341,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 413.78448918717373,
+        "co_like_rate": {
+          "mean": 0.5219450234253253,
+          "p10": 0.38107296522830647,
+          "median": 0.5174423983408096,
+          "p90": 0.6774350649350648
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7004628306878307,
+          "p10": 0.577,
+          "median": 0.7084920634920635,
+          "p90": 0.8176243386243386
+        },
+        "mean_unique_genres_per_list": 8.8
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 187,
+            "mean_difference": -0.022071826665814673,
+            "ci_low": -0.037388455312400745,
+            "ci_high": -0.00675598556996333,
+            "confidence": 0.95,
+            "p_value": 0.0058994100589941,
+            "wins": 78,
+            "ties": 1,
+            "losses": 108,
+            "effect_size_dz": -0.20402984137441657,
+            "p_value_holm": 0.42475752424757524
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.055208862433862436,
+            "ci_low": 0.038974507275132304,
+            "ci_high": 0.07199551587301586,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 137,
+            "ties": 0,
+            "losses": 63,
+            "effect_size_dz": 0.46178668587092303,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 186,
+            "mean_difference": 0.007622881604653946,
+            "ci_low": -0.013160020875862617,
+            "ci_high": 0.02816785911095317,
+            "confidence": 0.95,
+            "p_value": 0.47655234476552344,
+            "wins": 86,
+            "ties": 0,
+            "losses": 100,
+            "effect_size_dz": 0.052616846597226326,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6504228835978836,
+            "ci_low": 0.6312638029100529,
+            "ci_high": 0.6688129232804232,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.773178241027086,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "themes_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 1.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.689,
+        "scored_recommendations": 1378,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 301.19738751814225,
+        "co_like_rate": {
+          "mean": 0.49775173057936484,
+          "p10": 0.34592663169596793,
+          "median": 0.4946097388658598,
+          "p90": 0.6465087379073223
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6283143298059964,
+          "p10": 0.4570740740740741,
+          "median": 0.6462962962962964,
+          "p90": 0.7771111111111112
+        },
+        "mean_unique_genres_per_list": 7.7
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 183,
+            "mean_difference": -0.04452551055365741,
+            "ci_low": -0.06366965995663267,
+            "ci_high": -0.025588364503394388,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 64,
+            "ties": 0,
+            "losses": 119,
+            "effect_size_dz": -0.33883645891715736,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.01693963844797177,
+            "ci_low": -0.039789797178130505,
+            "ci_high": 0.005490311948853618,
+            "confidence": 0.95,
+            "p_value": 0.14378562143785623,
+            "wins": 83,
+            "ties": 0,
+            "losses": 117,
+            "effect_size_dz": -0.10342804770214371,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 184,
+            "mean_difference": -0.011489283456190755,
+            "ci_low": -0.031822688813923465,
+            "ci_high": 0.008729322832013357,
+            "confidence": 0.95,
+            "p_value": 0.27007299270072993,
+            "wins": 83,
+            "ties": 0,
+            "losses": 101,
+            "effect_size_dz": -0.08122687494350514,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5782743827160495,
+            "ci_low": 0.5568417449294533,
+            "ci_high": 0.5993051201499119,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.7486014381399113,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "characters_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 1.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.628,
+        "scored_recommendations": 1256,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 415.5636942675159,
+        "co_like_rate": {
+          "mean": 0.48999679271817614,
+          "p10": 0.3328535556584337,
+          "median": 0.47938973914423777,
+          "p90": 0.6667610516847053
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7640194003527335,
+          "p10": 0.6504708994708994,
+          "median": 0.7862962962962963,
+          "p90": 0.8638095238095237
+        },
+        "mean_unique_genres_per_list": 10.155
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 185,
+            "mean_difference": -0.05380323844418152,
+            "ci_low": -0.0733681237557645,
+            "ci_high": -0.03456980123408023,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 64,
+            "ties": 0,
+            "losses": 121,
+            "effect_size_dz": -0.3994231046119288,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.1187654320987654,
+            "ci_low": 0.10044564925044089,
+            "ci_high": 0.13728036596119927,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 166,
+            "ties": 1,
+            "losses": 33,
+            "effect_size_dz": 0.8879095896594321,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 184,
+            "mean_difference": -0.02499076096407216,
+            "ci_low": -0.04733413714885569,
+            "ci_high": -0.002064224194981604,
+            "confidence": 0.95,
+            "p_value": 0.031796820317968204,
+            "wins": 73,
+            "ties": 0,
+            "losses": 111,
+            "effect_size_dz": -0.16064009182772548,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.7139794532627866,
+            "ci_low": 0.6936628802910053,
+            "ci_high": 0.7339565553350971,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.824578430314759,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "tone_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 1.0,
+        "narrative_structure": 0.0
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.673,
+        "scored_recommendations": 1346,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 288.6604754829123,
+        "co_like_rate": {
+          "mean": 0.5070349627827142,
+          "p10": 0.35859086881135743,
+          "median": 0.5104335062077205,
+          "p90": 0.6422200731196637
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5723202380952381,
+          "p10": 0.38981481481481484,
+          "median": 0.5981481481481482,
+          "p90": 0.7462116402116401
+        },
+        "mean_unique_genres_per_list": 7.49
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 185,
+            "mean_difference": -0.0347094838290297,
+            "ci_low": -0.05410916604576268,
+            "ci_high": -0.014442858982225004,
+            "confidence": 0.95,
+            "p_value": 0.0005999400059994001,
+            "wins": 64,
+            "ties": 0,
+            "losses": 121,
+            "effect_size_dz": -0.2510148294690284,
+            "p_value_holm": 0.05699430056994301
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.07293373015873014,
+            "ci_low": -0.09987192239858904,
+            "ci_high": -0.04619007275132274,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 62,
+            "ties": 0,
+            "losses": 138,
+            "effect_size_dz": -0.38122411265638,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 184,
+            "mean_difference": -0.0022270389279024556,
+            "ci_low": -0.021023099195760616,
+            "ci_high": 0.016702749686629163,
+            "confidence": 0.95,
+            "p_value": 0.82001799820018,
+            "wins": 90,
+            "ties": 0,
+            "losses": 94,
+            "effect_size_dz": -0.016858584042834687,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5222802910052909,
+            "ci_low": 0.4972744466490301,
+            "ci_high": 0.5468931790123457,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 2,
+            "losses": 0,
+            "effect_size_dz": 2.9112554425175987,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "narrative_structure_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 1.0
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.575,
+        "scored_recommendations": 1150,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 232.77739130434782,
+        "co_like_rate": {
+          "mean": 0.4590951493097767,
+          "p10": 0.2792775188534384,
+          "median": 0.470735563574014,
+          "p90": 0.630935303745066
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7631171957671958,
+          "p10": 0.6313333333333334,
+          "median": 0.7842592592592592,
+          "p90": 0.8628095238095237
+        },
+        "mean_unique_genres_per_list": 10.195
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 180,
+            "mean_difference": -0.0814786882730221,
+            "ci_low": -0.10342856388411616,
+            "ci_high": -0.05948951899682083,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 54,
+            "ties": 0,
+            "losses": 126,
+            "effect_size_dz": -0.5416157736738437,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.11786322751322748,
+            "ci_low": 0.09417928571428569,
+            "ci_high": 0.1413127447089947,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 159,
+            "ties": 0,
+            "losses": 41,
+            "effect_size_dz": 0.7071985353520571,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 180,
+            "mean_difference": -0.04985913115013497,
+            "ci_low": -0.07129834296568668,
+            "ci_high": -0.028324467157055687,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 73,
+            "ties": 0,
+            "losses": 107,
+            "effect_size_dz": -0.3352336144625406,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.7130772486772485,
+            "ci_low": 0.6921910185185185,
+            "ci_high": 0.7326400958994709,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.857135620675073,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_01",
+      "weights": {
+        "plot": 0.14823487802658275,
+        "themes": 0.04261162845789876,
+        "characters": 0.7425961549655369,
+        "tone": 0.050620511702244804,
+        "narrative_structure": 0.015936826847736944
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.6525,
+        "scored_recommendations": 1305,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 416.06283524904217,
+        "co_like_rate": {
+          "mean": 0.50431752024773,
+          "p10": 0.3461359778432949,
+          "median": 0.5013538350563783,
+          "p90": 0.6652695313398895
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7245242945326279,
+          "p10": 0.6065238095238096,
+          "median": 0.7462962962962963,
+          "p90": 0.8527619047619047
+        },
+        "mean_unique_genres_per_list": 9.37
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 187,
+            "mean_difference": -0.0392285073913839,
+            "ci_low": -0.05765449324518383,
+            "ci_high": -0.021425124222836895,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 76,
+            "ties": 0,
+            "losses": 111,
+            "effect_size_dz": -0.30839225183044844,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.07927032627865961,
+            "ci_low": 0.0588414131393298,
+            "ci_high": 0.0990672045855379,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 148,
+            "ties": 1,
+            "losses": 51,
+            "effect_size_dz": 0.5506705135980994,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 186,
+            "mean_difference": -0.008313715087131331,
+            "ci_low": -0.028839910677174806,
+            "ci_high": 0.012629369153538687,
+            "confidence": 0.95,
+            "p_value": 0.44015598440155984,
+            "wins": 82,
+            "ties": 0,
+            "losses": 104,
+            "effect_size_dz": -0.05725880804601971,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6744843474426807,
+            "ci_low": 0.652164198633157,
+            "ci_high": 0.6962950451940034,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.207936677965069,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_02",
+      "weights": {
+        "plot": 0.4939561275625179,
+        "themes": 0.1368520039233785,
+        "characters": 0.15133815368513318,
+        "tone": 0.008154884150671653,
+        "narrative_structure": 0.20969883067829875
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.679,
+        "scored_recommendations": 1358,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 417.1296023564065,
+        "co_like_rate": {
+          "mean": 0.5251228957454185,
+          "p10": 0.39283502835271616,
+          "median": 0.5273809523809524,
+          "p90": 0.6677472023566031
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6536919312169313,
+          "p10": 0.4932962962962964,
+          "median": 0.6627513227513228,
+          "p90": 0.7961058201058198
+        },
+        "mean_unique_genres_per_list": 8.225
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 186,
+            "mean_difference": -0.018538571031074393,
+            "ci_low": -0.03353781523388117,
+            "ci_high": -0.0035781161427639488,
+            "confidence": 0.95,
+            "p_value": 0.015798420157984203,
+            "wins": 76,
+            "ties": 0,
+            "losses": 110,
+            "effect_size_dz": -0.17697000613924443,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.008437962962962951,
+            "ci_low": -0.010227883597883593,
+            "ci_high": 0.027479444444444417,
+            "confidence": 0.95,
+            "p_value": 0.38476152384761525,
+            "wins": 106,
+            "ties": 0,
+            "losses": 94,
+            "effect_size_dz": 0.06204087296925797,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 186,
+            "mean_difference": 0.014037168695733867,
+            "ci_low": -0.005811598382465731,
+            "ci_high": 0.034673952357079395,
+            "confidence": 0.95,
+            "p_value": 0.17168283171682833,
+            "wins": 86,
+            "ties": 0,
+            "losses": 100,
+            "effect_size_dz": 0.10051095971540339,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6036519841269841,
+            "ci_low": 0.5821333002645502,
+            "ci_high": 0.6242885515873016,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.9524014121180864,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_03",
+      "weights": {
+        "plot": 0.2640516114947549,
+        "themes": 0.05846688316193,
+        "characters": 0.42524139978199826,
+        "tone": 0.052892696209109344,
+        "narrative_structure": 0.19934740935220732
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.6715,
+        "scored_recommendations": 1343,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 398.3000744601638,
+        "co_like_rate": {
+          "mean": 0.5187209491499709,
+          "p10": 0.35479371374296087,
+          "median": 0.5130699453522809,
+          "p90": 0.678956162020391
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6790936067019401,
+          "p10": 0.5029629629629631,
+          "median": 0.7037830687830688,
+          "p90": 0.8114814814814815
+        },
+        "mean_unique_genres_per_list": 8.645
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 183,
+            "mean_difference": -0.024262729511883144,
+            "ci_low": -0.04052552189252791,
+            "ci_high": -0.0075161584205590045,
+            "confidence": 0.95,
+            "p_value": 0.004399560043995601,
+            "wins": 78,
+            "ties": 0,
+            "losses": 105,
+            "effect_size_dz": -0.21127751749938128,
+            "p_value_holm": 0.32556744325567444
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.03383963844797178,
+            "ci_low": 0.013547916666666673,
+            "ci_high": 0.054417552910052874,
+            "confidence": 0.95,
+            "p_value": 0.0016998300169983002,
+            "wins": 116,
+            "ties": 1,
+            "losses": 83,
+            "effect_size_dz": 0.2307691901895592,
+            "p_value_holm": 0.1461853814618538
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 184,
+            "mean_difference": 0.009802370423379121,
+            "ci_low": -0.01122538448032875,
+            "ci_high": 0.03190418959944418,
+            "confidence": 0.95,
+            "p_value": 0.3765623437656234,
+            "wins": 93,
+            "ties": 0,
+            "losses": 91,
+            "effect_size_dz": 0.06525550147721655,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6290536596119929,
+            "ci_low": 0.6075850352733686,
+            "ci_high": 0.6500994367283952,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.034739943740553,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_04",
+      "weights": {
+        "plot": 0.0265388108626073,
+        "themes": 0.19021910909653852,
+        "characters": 0.09529755266201537,
+        "tone": 0.1419557961629365,
+        "narrative_structure": 0.5459887312159022
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.65,
+        "scored_recommendations": 1300,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 306.48,
+        "co_like_rate": {
+          "mean": 0.5179791311697922,
+          "p10": 0.37763246833444053,
+          "median": 0.5077132921184473,
+          "p90": 0.6841270437472382
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6170197971781306,
+          "p10": 0.43937037037037036,
+          "median": 0.6276190476190477,
+          "p90": 0.7706296296296297
+        },
+        "mean_unique_genres_per_list": 7.765
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 184,
+            "mean_difference": -0.023114574519288084,
+            "ci_low": -0.04320119055525392,
+            "ci_high": -0.0030469568873404576,
+            "confidence": 0.95,
+            "p_value": 0.023397660233976603,
+            "wins": 72,
+            "ties": 0,
+            "losses": 112,
+            "effect_size_dz": -0.16611263232553053,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.028234171075837734,
+            "ci_low": -0.05267277116402114,
+            "ci_high": -0.004265173059964729,
+            "confidence": 0.95,
+            "p_value": 0.0212978702129787,
+            "wins": 79,
+            "ties": 0,
+            "losses": 121,
+            "effect_size_dz": -0.16211902953740331,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 183,
+            "mean_difference": 0.010323426271914779,
+            "ci_low": -0.00923515706138514,
+            "ci_high": 0.030490951683487304,
+            "confidence": 0.95,
+            "p_value": 0.31116888311168883,
+            "wins": 94,
+            "ties": 0,
+            "losses": 89,
+            "effect_size_dz": 0.07470259904097501,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5669798500881835,
+            "ci_low": 0.5448913514109348,
+            "ci_high": 0.5882961100088183,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.6104997698157963,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_05",
+      "weights": {
+        "plot": 0.13844972511066256,
+        "themes": 0.11165078385843653,
+        "characters": 0.3527928801363542,
+        "tone": 0.25228124312576816,
+        "narrative_structure": 0.14482536776877863
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.6835,
+        "scored_recommendations": 1367,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 416.54791514264815,
+        "co_like_rate": {
+          "mean": 0.5245692028726877,
+          "p10": 0.36963003034730924,
+          "median": 0.516808190485105,
+          "p90": 0.6878457620886572
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6058336419753086,
+          "p10": 0.44,
+          "median": 0.6196296296296296,
+          "p90": 0.7655608465608464
+        },
+        "mean_unique_genres_per_list": 7.765
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 187,
+            "mean_difference": -0.018477126730474924,
+            "ci_low": -0.035578579861196204,
+            "ci_high": -0.0014148514437947604,
+            "confidence": 0.95,
+            "p_value": 0.036096390360963904,
+            "wins": 80,
+            "ties": 0,
+            "losses": 107,
+            "effect_size_dz": -0.15572531361236774,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.0394203262786596,
+            "ci_low": -0.06060926697530862,
+            "ci_high": -0.01836957451499117,
+            "confidence": 0.95,
+            "p_value": 0.0004999500049995,
+            "wins": 71,
+            "ties": 1,
+            "losses": 128,
+            "effect_size_dz": -0.2586743583805933,
+            "p_value_holm": 0.047995200479952004
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 187,
+            "mean_difference": 0.013224015621352872,
+            "ci_low": -0.00477712508050143,
+            "ci_high": 0.03197724330533832,
+            "confidence": 0.95,
+            "p_value": 0.16818318168183183,
+            "wins": 98,
+            "ties": 0,
+            "losses": 89,
+            "effect_size_dz": 0.10163177358135342,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5557936948853616,
+            "ci_low": 0.5346452656525573,
+            "ci_high": 0.5763363844797178,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.6501266344502796,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_06",
+      "weights": {
+        "plot": 0.031059641245378973,
+        "themes": 0.13560641777760976,
+        "characters": 0.014910758088473463,
+        "tone": 0.7961223495612275,
+        "narrative_structure": 0.02230083332731019
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.6855,
+        "scored_recommendations": 1371,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 315.1575492341357,
+        "co_like_rate": {
+          "mean": 0.5103252165634479,
+          "p10": 0.363838422631605,
+          "median": 0.5071132769477515,
+          "p90": 0.6477779926627855
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.555657142857143,
+          "p10": 0.39099999999999996,
+          "median": 0.557962962962963,
+          "p90": 0.7301216931216928
+        },
+        "mean_unique_genres_per_list": 7.21
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 187,
+            "mean_difference": -0.03205261207953901,
+            "ci_low": -0.05255985524058549,
+            "ci_high": -0.011861219325166041,
+            "confidence": 0.95,
+            "p_value": 0.0011998800119988001,
+            "wins": 69,
+            "ties": 0,
+            "losses": 118,
+            "effect_size_dz": -0.23158733614327395,
+            "p_value_holm": 0.10918908109189081
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.08959682539682536,
+            "ci_low": -0.11402103835978832,
+            "ci_high": -0.065541832010582,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 52,
+            "ties": 0,
+            "losses": 148,
+            "effect_size_dz": -0.5093943431545687,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 186,
+            "mean_difference": -0.00012192753085114338,
+            "ci_low": -0.018703755585787622,
+            "ci_high": 0.018148915965327958,
+            "confidence": 0.95,
+            "p_value": 0.9891010898910109,
+            "wins": 92,
+            "ties": 0,
+            "losses": 94,
+            "effect_size_dz": -0.0009301450906714671,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5056171957671958,
+            "ci_low": 0.4815032275132275,
+            "ci_high": 0.5284095006613757,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 197,
+            "ties": 3,
+            "losses": 0,
+            "effect_size_dz": 3.0002602808536736,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_07",
+      "weights": {
+        "plot": 0.37837713630090036,
+        "themes": 0.29044867377488137,
+        "characters": 0.04884714030288494,
+        "tone": 0.27502631151550005,
+        "narrative_structure": 0.007300738105833188
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.706,
+        "scored_recommendations": 1412,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 411.79320113314446,
+        "co_like_rate": {
+          "mean": 0.5286932120702876,
+          "p10": 0.392910595637929,
+          "median": 0.527123386225818,
+          "p90": 0.6729106178518276
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5634355820105821,
+          "p10": 0.37692592592592594,
+          "median": 0.5794444444444444,
+          "p90": 0.7345185185185187
+        },
+        "mean_unique_genres_per_list": 7.145
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 188,
+            "mean_difference": -0.014975823519046074,
+            "ci_low": -0.030439417609226235,
+            "ci_high": 0.0007447783483841765,
+            "confidence": 0.95,
+            "p_value": 0.0653934606539346,
+            "wins": 83,
+            "ties": 0,
+            "losses": 105,
+            "effect_size_dz": -0.13556481930507364,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.08181838624338625,
+            "ci_low": -0.10051672619047618,
+            "ci_high": -0.06346351190476189,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 54,
+            "ties": 0,
+            "losses": 146,
+            "effect_size_dz": -0.6092733081127637,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 188,
+            "mean_difference": 0.016134520238745884,
+            "ci_low": -0.0016529863983020504,
+            "ci_high": 0.034383177119770646,
+            "confidence": 0.95,
+            "p_value": 0.08999100089991001,
+            "wins": 95,
+            "ties": 0,
+            "losses": 93,
+            "effect_size_dz": 0.12744346915941088,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5133956349206349,
+            "ci_low": 0.49164402777777777,
+            "ci_high": 0.534384775132275,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.3389655174524777,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_08",
+      "weights": {
+        "plot": 0.1814513463118546,
+        "themes": 0.16016029047565797,
+        "characters": 0.007927257036859883,
+        "tone": 0.14772402668188928,
+        "narrative_structure": 0.5027370794937384
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.66,
+        "scored_recommendations": 1320,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 349.27878787878785,
+        "co_like_rate": {
+          "mean": 0.5214357347427769,
+          "p10": 0.368605434029474,
+          "median": 0.5222222222222223,
+          "p90": 0.664828431372549
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.611811507936508,
+          "p10": 0.43701058201058196,
+          "median": 0.6240740740740741,
+          "p90": 0.7651587301587301
+        },
+        "mean_unique_genres_per_list": 7.595
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 185,
+            "mean_difference": -0.020661717388513783,
+            "ci_low": -0.03838056345681039,
+            "ci_high": -0.003215634266830594,
+            "confidence": 0.95,
+            "p_value": 0.026097390260973904,
+            "wins": 71,
+            "ties": 0,
+            "losses": 114,
+            "effect_size_dz": -0.16828540524969846,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.0334424603174603,
+            "ci_low": -0.05646859788359785,
+            "ci_high": -0.010911689814814801,
+            "confidence": 0.95,
+            "p_value": 0.004299570042995701,
+            "wins": 80,
+            "ties": 0,
+            "losses": 120,
+            "effect_size_dz": -0.20272408174570014,
+            "p_value_holm": 0.3224677532246776
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 185,
+            "mean_difference": 0.012779122544188695,
+            "ci_low": -0.005339435524713085,
+            "ci_high": 0.03194260372804277,
+            "confidence": 0.95,
+            "p_value": 0.1782821717828217,
+            "wins": 92,
+            "ties": 0,
+            "losses": 93,
+            "effect_size_dz": 0.09906483201783546,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5617715608465609,
+            "ci_low": 0.5408036805555556,
+            "ci_high": 0.5824743650793651,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.7339404525519226,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_09",
+      "weights": {
+        "plot": 0.21842281812176587,
+        "themes": 0.15416838694160837,
+        "characters": 0.16525362108993458,
+        "tone": 0.317965725572577,
+        "narrative_structure": 0.14418944827411412
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.694,
+        "scored_recommendations": 1388,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 406.3097982708934,
+        "co_like_rate": {
+          "mean": 0.5217067799378595,
+          "p10": 0.3745942786629876,
+          "median": 0.5230478361373228,
+          "p90": 0.6830373751096386
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5705160052910054,
+          "p10": 0.38129629629629624,
+          "median": 0.5961111111111111,
+          "p90": 0.728111111111111
+        },
+        "mean_unique_genres_per_list": 7.12
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 187,
+            "mean_difference": -0.021774307730380138,
+            "ci_low": -0.04010448933681287,
+            "ci_high": -0.003958193358382239,
+            "confidence": 0.95,
+            "p_value": 0.019098090190980903,
+            "wins": 76,
+            "ties": 0,
+            "losses": 111,
+            "effect_size_dz": -0.1726274096088715,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.07473796296296295,
+            "ci_low": -0.09528683862433862,
+            "ci_high": -0.054611560846560846,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 53,
+            "ties": 0,
+            "losses": 147,
+            "effect_size_dz": -0.5080072022721255,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 187,
+            "mean_difference": 0.009359492163111159,
+            "ci_low": -0.00994205517034302,
+            "ci_high": 0.02900430931181086,
+            "confidence": 0.95,
+            "p_value": 0.3504649535046495,
+            "wins": 91,
+            "ties": 0,
+            "losses": 96,
+            "effect_size_dz": 0.06942880611765773,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5204760582010582,
+            "ci_low": 0.4984602612433863,
+            "ci_high": 0.5417201851851853,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.31699889189522,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_10",
+      "weights": {
+        "plot": 0.046361875995988934,
+        "themes": 0.1773651225640914,
+        "characters": 0.24913886994774512,
+        "tone": 0.1399817354117064,
+        "narrative_structure": 0.3871523960804682
+      },
+      "k": 10,
+      "multi": {
+        "recommendation_coverage": 0.6505,
+        "scored_recommendations": 1301,
+        "possible_recommendations": 2000,
+        "mean_shared_raters_for_scored_recommendations": 395.8793235972329,
+        "co_like_rate": {
+          "mean": 0.520282839875067,
+          "p10": 0.3763259631124979,
+          "median": 0.5173893067274378,
+          "p90": 0.6846025110283407
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6286967813051147,
+          "p10": 0.46616402116402117,
+          "median": 0.6382275132275133,
+          "p90": 0.7837407407407408
+        },
+        "mean_unique_genres_per_list": 7.915
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 183,
+            "mean_difference": -0.020713158740647893,
+            "ci_low": -0.03842804221322655,
+            "ci_high": -0.002635010317857754,
+            "confidence": 0.95,
+            "p_value": 0.023297670232976703,
+            "wins": 83,
+            "ties": 0,
+            "losses": 100,
+            "effect_size_dz": -0.16818096714073733,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.016557186948853598,
+            "ci_low": -0.04087981261022926,
+            "ci_high": 0.007174945987654328,
+            "confidence": 0.95,
+            "p_value": 0.1755824417558244,
+            "wins": 90,
+            "ties": 0,
+            "losses": 110,
+            "effect_size_dz": -0.09559315710321632,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 182,
+            "mean_difference": 0.011496184141868022,
+            "ci_low": -0.006441418938733714,
+            "ci_high": 0.030177040663925916,
+            "confidence": 0.95,
+            "p_value": 0.21947805219478053,
+            "wins": 90,
+            "ties": 0,
+            "losses": 92,
+            "effect_size_dz": 0.09050140133519761,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5786568342151677,
+            "ci_low": 0.5574059424603174,
+            "ci_high": 0.5996660526895944,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.7582412782506993,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "equal",
+      "weights": {
+        "plot": 1.0,
+        "themes": 1.0,
+        "characters": 1.0,
+        "tone": 1.0,
+        "narrative_structure": 1.0
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.681,
+        "scored_recommendations": 681,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 532.12187958884,
+        "co_like_rate": {
+          "mean": 0.5431717509506926,
+          "p10": 0.38319430787979714,
+          "median": 0.5329741206249136,
+          "p90": 0.7311737499979138
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5744821428571428,
+          "p10": 0.3786666666666667,
+          "median": 0.585,
+          "p90": 0.7701666666666668
+        },
+        "mean_unique_genres_per_list": 5.6
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 176,
+            "mean_difference": -0.020504503855044022,
+            "ci_low": -0.041053841226818454,
+            "ci_high": 0.0003278612326829764,
+            "confidence": 0.95,
+            "p_value": 0.051794820517948204,
+            "wins": 75,
+            "ties": 1,
+            "losses": 100,
+            "effect_size_dz": -0.14572032387243392,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.03174821428571429,
+            "ci_low": -0.06068248511904761,
+            "ci_high": -0.0029940029761904743,
+            "confidence": 0.95,
+            "p_value": 0.0282971702829717,
+            "wins": 82,
+            "ties": 3,
+            "losses": 115,
+            "effect_size_dz": -0.15298588936350951,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 173,
+            "mean_difference": 0.023245190553312742,
+            "ci_low": -0.0007726441027949514,
+            "ci_high": 0.047364456620202715,
+            "confidence": 0.95,
+            "p_value": 0.06319368063193681,
+            "wins": 97,
+            "ties": 0,
+            "losses": 76,
+            "effect_size_dz": 0.14086811328505536,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5435119047619048,
+            "ci_low": 0.5199939583333334,
+            "ci_high": 0.566967232142857,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 2,
+            "losses": 0,
+            "effect_size_dz": 3.213342586037568,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "plot_only",
+      "weights": {
+        "plot": 1.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.676,
+        "scored_recommendations": 676,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 515.1730769230769,
+        "co_like_rate": {
+          "mean": 0.52606395385845,
+          "p10": 0.3507165528805845,
+          "median": 0.524822695035461,
+          "p90": 0.7147463021735004
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6670523809523811,
+          "p10": 0.479,
+          "median": 0.6853571428571428,
+          "p90": 0.8567619047619047
+        },
+        "mean_unique_genres_per_list": 6.37
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 174,
+            "mean_difference": -0.033827325853016454,
+            "ci_low": -0.05340188636600074,
+            "ci_high": -0.01441665880157501,
+            "confidence": 0.95,
+            "p_value": 0.0014998500149985001,
+            "wins": 67,
+            "ties": 3,
+            "losses": 104,
+            "effect_size_dz": -0.25549780877329525,
+            "p_value_holm": 0.1334866513348665
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.060822023809523805,
+            "ci_low": 0.03305373511904761,
+            "ci_high": 0.08868531249999999,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 113,
+            "ties": 5,
+            "losses": 82,
+            "effect_size_dz": 0.3017030722839925,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 174,
+            "mean_difference": 0.005920283950617792,
+            "ci_low": -0.01947402118025148,
+            "ci_high": 0.03129870996051031,
+            "confidence": 0.95,
+            "p_value": 0.647035296470353,
+            "wins": 87,
+            "ties": 0,
+            "losses": 87,
+            "effect_size_dz": 0.03488807350468817,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6360821428571428,
+            "ci_low": 0.6115236309523809,
+            "ci_high": 0.6597505654761904,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 199,
+            "ties": 1,
+            "losses": 0,
+            "effect_size_dz": 3.651860095828385,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "themes_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 1.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.684,
+        "scored_recommendations": 684,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 298.08479532163744,
+        "co_like_rate": {
+          "mean": 0.4996839148617813,
+          "p10": 0.32807108887434694,
+          "median": 0.4888880402358456,
+          "p90": 0.6949324486909951
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6318654761904763,
+          "p10": 0.4325,
+          "median": 0.6475,
+          "p90": 0.8248333333333332
+        },
+        "mean_unique_genres_per_list": 5.95
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 175,
+            "mean_difference": -0.05571681412184351,
+            "ci_low": -0.08115575048380766,
+            "ci_high": -0.030266486417267768,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 63,
+            "ties": 0,
+            "losses": 112,
+            "effect_size_dz": -0.32522878581325715,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.025635119047619045,
+            "ci_low": -0.006007827380952385,
+            "ci_high": 0.05704532738095239,
+            "confidence": 0.95,
+            "p_value": 0.10828917108289171,
+            "wins": 107,
+            "ties": 2,
+            "losses": 91,
+            "effect_size_dz": 0.11327416297807308,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 173,
+            "mean_difference": -0.018712576972488956,
+            "ci_low": -0.04437950310375152,
+            "ci_high": 0.0070358511894126,
+            "confidence": 0.95,
+            "p_value": 0.1623837616238376,
+            "wins": 72,
+            "ties": 0,
+            "losses": 101,
+            "effect_size_dz": -0.10662193965287879,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6008952380952381,
+            "ci_low": 0.5762572470238096,
+            "ci_high": 0.6251189583333334,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 199,
+            "ties": 1,
+            "losses": 0,
+            "effect_size_dz": 3.4084068409304025,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "characters_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 1.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.619,
+        "scored_recommendations": 619,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 556.3683360258482,
+        "co_like_rate": {
+          "mean": 0.5001007803980899,
+          "p10": 0.30670399454234043,
+          "median": 0.4860734069562306,
+          "p90": 0.7035405002618117
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7436976190476191,
+          "p10": 0.5853333333333334,
+          "median": 0.7828571428571429,
+          "p90": 0.8885000000000001
+        },
+        "mean_unique_genres_per_list": 7.36
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 167,
+            "mean_difference": -0.053327008367316506,
+            "ci_low": -0.07866256098085216,
+            "ci_high": -0.029245723157064835,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 63,
+            "ties": 1,
+            "losses": 103,
+            "effect_size_dz": -0.32451770019777687,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.1374672619047619,
+            "ci_low": 0.10846550595238097,
+            "ci_high": 0.16642651785714282,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 146,
+            "ties": 3,
+            "losses": 51,
+            "effect_size_dz": 0.6545169638289801,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 168,
+            "mean_difference": -0.017817036723397902,
+            "ci_low": -0.04718350772179467,
+            "ci_high": 0.010820483935174192,
+            "confidence": 0.95,
+            "p_value": 0.22847715228477153,
+            "wins": 79,
+            "ties": 0,
+            "losses": 89,
+            "effect_size_dz": -0.09338804151617501,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.7127273809523811,
+            "ci_low": 0.6855820089285716,
+            "ci_high": 0.7385094494047619,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 196,
+            "ties": 3,
+            "losses": 1,
+            "effect_size_dz": 3.741104515796206,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "tone_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 1.0,
+        "narrative_structure": 0.0
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.681,
+        "scored_recommendations": 681,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 293.2393538913363,
+        "co_like_rate": {
+          "mean": 0.4999738309789224,
+          "p10": 0.31403210098957607,
+          "median": 0.5027344580734898,
+          "p90": 0.6693659708591967
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5569226190476191,
+          "p10": 0.3196666666666667,
+          "median": 0.575,
+          "p90": 0.7767380952380953
+        },
+        "mean_unique_genres_per_list": 5.655
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 170,
+            "mean_difference": -0.05420865398508095,
+            "ci_low": -0.07957669900955405,
+            "ci_high": -0.028100465594572167,
+            "confidence": 0.95,
+            "p_value": 0.00019998000199980003,
+            "wins": 62,
+            "ties": 0,
+            "losses": 108,
+            "effect_size_dz": -0.3141648591884397,
+            "p_value_holm": 0.020397960203979604
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.0493077380952381,
+            "ci_low": -0.08222508928571429,
+            "ci_high": -0.016701666666666674,
+            "confidence": 0.95,
+            "p_value": 0.0033996600339966003,
+            "wins": 78,
+            "ties": 2,
+            "losses": 120,
+            "effect_size_dz": -0.21012772231267868,
+            "p_value_holm": 0.26177382261773824
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 172,
+            "mean_difference": -0.019862885175264668,
+            "ci_low": -0.043118371229909074,
+            "ci_high": 0.0038660759258275375,
+            "confidence": 0.95,
+            "p_value": 0.09209079092090791,
+            "wins": 76,
+            "ties": 0,
+            "losses": 96,
+            "effect_size_dz": -0.1284213911458065,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.525952380952381,
+            "ci_low": 0.5006783333333333,
+            "ci_high": 0.5512944047619048,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 196,
+            "ties": 3,
+            "losses": 1,
+            "effect_size_dz": 2.8765505496589205,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "narrative_structure_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 1.0
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.562,
+        "scored_recommendations": 562,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 213.51245551601423,
+        "co_like_rate": {
+          "mean": 0.45629278798865736,
+          "p10": 0.2492366164534194,
+          "median": 0.4553762249294593,
+          "p90": 0.6768713450292397
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7648797619047619,
+          "p10": 0.6381666666666667,
+          "median": 0.7611904761904763,
+          "p90": 0.89
+        },
+        "mean_unique_genres_per_list": 7.415
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 165,
+            "mean_difference": -0.09729540474032307,
+            "ci_low": -0.12689653237982187,
+            "ci_high": -0.06628339238681943,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 48,
+            "ties": 0,
+            "losses": 117,
+            "effect_size_dz": -0.49758015523565075,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.15864940476190476,
+            "ci_low": 0.12514004464285713,
+            "ci_high": 0.19151299107142858,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 151,
+            "ties": 0,
+            "losses": 49,
+            "effect_size_dz": 0.6713337084792517,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 165,
+            "mean_difference": -0.06331154618674335,
+            "ci_low": -0.0910081234074661,
+            "ci_high": -0.03620751162927137,
+            "confidence": 0.95,
+            "p_value": 0.00019998000199980003,
+            "wins": 62,
+            "ties": 0,
+            "losses": 103,
+            "effect_size_dz": -0.3539025637912908,
+            "p_value_holm": 0.020397960203979604
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.7339095238095239,
+            "ci_low": 0.7119257142857143,
+            "ci_high": 0.7543515178571427,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 199,
+            "ties": 0,
+            "losses": 1,
+            "effect_size_dz": 4.847530889303516,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_01",
+      "weights": {
+        "plot": 0.14823487802658275,
+        "themes": 0.04261162845789876,
+        "characters": 0.7425961549655369,
+        "tone": 0.050620511702244804,
+        "narrative_structure": 0.015936826847736944
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.665,
+        "scored_recommendations": 665,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 535.406015037594,
+        "co_like_rate": {
+          "mean": 0.5177130804549922,
+          "p10": 0.32483307171940623,
+          "median": 0.5123462079878948,
+          "p90": 0.7254952682088817
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6980375,
+          "p10": 0.4658333333333334,
+          "median": 0.7402380952380951,
+          "p90": 0.8805714285714287
+        },
+        "mean_unique_genres_per_list": 6.92
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 174,
+            "mean_difference": -0.038381566374847936,
+            "ci_low": -0.06169445056052328,
+            "ci_high": -0.015551904839700885,
+            "confidence": 0.95,
+            "p_value": 0.0016998300169983002,
+            "wins": 73,
+            "ties": 2,
+            "losses": 99,
+            "effect_size_dz": -0.24420188399435533,
+            "p_value_holm": 0.1461853814618538
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.09180714285714286,
+            "ci_low": 0.06222293154761908,
+            "ci_high": 0.1213090029761905,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 130,
+            "ties": 3,
+            "losses": 67,
+            "effect_size_dz": 0.42616629012358637,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 172,
+            "mean_difference": 0.00026009729798172115,
+            "ci_low": -0.027569568288128142,
+            "ci_high": 0.027625091481476266,
+            "confidence": 0.95,
+            "p_value": 0.9857014298570143,
+            "wins": 82,
+            "ties": 0,
+            "losses": 90,
+            "effect_size_dz": 0.001413554052129968,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6670672619047618,
+            "ci_low": 0.6373094791666667,
+            "ci_high": 0.6948965178571428,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 195,
+            "ties": 4,
+            "losses": 1,
+            "effect_size_dz": 3.2055584319729875,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_02",
+      "weights": {
+        "plot": 0.4939561275625179,
+        "themes": 0.1368520039233785,
+        "characters": 0.15133815368513318,
+        "tone": 0.008154884150671653,
+        "narrative_structure": 0.20969883067829875
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.689,
+        "scored_recommendations": 689,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 519.6429608127721,
+        "co_like_rate": {
+          "mean": 0.5302443259997071,
+          "p10": 0.3615750444091697,
+          "median": 0.5199908715533715,
+          "p90": 0.7175734388359928
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6211214285714286,
+          "p10": 0.38483333333333336,
+          "median": 0.645357142857143,
+          "p90": 0.8333333333333333
+        },
+        "mean_unique_genres_per_list": 6.01
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 174,
+            "mean_difference": -0.03269386727752916,
+            "ci_low": -0.05408072360651818,
+            "ci_high": -0.01146841458307954,
+            "confidence": 0.95,
+            "p_value": 0.0031996800319968005,
+            "wins": 63,
+            "ties": 0,
+            "losses": 111,
+            "effect_size_dz": -0.22592357123862566,
+            "p_value_holm": 0.24957504249575044
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.014891071428571434,
+            "ci_low": -0.013435967261904762,
+            "ci_high": 0.042818437499999994,
+            "confidence": 0.95,
+            "p_value": 0.2937706229377062,
+            "wins": 103,
+            "ties": 6,
+            "losses": 91,
+            "effect_size_dz": 0.07381857344250956,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 175,
+            "mean_difference": 0.011791044421479486,
+            "ci_low": -0.014028865973714737,
+            "ci_high": 0.03798902534677606,
+            "confidence": 0.95,
+            "p_value": 0.37766223377662234,
+            "wins": 93,
+            "ties": 0,
+            "losses": 82,
+            "effect_size_dz": 0.06639781297482786,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5901511904761905,
+            "ci_low": 0.5639058035714286,
+            "ci_high": 0.6156401636904761,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.1760969798110716,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_03",
+      "weights": {
+        "plot": 0.2640516114947549,
+        "themes": 0.05846688316193,
+        "characters": 0.42524139978199826,
+        "tone": 0.052892696209109344,
+        "narrative_structure": 0.19934740935220732
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.668,
+        "scored_recommendations": 668,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 529.877245508982,
+        "co_like_rate": {
+          "mean": 0.5270224642136095,
+          "p10": 0.3244436044572312,
+          "median": 0.5227874933757287,
+          "p90": 0.7384062566053688
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6576619047619048,
+          "p10": 0.4139999999999999,
+          "median": 0.6903571428571429,
+          "p90": 0.8553333333333334
+        },
+        "mean_unique_genres_per_list": 6.41
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 172,
+            "mean_difference": -0.029457522318608757,
+            "ci_low": -0.053696126074705516,
+            "ci_high": -0.005963488637262164,
+            "confidence": 0.95,
+            "p_value": 0.015998400159984,
+            "wins": 80,
+            "ties": 1,
+            "losses": 91,
+            "effect_size_dz": -0.18446121408874555,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.05143154761904763,
+            "ci_low": 0.021054166666666662,
+            "ci_high": 0.08146641369047616,
+            "confidence": 0.95,
+            "p_value": 0.0008999100089991,
+            "wins": 108,
+            "ties": 5,
+            "losses": 87,
+            "effect_size_dz": 0.23521478551941252,
+            "p_value_holm": 0.0845915408459154
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 171,
+            "mean_difference": 0.010621156155596362,
+            "ci_low": -0.0164264370342522,
+            "ci_high": 0.03711580609757141,
+            "confidence": 0.95,
+            "p_value": 0.43575642435756423,
+            "wins": 89,
+            "ties": 0,
+            "losses": 82,
+            "effect_size_dz": 0.05975870338038667,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6266916666666666,
+            "ci_low": 0.5982391517857143,
+            "ci_high": 0.6543137648809525,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 197,
+            "ties": 2,
+            "losses": 1,
+            "effect_size_dz": 3.059933860882589,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_04",
+      "weights": {
+        "plot": 0.0265388108626073,
+        "themes": 0.19021910909653852,
+        "characters": 0.09529755266201537,
+        "tone": 0.1419557961629365,
+        "narrative_structure": 0.5459887312159022
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.655,
+        "scored_recommendations": 655,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 307.1801526717557,
+        "co_like_rate": {
+          "mean": 0.5244871033763941,
+          "p10": 0.3540759867576863,
+          "median": 0.5188853102463229,
+          "p90": 0.7206879673325848
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5977128968253969,
+          "p10": 0.3931904761904762,
+          "median": 0.6108333333333333,
+          "p90": 0.772
+        },
+        "mean_unique_genres_per_list": 5.865
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 173,
+            "mean_difference": -0.03714982859271355,
+            "ci_low": -0.06319777464816896,
+            "ci_high": -0.010880467351591785,
+            "confidence": 0.95,
+            "p_value": 0.0052994700529947,
+            "wins": 71,
+            "ties": 0,
+            "losses": 102,
+            "effect_size_dz": -0.21221902706849013,
+            "p_value_holm": 0.3868613138686131
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.00851746031746032,
+            "ci_low": -0.04103597222222222,
+            "ci_high": 0.024482857142857136,
+            "confidence": 0.95,
+            "p_value": 0.6131386861313869,
+            "wins": 82,
+            "ties": 2,
+            "losses": 116,
+            "effect_size_dz": -0.03656477664324912,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 171,
+            "mean_difference": 0.004318784640093802,
+            "ci_low": -0.0206827871877737,
+            "ci_high": 0.030355202553715908,
+            "confidence": 0.95,
+            "p_value": 0.73002699730027,
+            "wins": 75,
+            "ties": 0,
+            "losses": 96,
+            "effect_size_dz": 0.025514888905338682,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5667426587301588,
+            "ci_low": 0.5425614087301588,
+            "ci_high": 0.5902273660714286,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 1,
+            "losses": 1,
+            "effect_size_dz": 3.294160849999748,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_05",
+      "weights": {
+        "plot": 0.13844972511066256,
+        "themes": 0.11165078385843653,
+        "characters": 0.3527928801363542,
+        "tone": 0.25228124312576816,
+        "narrative_structure": 0.14482536776877863
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.689,
+        "scored_recommendations": 689,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 520.3831640058055,
+        "co_like_rate": {
+          "mean": 0.535542514481758,
+          "p10": 0.36869931461804156,
+          "median": 0.5275674372313027,
+          "p90": 0.7337131507325819
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5719938492063492,
+          "p10": 0.3265,
+          "median": 0.5933333333333334,
+          "p90": 0.7757380952380952
+        },
+        "mean_unique_genres_per_list": 5.7
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 176,
+            "mean_difference": -0.020522101876408412,
+            "ci_low": -0.04183950457000028,
+            "ci_high": 0.0004900826040897237,
+            "confidence": 0.95,
+            "p_value": 0.055394460553944605,
+            "wins": 69,
+            "ties": 1,
+            "losses": 106,
+            "effect_size_dz": -0.14519504982921438,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.03423650793650793,
+            "ci_low": -0.0643510763888889,
+            "ci_high": -0.004920887896825395,
+            "confidence": 0.95,
+            "p_value": 0.0235976402359764,
+            "wins": 82,
+            "ties": 6,
+            "losses": 112,
+            "effect_size_dz": -0.1601229802961886,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 176,
+            "mean_difference": 0.018462535572097344,
+            "ci_low": -0.0042282846095270665,
+            "ci_high": 0.04236359620290936,
+            "confidence": 0.95,
+            "p_value": 0.1342865713428657,
+            "wins": 94,
+            "ties": 0,
+            "losses": 82,
+            "effect_size_dz": 0.11380969537817141,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5410236111111112,
+            "ci_low": 0.5162608531746032,
+            "ci_high": 0.5653542311507936,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 2,
+            "losses": 0,
+            "effect_size_dz": 3.060053381609727,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_06",
+      "weights": {
+        "plot": 0.031059641245378973,
+        "themes": 0.13560641777760976,
+        "characters": 0.014910758088473463,
+        "tone": 0.7961223495612275,
+        "narrative_structure": 0.02230083332731019
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.681,
+        "scored_recommendations": 681,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 293.2511013215859,
+        "co_like_rate": {
+          "mean": 0.5065311634731967,
+          "p10": 0.3321058626876935,
+          "median": 0.5167269450657135,
+          "p90": 0.6687028726542327
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5364130952380952,
+          "p10": 0.3325000000000001,
+          "median": 0.555,
+          "p90": 0.75
+        },
+        "mean_unique_genres_per_list": 5.44
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 174,
+            "mean_difference": -0.047397033163953495,
+            "ci_low": -0.07283377861161754,
+            "ci_high": -0.022554145024814596,
+            "confidence": 0.95,
+            "p_value": 0.00029997000299970003,
+            "wins": 62,
+            "ties": 0,
+            "losses": 112,
+            "effect_size_dz": -0.27491186265645345,
+            "p_value_holm": 0.029397060293970604
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.06981726190476191,
+            "ci_low": -0.10368046130952381,
+            "ci_high": -0.036797470238095244,
+            "confidence": 0.95,
+            "p_value": 0.00019998000199980003,
+            "wins": 69,
+            "ties": 1,
+            "losses": 130,
+            "effect_size_dz": -0.289099497284713,
+            "p_value_holm": 0.020397960203979604
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 173,
+            "mean_difference": -0.006712193504592913,
+            "ci_low": -0.03046431332874426,
+            "ci_high": 0.016951558219633237,
+            "confidence": 0.95,
+            "p_value": 0.5828417158284172,
+            "wins": 81,
+            "ties": 0,
+            "losses": 92,
+            "effect_size_dz": -0.041654815596618856,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5054428571428572,
+            "ci_low": 0.4785398511904762,
+            "ci_high": 0.5321502976190476,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 193,
+            "ties": 7,
+            "losses": 0,
+            "effect_size_dz": 2.6166915454978046,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_07",
+      "weights": {
+        "plot": 0.37837713630090036,
+        "themes": 0.29044867377488137,
+        "characters": 0.04884714030288494,
+        "tone": 0.27502631151550005,
+        "narrative_structure": 0.007300738105833188
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.723,
+        "scored_recommendations": 723,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 509.5048409405256,
+        "co_like_rate": {
+          "mean": 0.5394573975568566,
+          "p10": 0.3671243481781734,
+          "median": 0.5483502876069711,
+          "p90": 0.6981719681626701
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5382000000000001,
+          "p10": 0.3,
+          "median": 0.55,
+          "p90": 0.75
+        },
+        "mean_unique_genres_per_list": 5.42
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 175,
+            "mean_difference": -0.01678037761605435,
+            "ci_low": -0.03686740050443447,
+            "ci_high": 0.00363745272958282,
+            "confidence": 0.95,
+            "p_value": 0.1085891410858914,
+            "wins": 74,
+            "ties": 1,
+            "losses": 100,
+            "effect_size_dz": -0.12232164938742558,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.06803035714285713,
+            "ci_low": -0.09611181547619045,
+            "ci_high": -0.03978889880952381,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 69,
+            "ties": 4,
+            "losses": 127,
+            "effect_size_dz": -0.33952617235085897,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 174,
+            "mean_difference": 0.022868757597997308,
+            "ci_low": -0.0020744513270656356,
+            "ci_high": 0.04688946706573204,
+            "confidence": 0.95,
+            "p_value": 0.0694930506949305,
+            "wins": 95,
+            "ties": 0,
+            "losses": 79,
+            "effect_size_dz": 0.13802202098559158,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5072297619047619,
+            "ci_low": 0.48118258928571433,
+            "ci_high": 0.531950193452381,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 1,
+            "losses": 1,
+            "effect_size_dz": 2.7694434361695066,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_08",
+      "weights": {
+        "plot": 0.1814513463118546,
+        "themes": 0.16016029047565797,
+        "characters": 0.007927257036859883,
+        "tone": 0.14772402668188928,
+        "narrative_structure": 0.5027370794937384
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.67,
+        "scored_recommendations": 670,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 318.8179104477612,
+        "co_like_rate": {
+          "mean": 0.5320078102853589,
+          "p10": 0.35704287488356945,
+          "median": 0.5342610428351289,
+          "p90": 0.7320467682606411
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5902666666666667,
+          "p10": 0.3825000000000001,
+          "median": 0.6008333333333333,
+          "p90": 0.7916666666666667
+        },
+        "mean_unique_genres_per_list": 5.86
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 174,
+            "mean_difference": -0.029550877832232335,
+            "ci_low": -0.0549304322640484,
+            "ci_high": -0.0043063129733984205,
+            "confidence": 0.95,
+            "p_value": 0.021497850214978503,
+            "wins": 72,
+            "ties": 0,
+            "losses": 102,
+            "effect_size_dz": -0.17444606653733127,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.01596369047619048,
+            "ci_low": -0.04878550595238095,
+            "ci_high": 0.015763363095238084,
+            "confidence": 0.95,
+            "p_value": 0.3240675932406759,
+            "wins": 89,
+            "ties": 0,
+            "losses": 111,
+            "effect_size_dz": -0.06963515781114311,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 173,
+            "mean_difference": 0.009789232262245309,
+            "ci_low": -0.014517991307845375,
+            "ci_high": 0.03408750225503408,
+            "confidence": 0.95,
+            "p_value": 0.4196580341965803,
+            "wins": 87,
+            "ties": 0,
+            "losses": 86,
+            "effect_size_dz": 0.060903377763716106,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5592964285714286,
+            "ci_low": 0.5334105952380953,
+            "ci_high": 0.5830776785714286,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 1,
+            "losses": 1,
+            "effect_size_dz": 3.1556650184346844,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_09",
+      "weights": {
+        "plot": 0.21842281812176587,
+        "themes": 0.15416838694160837,
+        "characters": 0.16525362108993458,
+        "tone": 0.317965725572577,
+        "narrative_structure": 0.14418944827411412
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.7,
+        "scored_recommendations": 700,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 493.6485714285714,
+        "co_like_rate": {
+          "mean": 0.5272886782241071,
+          "p10": 0.34487751963727464,
+          "median": 0.5340909090909091,
+          "p90": 0.700813048504981
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5529595238095238,
+          "p10": 0.3166666666666667,
+          "median": 0.5783333333333334,
+          "p90": 0.7374285714285714
+        },
+        "mean_unique_genres_per_list": 5.49
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 176,
+            "mean_difference": -0.03281900346063506,
+            "ci_low": -0.0539932006830631,
+            "ci_high": -0.012609458626437682,
+            "confidence": 0.95,
+            "p_value": 0.0026997300269973002,
+            "wins": 68,
+            "ties": 1,
+            "losses": 107,
+            "effect_size_dz": -0.23370974422427435,
+            "p_value_holm": 0.21327867213278673
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.05327083333333332,
+            "ci_low": -0.08261616071428571,
+            "ci_high": -0.0238561011904762,
+            "confidence": 0.95,
+            "p_value": 0.00039996000399960006,
+            "wins": 77,
+            "ties": 4,
+            "losses": 119,
+            "effect_size_dz": -0.2536522306685561,
+            "p_value_holm": 0.03879612038796121
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 176,
+            "mean_difference": 0.004579472009351891,
+            "ci_low": -0.02072481242765081,
+            "ci_high": 0.0297619350394967,
+            "confidence": 0.95,
+            "p_value": 0.7262273772622738,
+            "wins": 85,
+            "ties": 0,
+            "losses": 91,
+            "effect_size_dz": 0.027083711615544192,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5219892857142857,
+            "ci_low": 0.49777473214285717,
+            "ci_high": 0.5458559821428571,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 2,
+            "losses": 0,
+            "effect_size_dz": 3.0001752122311927,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_10",
+      "weights": {
+        "plot": 0.046361875995988934,
+        "themes": 0.1773651225640914,
+        "characters": 0.24913886994774512,
+        "tone": 0.1399817354117064,
+        "narrative_structure": 0.3871523960804682
+      },
+      "k": 5,
+      "multi": {
+        "recommendation_coverage": 0.669,
+        "scored_recommendations": 669,
+        "possible_recommendations": 1000,
+        "mean_shared_raters_for_scored_recommendations": 482.0971599402093,
+        "co_like_rate": {
+          "mean": 0.5244398610912778,
+          "p10": 0.3572687129830335,
+          "median": 0.5106382978723404,
+          "p90": 0.7138817119754491
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6154140873015873,
+          "p10": 0.418,
+          "median": 0.6391666666666667,
+          "p90": 0.7955
+        },
+        "mean_unique_genres_per_list": 6.025
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 172,
+            "mean_difference": -0.033714035728212195,
+            "ci_low": -0.05797645384536534,
+            "ci_high": -0.010148455702347023,
+            "confidence": 0.95,
+            "p_value": 0.0071992800719928,
+            "wins": 78,
+            "ties": 1,
+            "losses": 93,
+            "effect_size_dz": -0.2091339143557086,
+            "p_value_holm": 0.5111488851114888
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.009183730158730155,
+            "ci_low": -0.023790124007936505,
+            "ci_high": 0.042383100198412696,
+            "confidence": 0.95,
+            "p_value": 0.5871412858714129,
+            "wins": 92,
+            "ties": 2,
+            "losses": 106,
+            "effect_size_dz": 0.03887443932531028,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 170,
+            "mean_difference": 0.007812380817618853,
+            "ci_low": -0.017396054471962814,
+            "ci_high": 0.03239391486809432,
+            "confidence": 0.95,
+            "p_value": 0.5463453654634537,
+            "wins": 82,
+            "ties": 0,
+            "losses": 88,
+            "effect_size_dz": 0.04663956155048809,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5844438492063493,
+            "ci_low": 0.559288566468254,
+            "ci_high": 0.6089229464285715,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 198,
+            "ties": 1,
+            "losses": 1,
+            "effect_size_dz": 3.2849272102166474,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "equal",
+      "weights": {
+        "plot": 1.0,
+        "themes": 1.0,
+        "characters": 1.0,
+        "tone": 1.0,
+        "narrative_structure": 1.0
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.677,
+        "scored_recommendations": 2708,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 365.35709010339735,
+        "co_like_rate": {
+          "mean": 0.5174856908448451,
+          "p10": 0.3928079749232665,
+          "median": 0.5106819396857103,
+          "p90": 0.6600102974999208
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.613891134085213,
+          "p10": 0.4562518796992481,
+          "median": 0.628421052631579,
+          "p90": 0.7524160401002506
+        },
+        "mean_unique_genres_per_list": 9.55
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.022154841023672177,
+            "ci_low": -0.036334694226671606,
+            "ci_high": -0.007591823545604884,
+            "confidence": 0.95,
+            "p_value": 0.0024997500249975004,
+            "wins": 78,
+            "ties": 1,
+            "losses": 114,
+            "effect_size_dz": -0.21713773140938347,
+            "p_value_holm": 0.19998000199980004
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.06046798245614035,
+            "ci_low": -0.07729799524853802,
+            "ci_high": -0.04425503080618213,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 54,
+            "ties": 0,
+            "losses": 146,
+            "effect_size_dz": -0.5128675789124242,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 192,
+            "mean_difference": 0.0030829900221376384,
+            "ci_low": -0.011374904430563992,
+            "ci_high": 0.018020984498751724,
+            "confidence": 0.95,
+            "p_value": 0.680931906809319,
+            "wins": 92,
+            "ties": 0,
+            "losses": 100,
+            "effect_size_dz": 0.029258196901008213,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5404507832080201,
+            "ci_low": 0.5217413126566417,
+            "ci_high": 0.5591355184837092,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.966842593090275,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "plot_only",
+      "weights": {
+        "plot": 1.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.66275,
+        "scored_recommendations": 2651,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 353.9909468125236,
+        "co_like_rate": {
+          "mean": 0.519567555683959,
+          "p10": 0.3990428176722585,
+          "median": 0.5183754396641903,
+          "p90": 0.6418625967518606
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7186496553884711,
+          "p10": 0.6224285714285714,
+          "median": 0.7286058897243108,
+          "p90": 0.8156798245614035
+        },
+        "mean_unique_genres_per_list": 11.225
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 192,
+            "mean_difference": -0.019544532908601933,
+            "ci_low": -0.03106046129760904,
+            "ci_high": -0.007991222245799958,
+            "confidence": 0.95,
+            "p_value": 0.0010998900109989002,
+            "wins": 75,
+            "ties": 0,
+            "losses": 117,
+            "effect_size_dz": -0.24019569359182164,
+            "p_value_holm": 0.10118988101189882
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.04429053884711781,
+            "ci_low": 0.03196185776942358,
+            "ci_high": 0.056576234335839595,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 138,
+            "ties": 0,
+            "losses": 62,
+            "effect_size_dz": 0.5016942568266973,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 192,
+            "mean_difference": 0.004425882965583262,
+            "ci_low": -0.012001171301662623,
+            "ci_high": 0.020949303904500925,
+            "confidence": 0.95,
+            "p_value": 0.6064393560643936,
+            "wins": 98,
+            "ties": 0,
+            "losses": 94,
+            "effect_size_dz": 0.037449217578202174,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6452093045112782,
+            "ci_low": 0.627105215121136,
+            "ci_high": 0.6629942387218045,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.94078232734603,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "themes_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 1.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.673,
+        "scored_recommendations": 2692,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 310.7239970282318,
+        "co_like_rate": {
+          "mean": 0.5047171284023184,
+          "p10": 0.3781623467561566,
+          "median": 0.49667829491628507,
+          "p90": 0.6369111357173823
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.646812708855472,
+          "p10": 0.5036578947368421,
+          "median": 0.6570739348370926,
+          "p90": 0.7701328320802004
+        },
+        "mean_unique_genres_per_list": 10.0
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 191,
+            "mean_difference": -0.03503290618941885,
+            "ci_low": -0.049266210451578925,
+            "ci_high": -0.02071737802664808,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 70,
+            "ties": 0,
+            "losses": 121,
+            "effect_size_dz": -0.3462246872585446,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.027546407685881374,
+            "ci_low": -0.045062899175020876,
+            "ci_high": -0.010488323151629094,
+            "confidence": 0.95,
+            "p_value": 0.0016998300169983002,
+            "wins": 72,
+            "ties": 0,
+            "losses": 128,
+            "effect_size_dz": -0.22524273755152097,
+            "p_value_holm": 0.1461853814618538
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 191,
+            "mean_difference": -0.011377812464240333,
+            "ci_low": -0.02658935068849694,
+            "ci_high": 0.003363164299744029,
+            "confidence": 0.95,
+            "p_value": 0.1366863313668633,
+            "wins": 85,
+            "ties": 0,
+            "losses": 106,
+            "effect_size_dz": -0.10673565529309859,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5733723579782791,
+            "ci_low": 0.5536867815371762,
+            "ci_high": 0.59275304981203,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.06661938630543,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "characters_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 1.0,
+        "tone": 0.0,
+        "narrative_structure": 0.0
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.639,
+        "scored_recommendations": 2556,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 330.9076682316119,
+        "co_like_rate": {
+          "mean": 0.49344512316014427,
+          "p10": 0.36161235962211885,
+          "median": 0.47671282253298997,
+          "p90": 0.6569132370423673
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7834028717627401,
+          "p10": 0.6993038847117793,
+          "median": 0.7967752715121137,
+          "p90": 0.8510639097744361
+        },
+        "mean_unique_genres_per_list": 13.02
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 191,
+            "mean_difference": -0.047561322001459,
+            "ci_low": -0.06259140944764106,
+            "ci_high": -0.032723882298712315,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 62,
+            "ties": 0,
+            "losses": 129,
+            "effect_size_dz": -0.4474602148259389,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.10904375522138682,
+            "ci_low": 0.09473679224101923,
+            "ci_high": 0.12344577093776109,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 178,
+            "ties": 0,
+            "losses": 22,
+            "effect_size_dz": 1.0582472297955705,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.022905013306541176,
+            "ci_low": -0.04097083470965927,
+            "ci_high": -0.00504191204730896,
+            "confidence": 0.95,
+            "p_value": 0.014498550144985502,
+            "wins": 82,
+            "ties": 0,
+            "losses": 111,
+            "effect_size_dz": -0.17907386813951234,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.7099625208855471,
+            "ci_low": 0.6913184842314118,
+            "ci_high": 0.7283908304615706,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 5.287684151672104,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "tone_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 1.0,
+        "narrative_structure": 0.0
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.66425,
+        "scored_recommendations": 2657,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 297.5848701543094,
+        "co_like_rate": {
+          "mean": 0.5114733783407357,
+          "p10": 0.37051911766077417,
+          "median": 0.5177837782888024,
+          "p90": 0.6445395470115949
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.592035515873016,
+          "p10": 0.4526416040100251,
+          "median": 0.6017773600668337,
+          "p90": 0.734263157894737
+        },
+        "mean_unique_genres_per_list": 9.52
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 190,
+            "mean_difference": -0.027976701572520083,
+            "ci_low": -0.04489105080634447,
+            "ci_high": -0.01115566959053785,
+            "confidence": 0.95,
+            "p_value": 0.001999800019998,
+            "wins": 79,
+            "ties": 0,
+            "losses": 111,
+            "effect_size_dz": -0.2332444643709991,
+            "p_value_holm": 0.16398360163983602
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.08232360066833751,
+            "ci_low": -0.10294101608187134,
+            "ci_high": -0.06208103801169593,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 52,
+            "ties": 0,
+            "losses": 148,
+            "effect_size_dz": -0.5593960529952883,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 191,
+            "mean_difference": -0.003508274160649735,
+            "ci_low": -0.019148881736096975,
+            "ci_high": 0.011739511206685715,
+            "confidence": 0.95,
+            "p_value": 0.6622337766223377,
+            "wins": 97,
+            "ties": 0,
+            "losses": 94,
+            "effect_size_dz": -0.0321830840552484,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5185951649958229,
+            "ci_low": 0.49534856411862993,
+            "ci_high": 0.5417418319235588,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.1068616796913666,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "narrative_structure_only",
+      "weights": {
+        "plot": 0.0,
+        "themes": 0.0,
+        "characters": 0.0,
+        "tone": 0.0,
+        "narrative_structure": 1.0
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.58,
+        "scored_recommendations": 2320,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 234.62887931034481,
+        "co_like_rate": {
+          "mean": 0.4610079280655071,
+          "p10": 0.29687374997558247,
+          "median": 0.4615133237678936,
+          "p90": 0.6278625694484148
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7683415100250628,
+          "p10": 0.6824893483709273,
+          "median": 0.779733709273183,
+          "p90": 0.8450000000000001
+        },
+        "mean_unique_genres_per_list": 12.605
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 188,
+            "mean_difference": -0.07641924998907658,
+            "ci_low": -0.09469815903570675,
+            "ci_high": -0.05858801769039061,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 51,
+            "ties": 0,
+            "losses": 137,
+            "effect_size_dz": -0.5965737098668944,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.09398239348370929,
+            "ci_low": 0.07638214781746035,
+            "ci_high": 0.11157197368421053,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 162,
+            "ties": 0,
+            "losses": 38,
+            "effect_size_dz": 0.7496353173073191,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 188,
+            "mean_difference": -0.05165136004752077,
+            "ci_low": -0.070840233690885,
+            "ci_high": -0.032400935839541865,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 60,
+            "ties": 0,
+            "losses": 128,
+            "effect_size_dz": -0.3795948850846863,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6949011591478697,
+            "ci_low": 0.6755679268483709,
+            "ci_high": 0.7136831866123643,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.976173501781596,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_01",
+      "weights": {
+        "plot": 0.14823487802658275,
+        "themes": 0.04261162845789876,
+        "characters": 0.7425961549655369,
+        "tone": 0.050620511702244804,
+        "narrative_structure": 0.015936826847736944
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.65875,
+        "scored_recommendations": 2635,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 353.36698292220115,
+        "co_like_rate": {
+          "mean": 0.5034729296506041,
+          "p10": 0.3725120176726101,
+          "median": 0.4906029767458213,
+          "p90": 0.6587301926603589
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7450728905597327,
+          "p10": 0.6330739348370928,
+          "median": 0.764298245614035,
+          "p90": 0.8405388471177945
+        },
+        "mean_unique_genres_per_list": 12.18
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 191,
+            "mean_difference": -0.037376010697012844,
+            "ci_low": -0.051353112558722776,
+            "ci_high": -0.02316232851855934,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 67,
+            "ties": 0,
+            "losses": 124,
+            "effect_size_dz": -0.37198658938176493,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.07071377401837928,
+            "ci_low": 0.056231349467418555,
+            "ci_high": 0.08534804276315788,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 151,
+            "ties": 0,
+            "losses": 49,
+            "effect_size_dz": 0.6790917187717562,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.0128252492694986,
+            "ci_low": -0.030530045324884857,
+            "ci_high": 0.004222107306261468,
+            "confidence": 0.95,
+            "p_value": 0.16198380161983802,
+            "wins": 85,
+            "ties": 0,
+            "losses": 108,
+            "effect_size_dz": -0.10248229928371465,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6716325396825397,
+            "ci_low": 0.6523877477548038,
+            "ci_high": 0.6905671658312448,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.858198952484143,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_02",
+      "weights": {
+        "plot": 0.4939561275625179,
+        "themes": 0.1368520039233785,
+        "characters": 0.15133815368513318,
+        "tone": 0.008154884150671653,
+        "narrative_structure": 0.20969883067829875
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.67075,
+        "scored_recommendations": 2683,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 365.14088706671635,
+        "co_like_rate": {
+          "mean": 0.5178861154236882,
+          "p10": 0.396800710539945,
+          "median": 0.5075852003476148,
+          "p90": 0.6742132438690642
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6764629594820384,
+          "p10": 0.5630952380952381,
+          "median": 0.6853978696741856,
+          "p90": 0.7902807017543858
+        },
+        "mean_unique_genres_per_list": 10.66
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 189,
+            "mean_difference": -0.020979521144767834,
+            "ci_low": -0.03352929636789528,
+            "ci_high": -0.008463919847564309,
+            "confidence": 0.95,
+            "p_value": 0.0014998500149985001,
+            "wins": 72,
+            "ties": 0,
+            "losses": 117,
+            "effect_size_dz": -0.2375236745767622,
+            "p_value_holm": 0.1334866513348665
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.002103842940685037,
+            "ci_low": -0.011995284304511288,
+            "ci_high": 0.016366315006265657,
+            "confidence": 0.95,
+            "p_value": 0.771922807719228,
+            "wins": 101,
+            "ties": 0,
+            "losses": 99,
+            "effect_size_dz": 0.02076820304347656,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 190,
+            "mean_difference": 0.002706340782126218,
+            "ci_low": -0.013266969402846544,
+            "ci_high": 0.019023382169932407,
+            "confidence": 0.95,
+            "p_value": 0.7457254274572542,
+            "wins": 95,
+            "ties": 0,
+            "losses": 95,
+            "effect_size_dz": 0.023618433205043535,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6030226086048455,
+            "ci_low": 0.5842466128863826,
+            "ci_high": 0.6215749945175439,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.403211199373218,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_03",
+      "weights": {
+        "plot": 0.2640516114947549,
+        "themes": 0.05846688316193,
+        "characters": 0.42524139978199826,
+        "tone": 0.052892696209109344,
+        "narrative_structure": 0.19934740935220732
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.6595,
+        "scored_recommendations": 2638,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 359.8866565579985,
+        "co_like_rate": {
+          "mean": 0.510907687724698,
+          "p10": 0.38966352394330284,
+          "median": 0.4951204404163092,
+          "p90": 0.6576997445795818
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.7059849937343359,
+          "p10": 0.5802543859649123,
+          "median": 0.7303132832080199,
+          "p90": 0.8075008354218881
+        },
+        "mean_unique_genres_per_list": 11.26
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 192,
+            "mean_difference": -0.03113223111921649,
+            "ci_low": -0.04375818008389561,
+            "ci_high": -0.018133216690282453,
+            "confidence": 0.95,
+            "p_value": 0.00019998000199980003,
+            "wins": 70,
+            "ties": 1,
+            "losses": 121,
+            "effect_size_dz": -0.3425886106881486,
+            "p_value_holm": 0.020397960203979604
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.03162587719298246,
+            "ci_low": 0.01648657215956559,
+            "ci_high": 0.04674500287176275,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 125,
+            "ties": 0,
+            "losses": 75,
+            "effect_size_dz": 0.2911202758205627,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 192,
+            "mean_difference": -0.0050665622368326856,
+            "ci_low": -0.021313918259697008,
+            "ci_high": 0.011629169505083673,
+            "confidence": 0.95,
+            "p_value": 0.559044095590441,
+            "wins": 86,
+            "ties": 0,
+            "losses": 106,
+            "effect_size_dz": -0.043396668586964816,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.6325446428571428,
+            "ci_low": 0.6142554720133668,
+            "ci_high": 0.6506440901733499,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.676126919999983,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_04",
+      "weights": {
+        "plot": 0.0265388108626073,
+        "themes": 0.19021910909653852,
+        "characters": 0.09529755266201537,
+        "tone": 0.1419557961629365,
+        "narrative_structure": 0.5459887312159022
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.639,
+        "scored_recommendations": 2556,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 313.2100938967136,
+        "co_like_rate": {
+          "mean": 0.506281077819875,
+          "p10": 0.3817900426115273,
+          "median": 0.4963885866079883,
+          "p90": 0.6433944144401933
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6426453111946532,
+          "p10": 0.4783245614035089,
+          "median": 0.659874686716792,
+          "p90": 0.7709423558897243
+        },
+        "mean_unique_genres_per_list": 10.1
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 191,
+            "mean_difference": -0.032968733511475626,
+            "ci_low": -0.048141221014061694,
+            "ci_high": -0.017920834703122085,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 74,
+            "ties": 1,
+            "losses": 116,
+            "effect_size_dz": -0.30446458680775196,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.03171380534670009,
+            "ci_low": -0.051289131944444434,
+            "ci_high": -0.012486657007101096,
+            "confidence": 0.95,
+            "p_value": 0.0012998700129987,
+            "wins": 77,
+            "ties": 0,
+            "losses": 123,
+            "effect_size_dz": -0.2311035162454002,
+            "p_value_holm": 0.116988301169883
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 191,
+            "mean_difference": -0.007854055957677016,
+            "ci_low": -0.022981742953770604,
+            "ci_high": 0.007620079702019829,
+            "confidence": 0.95,
+            "p_value": 0.31396860313968605,
+            "wins": 95,
+            "ties": 0,
+            "losses": 96,
+            "effect_size_dz": -0.0723780554954163,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5692049603174604,
+            "ci_low": 0.5492998582393483,
+            "ci_high": 0.5884192517752715,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.9837959070603945,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_05",
+      "weights": {
+        "plot": 0.13844972511066256,
+        "themes": 0.11165078385843653,
+        "characters": 0.3527928801363542,
+        "tone": 0.25228124312576816,
+        "narrative_structure": 0.14482536776877863
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.67625,
+        "scored_recommendations": 2705,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 360.62661737523104,
+        "co_like_rate": {
+          "mean": 0.5160142232269658,
+          "p10": 0.38061392139964084,
+          "median": 0.5121714958280743,
+          "p90": 0.6436987594417175
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6286017021720969,
+          "p10": 0.4793721804511278,
+          "median": 0.6443139097744361,
+          "p90": 0.7567443609022555
+        },
+        "mean_unique_genres_per_list": 9.765
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 194,
+            "mean_difference": -0.02392117999474427,
+            "ci_low": -0.03788082704686611,
+            "ci_high": -0.009970117695962512,
+            "confidence": 0.95,
+            "p_value": 0.0016998300169983002,
+            "wins": 83,
+            "ties": 1,
+            "losses": 110,
+            "effect_size_dz": -0.23634703550683392,
+            "p_value_holm": 0.1461853814618538
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.045757414369256476,
+            "ci_low": -0.06209965852130324,
+            "ci_high": -0.029791821219715957,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 60,
+            "ties": 0,
+            "losses": 140,
+            "effect_size_dz": -0.39461327230581317,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": 0.00012411946749592853,
+            "ci_low": -0.01562769107893364,
+            "ci_high": 0.01580230005101673,
+            "confidence": 0.95,
+            "p_value": 0.9878012198780122,
+            "wins": 87,
+            "ties": 0,
+            "losses": 106,
+            "effect_size_dz": 0.0011161316414114472,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.555161351294904,
+            "ci_low": 0.5368516969507101,
+            "ci_high": 0.5733831842627402,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.119484351827731,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_06",
+      "weights": {
+        "plot": 0.031059641245378973,
+        "themes": 0.13560641777760976,
+        "characters": 0.014910758088473463,
+        "tone": 0.7961223495612275,
+        "narrative_structure": 0.02230083332731019
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.67525,
+        "scored_recommendations": 2701,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 323.84672343576455,
+        "co_like_rate": {
+          "mean": 0.5151396022625946,
+          "p10": 0.38264167268624266,
+          "median": 0.523103504528585,
+          "p90": 0.6424884809206133
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5775968984962406,
+          "p10": 0.43201754385964924,
+          "median": 0.5902568922305764,
+          "p90": 0.7351303258145363
+        },
+        "mean_unique_genres_per_list": 9.215
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.026942625230848574,
+            "ci_low": -0.04323345502211573,
+            "ci_high": -0.01061272620832956,
+            "confidence": 0.95,
+            "p_value": 0.0020997900209979003,
+            "wins": 78,
+            "ties": 0,
+            "losses": 115,
+            "effect_size_dz": -0.23030644795823554,
+            "p_value_holm": 0.1700829917008299
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.09676221804511279,
+            "ci_low": -0.11652337092731829,
+            "ci_high": -0.07721111685463661,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 39,
+            "ties": 0,
+            "losses": 161,
+            "effect_size_dz": -0.6778251155817785,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.0019471504771192986,
+            "ci_low": -0.017081329174788634,
+            "ci_high": 0.013049854701407113,
+            "confidence": 0.95,
+            "p_value": 0.797920207979202,
+            "wins": 103,
+            "ties": 0,
+            "losses": 90,
+            "effect_size_dz": -0.018319367865534154,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5041565476190476,
+            "ci_low": 0.4812382960004178,
+            "ci_high": 0.526374937865497,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 199,
+            "ties": 1,
+            "losses": 0,
+            "effect_size_dz": 3.115426079818365,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_07",
+      "weights": {
+        "plot": 0.37837713630090036,
+        "themes": 0.29044867377488137,
+        "characters": 0.04884714030288494,
+        "tone": 0.27502631151550005,
+        "narrative_structure": 0.007300738105833188
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.69925,
+        "scored_recommendations": 2797,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 359.3746871648195,
+        "co_like_rate": {
+          "mean": 0.5248008379594906,
+          "p10": 0.40723664496228296,
+          "median": 0.5215985970701147,
+          "p90": 0.6433505522599606
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5864708542188805,
+          "p10": 0.44442105263157894,
+          "median": 0.5851754385964911,
+          "p90": 0.7347675438596492
+        },
+        "mean_unique_genres_per_list": 9.0
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 194,
+            "mean_difference": -0.015865832420503906,
+            "ci_low": -0.028601343938448938,
+            "ci_high": -0.0031221804057912908,
+            "confidence": 0.95,
+            "p_value": 0.015898410158984102,
+            "wins": 79,
+            "ties": 1,
+            "losses": 114,
+            "effect_size_dz": -0.17252681892059377,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.08788826232247285,
+            "ci_low": -0.1031374289891395,
+            "ci_high": -0.07335984492481201,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 40,
+            "ties": 0,
+            "losses": 160,
+            "effect_size_dz": -0.837792738647341,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": 0.009077505663585093,
+            "ci_low": -0.005606869431411695,
+            "ci_high": 0.023286882576958514,
+            "confidence": 0.95,
+            "p_value": 0.22007799220077992,
+            "wins": 104,
+            "ties": 0,
+            "losses": 89,
+            "effect_size_dz": 0.08911037130285593,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5130305033416875,
+            "ci_low": 0.49360953842940686,
+            "ci_high": 0.5323351200918964,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.6393319842162084,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_08",
+      "weights": {
+        "plot": 0.1814513463118546,
+        "themes": 0.16016029047565797,
+        "characters": 0.007927257036859883,
+        "tone": 0.14772402668188928,
+        "narrative_structure": 0.5027370794937384
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.6525,
+        "scored_recommendations": 2610,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 351.13065134099617,
+        "co_like_rate": {
+          "mean": 0.5126393081361171,
+          "p10": 0.37944217962685084,
+          "median": 0.4995474714546435,
+          "p90": 0.645736511215482
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6439600981620718,
+          "p10": 0.4760175438596492,
+          "median": 0.6616666666666666,
+          "p90": 0.7735889724310778
+        },
+        "mean_unique_genres_per_list": 9.925
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 190,
+            "mean_difference": -0.024923090364315094,
+            "ci_low": -0.038759476615410064,
+            "ci_high": -0.010408201390854025,
+            "confidence": 0.95,
+            "p_value": 0.000999900009999,
+            "wins": 72,
+            "ties": 1,
+            "losses": 117,
+            "effect_size_dz": -0.25147326178185186,
+            "p_value_holm": 0.09299070092990701
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.030399018379281523,
+            "ci_low": -0.048849648861737656,
+            "ci_high": -0.012277082027986629,
+            "confidence": 0.95,
+            "p_value": 0.0015998400159984002,
+            "wins": 77,
+            "ties": 0,
+            "losses": 123,
+            "effect_size_dz": -0.23245009839362235,
+            "p_value_holm": 0.1391860813918608
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 189,
+            "mean_difference": 5.052401686070219e-05,
+            "ci_low": -0.014624732783785222,
+            "ci_high": 0.014973123073154678,
+            "confidence": 0.95,
+            "p_value": 0.9934006599340066,
+            "wins": 95,
+            "ties": 0,
+            "losses": 94,
+            "effect_size_dz": 0.0004764236971766945,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5705197472848789,
+            "ci_low": 0.5503145465225564,
+            "ci_high": 0.5898768671679199,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.005450014712141,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_09",
+      "weights": {
+        "plot": 0.21842281812176587,
+        "themes": 0.15416838694160837,
+        "characters": 0.16525362108993458,
+        "tone": 0.317965725572577,
+        "narrative_structure": 0.14418944827411412
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.68375,
+        "scored_recommendations": 2735,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 364.53126142595977,
+        "co_like_rate": {
+          "mean": 0.5177943869634601,
+          "p10": 0.3811442009448449,
+          "median": 0.5124611980478848,
+          "p90": 0.6512412221938082
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.5949388053467001,
+          "p10": 0.4535438596491229,
+          "median": 0.6019548872180451,
+          "p90": 0.7308226817042607
+        },
+        "mean_unique_genres_per_list": 9.135
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.021829800730901395,
+            "ci_low": -0.03646458849366985,
+            "ci_high": -0.007149759343769312,
+            "confidence": 0.95,
+            "p_value": 0.0038996100389961006,
+            "wins": 79,
+            "ties": 1,
+            "losses": 113,
+            "effect_size_dz": -0.2103726948475263,
+            "p_value_holm": 0.29637036296370367
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.07942031119465331,
+            "ci_low": -0.09608534173976607,
+            "ci_high": -0.0630323812134503,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 43,
+            "ties": 0,
+            "losses": 157,
+            "effect_size_dz": -0.6701373482377492,
+            "p_value_holm": 0.0187981201879812
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 192,
+            "mean_difference": 0.0029152657821366647,
+            "ci_low": -0.012373092996729063,
+            "ci_high": 0.01848533089251317,
+            "confidence": 0.95,
+            "p_value": 0.7030296970302969,
+            "wins": 94,
+            "ties": 0,
+            "losses": 98,
+            "effect_size_dz": 0.02656813535393001,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5214984544695072,
+            "ci_low": 0.5024056719924812,
+            "ci_high": 0.5403473509294068,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 3.7711372169438264,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    },
+    {
+      "profile": "random_10",
+      "weights": {
+        "plot": 0.046361875995988934,
+        "themes": 0.1773651225640914,
+        "characters": 0.24913886994774512,
+        "tone": 0.1399817354117064,
+        "narrative_structure": 0.3871523960804682
+      },
+      "k": 20,
+      "multi": {
+        "recommendation_coverage": 0.6535,
+        "scored_recommendations": 2614,
+        "possible_recommendations": 4000,
+        "mean_shared_raters_for_scored_recommendations": 344.11400153022186,
+        "co_like_rate": {
+          "mean": 0.511284916364087,
+          "p10": 0.3856661660249689,
+          "median": 0.5055702891901688,
+          "p90": 0.649556850304173
+        },
+        "genre_intra_list_diversity": {
+          "mean": 0.6525239870509607,
+          "p10": 0.5027631578947369,
+          "median": 0.6733208020050125,
+          "p90": 0.7729285714285714
+        },
+        "mean_unique_genres_per_list": 10.305
+      },
+      "versus": {
+        "single": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.02943056412430541,
+            "ci_low": -0.04329602429242023,
+            "ci_high": -0.015264704161212008,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 69,
+            "ties": 1,
+            "losses": 123,
+            "effect_size_dz": -0.29589306040217683,
+            "p_value_holm": 0.0187981201879812
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": -0.021835129490392652,
+            "ci_low": -0.040562832080200506,
+            "ci_high": -0.003324989035087731,
+            "confidence": 0.95,
+            "p_value": 0.0198980101989801,
+            "wins": 78,
+            "ties": 0,
+            "losses": 122,
+            "effect_size_dz": -0.16387797137291077,
+            "p_value_holm": 1.0
+          }
+        },
+        "genre": {
+          "co_like_rate": {
+            "n": 193,
+            "mean_difference": -0.004481653086012222,
+            "ci_low": -0.019231870209716083,
+            "ci_high": 0.010377173133791006,
+            "confidence": 0.95,
+            "p_value": 0.5725427457254274,
+            "wins": 91,
+            "ties": 0,
+            "losses": 102,
+            "effect_size_dz": -0.042383038003631905,
+            "p_value_holm": 1.0
+          },
+          "genre_diversity": {
+            "n": 200,
+            "mean_difference": 0.5790836361737678,
+            "ci_low": 0.5602520000522139,
+            "ci_high": 0.5975080177005012,
+            "confidence": 0.95,
+            "p_value": 9.999000099990002e-05,
+            "wins": 200,
+            "ties": 0,
+            "losses": 0,
+            "effect_size_dz": 4.216142826191324,
+            "p_value_holm": 0.0187981201879812
+          }
+        }
+      }
+    }
+  ]
+}

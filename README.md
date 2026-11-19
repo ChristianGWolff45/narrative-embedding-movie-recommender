@@ -75,6 +75,8 @@ bin/reconstruct benchmark --artifact artifacts/movie_embeddings.npz
 
 ## Evaluation
 
+The latest real-catalog results, system measurements, and charts are in the [real-data evaluation report](reports/real_data_report.md). It separates measured results for the 6,194-film catalog from synthetic large-catalog projections.
+
 The evaluator compares single and weighted narrative retrieval against genre, popularity, and rating-count-matched random baselines. Relevance is an offline co-like proxy: the share of users who rated a query film at least 4/5 who also rated a recommendation at least 4/5. Diversity is pairwise Jaccard distance over genre sets. These measures do not replace a viewer study, and no viewer study was run.
 
 **Relevance and diversity** (`bin/evaluate`, written to `reports/evaluation.json`):

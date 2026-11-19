@@ -1,0 +1,16 @@
+{
+  "movies": 6194,
+  "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+  "batch_size": 128,
+  "encode_seconds": {
+    "single": null,
+    "plot": 24.286915282718837,
+    "themes": 4.938497386872768,
+    "characters": 14.32601920235902,
+    "tone": 3.377448762767017,
+    "narrative_structure": 3.6521240305155516
+  },
+  "narrative_encode_seconds": 50.581004665233195,
+  "narrative_ms_per_film": 8.166129264648562,
+  "note": "single is null when the baseline vectors were reused instead of re-encoded"
+}

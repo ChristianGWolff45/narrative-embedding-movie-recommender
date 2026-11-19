@@ -1,0 +1,273 @@
+{
+  "artifact": "artifacts/movie_embeddings.npz",
+  "movies": 6194,
+  "queries": 500,
+  "machine": {
+    "platform": "Linux-6.17.0-29-generic-x86_64-with-glibc2.39",
+    "processor": "x86_64",
+    "numpy": "1.26.4"
+  },
+  "artifact_load_seconds": 0.3345919316634536,
+  "latency_k10": {
+    "single": {
+      "count": 500,
+      "mean_ms": 0.10076719708740711,
+      "p50_ms": 0.10016094893217087,
+      "p95_ms": 0.1292371656745672,
+      "p99_ms": 0.16343010589480375,
+      "max_ms": 0.7848478853702545,
+      "serial_qps": 9923.864401354576
+    },
+    "multi_equal_weights": {
+      "count": 500,
+      "mean_ms": 0.24207578785717487,
+      "p50_ms": 0.2414574846625328,
+      "p95_ms": 0.31372206285595894,
+      "p99_ms": 0.3331676870584488,
+      "max_ms": 0.3602979704737663,
+      "serial_qps": 4130.937706954823
+    },
+    "multi_random_weights": {
+      "count": 500,
+      "mean_ms": 0.2010769285261631,
+      "p50_ms": 0.2023112028837204,
+      "p95_ms": 0.2783800009638071,
+      "p99_ms": 0.31085167080163956,
+      "max_ms": 0.3379425033926964,
+      "serial_qps": 4973.220982286315
+    }
+  },
+  "multi_to_single_latency_ratio": 1.9954601729345085,
+  "p95_ms_by_k": {
+    "5": {
+      "single": 0.1291322987526655,
+      "multi_equal_weights": 0.31837713904678816,
+      "multi_random_weights": 0.28273086063563824
+    },
+    "10": {
+      "single": 0.1299798022955656,
+      "multi_equal_weights": 0.31934399157762516,
+      "multi_random_weights": 0.28879432938992966
+    },
+    "20": {
+      "single": 0.13002301566302776,
+      "multi_equal_weights": 0.30636503361165524,
+      "multi_random_weights": 0.2861117012798785
+    },
+    "50": {
+      "single": 0.13266378082334995,
+      "multi_equal_weights": 0.3315957263112068,
+      "multi_random_weights": 0.30418103560805315
+    }
+  },
+  "scaling": [
+    {
+      "movies": 1000,
+      "source": "subsample",
+      "vector_mb": 8.7890625,
+      "single_p95_ms": 0.03476487472653389,
+      "multi_random_p95_ms": 0.12088329531252384,
+      "multi_random_mean_ms": 0.09390893392264843
+    },
+    {
+      "movies": 2500,
+      "source": "subsample",
+      "vector_mb": 21.97265625,
+      "single_p95_ms": 0.06578066386282444,
+      "multi_random_p95_ms": 0.14923070557415485,
+      "multi_random_mean_ms": 0.11652788147330284
+    },
+    {
+      "movies": 6194,
+      "source": "subsample",
+      "vector_mb": 54.439453125,
+      "single_p95_ms": 0.13080071657896042,
+      "multi_random_p95_ms": 0.3144374582916498,
+      "multi_random_mean_ms": 0.25012459605932236
+    },
+    {
+      "movies": 25000,
+      "source": "synthetic",
+      "vector_mb": 219.7265625,
+      "single_p95_ms": 0.4902457818388939,
+      "multi_random_p95_ms": 1.3458210974931717,
+      "multi_random_mean_ms": 0.99629957228899
+    },
+    {
+      "movies": 50000,
+      "source": "synthetic",
+      "vector_mb": 439.453125,
+      "single_p95_ms": 0.9941833093762398,
+      "multi_random_p95_ms": 3.1150970607995987,
+      "multi_random_mean_ms": 2.362085971981287
+    },
+    {
+      "movies": 87585,
+      "source": "synthetic",
+      "vector_mb": 769.7900390625,
+      "single_p95_ms": 1.8563982099294662,
+      "multi_random_p95_ms": 6.48119356483221,
+      "multi_random_mean_ms": 4.991079214960337
+    }
+  ],
+  "memory": {
+    "single_vectors_mb": 9.0732421875,
+    "narrative_vectors_mb": 45.3662109375,
+    "total_vectors_mb": 54.439453125,
+    "dtype": "float32",
+    "dimension": 384,
+    "peak_process_rss_mb": 989.8515625,
+    "projected_total_mb_at_tmdb_scale": 769.7900390625
+  },
+  "storage": {
+    "artifact_bytes": 48411656,
+    "artifact_members": {
+      "single": {
+        "compressed_bytes": 8822021,
+        "uncompressed_bytes": 9514112
+      },
+      "plot": {
+        "compressed_bytes": 8821624,
+        "uncompressed_bytes": 9514112
+      },
+      "themes": {
+        "compressed_bytes": 8819477,
+        "uncompressed_bytes": 9514112
+      },
+      "characters": {
+        "compressed_bytes": 8821546,
+        "uncompressed_bytes": 9514112
+      },
+      "tone": {
+        "compressed_bytes": 8642973,
+        "uncompressed_bytes": 9514112
+      },
+      "narrative_structure": {
+        "compressed_bytes": 4483271,
+        "uncompressed_bytes": 9514112
+      }
+    },
+    "single_bytes": 8822021,
+    "narrative_bytes": 39588891,
+    "baseline_npy_bytes": 9514112,
+    "narrative_to_single_ratio": 4.4875081344739485,
+    "note": "The .npz holds the single vectors too; narrative_bytes counts only the five narrative arrays."
+  },
+  "offline_cost": {
+    "labeling_runs": [
+      {
+        "run_id": "20261006T150026Z",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "completed",
+        "processed": 20,
+        "failed": 0,
+        "wall_seconds": 88.918846,
+        "items_per_minute": 13.495,
+        "seconds_per_film": 4.44609114486847
+      },
+      {
+        "run_id": "20261117T221413Z",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "running",
+        "processed": 957,
+        "failed": 2,
+        "wall_seconds": 1961.098288,
+        "items_per_minute": 29.28,
+        "seconds_per_film": 2.0491803278688523
+      },
+      {
+        "run_id": "20261117T224801Z",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "completed",
+        "processed": 1669,
+        "failed": 0,
+        "wall_seconds": 3733.196561,
+        "items_per_minute": 26.824,
+        "seconds_per_film": 2.236802863107665
+      },
+      {
+        "run_id": "full-20261006",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "stopped",
+        "processed": 77,
+        "failed": 0,
+        "wall_seconds": 87.89344,
+        "items_per_minute": 52.564,
+        "seconds_per_film": 1.1414656418841793
+      },
+      {
+        "run_id": "full-20261006-gpu0",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "completed",
+        "processed": 2500,
+        "failed": 1,
+        "wall_seconds": 1535.162645,
+        "items_per_minute": 97.71,
+        "seconds_per_film": 0.6140620202640467
+      },
+      {
+        "run_id": "full-20261006-gpu1",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "completed",
+        "processed": 2500,
+        "failed": 6,
+        "wall_seconds": 3398.752731,
+        "items_per_minute": 44.134,
+        "seconds_per_film": 1.3594960801196356
+      },
+      {
+        "run_id": "full-20261006-gpu2",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "completed",
+        "processed": 2500,
+        "failed": 4,
+        "wall_seconds": 3428.549985,
+        "items_per_minute": 43.75,
+        "seconds_per_film": 1.3714285714285714
+      },
+      {
+        "run_id": "full-20261006-gpu3",
+        "model_id": "Qwen/Qwen2.5-3B-Instruct",
+        "status": "completed",
+        "processed": 2500,
+        "failed": 0,
+        "wall_seconds": 3339.868383,
+        "items_per_minute": 44.912,
+        "seconds_per_film": 1.3359458496615604
+      }
+    ],
+    "labeling_median_seconds_per_film": 1.3594960801196356,
+    "labeling_note": "Runs resuming saved labels report inflated speed; prefer runs that labeled new films.",
+    "encoding": {
+      "movies": 6194,
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "batch_size": 128,
+      "encode_seconds": {
+        "single": null,
+        "plot": 24.286915282718837,
+        "themes": 4.938497386872768,
+        "characters": 14.32601920235902,
+        "tone": 3.377448762767017,
+        "narrative_structure": 3.6521240305155516
+      },
+      "narrative_encode_seconds": 50.581004665233195,
+      "narrative_ms_per_film": 8.166129264648562,
+      "note": "single is null when the baseline vectors were reused instead of re-encoded"
+    }
+  },
+  "budget": {
+    "latency_p95_ms_limit": 100.0,
+    "memory_mb_limit": 256.0,
+    "measured_multi_random_p95_ms": 0.2783800009638071,
+    "measured_total_vectors_mb": 54.439453125,
+    "latency_pass": true,
+    "memory_pass": true,
+    "largest_catalog_within_memory": 29127,
+    "largest_measured_catalog_within_latency": 87585,
+    "pass": true
+  },
+  "single_mean_ms": 0.10076719708740711,
+  "multi_mean_ms": 0.24207578785717487,
+  "single_qps": 9923.864401354576,
+  "multi_qps": 4130.937706954823
+}

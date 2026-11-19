@@ -1,0 +1,3663 @@
+{
+  "generated_at_utc": "2026-11-19T20:41:20.243383+00:00",
+  "source_commit": "40783b1",
+  "catalog_movies": 6194,
+  "label_model": "Qwen/Qwen2.5-3B-Instruct",
+  "baseline_encoder": "sentence-transformers/all-MiniLM-L6-v2",
+  "purpose": "Qualitative evaluation examples; compare single-document and equal-weight narrative-vector recommendations for each seed.",
+  "sample_count": 8,
+  "samples": [
+    {
+      "seed": {
+        "tmdb_id": 278,
+        "title": "The Shawshank Redemption",
+        "year": "1994",
+        "genres": [
+          "Drama",
+          "Crime"
+        ],
+        "label": {
+          "themes": [
+            "Hope",
+            "Justice",
+            "Injustice",
+            "Friendship",
+            "Rehabilitation",
+            "Betrayal",
+            "Power Dynamics",
+            "Morality"
+          ],
+          "tone": [
+            "Dramatic",
+            "Serious",
+            "Thought-provoking",
+            "Hopeful"
+          ],
+          "characters": [
+            "Andy Dufresne",
+            "Ellis Boyd 'Red' Redding",
+            "Warden Norton",
+            "Captain Byron T. Hadley",
+            "Tommy",
+            "Brooks Hatlen",
+            "Bogs Diamond",
+            "Jigger"
+          ],
+          "narrative_structure": [
+            "Quest",
+            "Ensemble",
+            "Nonlinear"
+          ],
+          "rationale": "The movie follows Andy's journey through prison, exploring themes of hope and justice against injustice, and features a diverse cast of characters.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 257091,
+            "title": "Get Hard",
+            "year": "2015",
+            "genres": [
+              "Comedy",
+              "Crime"
+            ],
+            "score": 0.5834,
+            "label": {
+              "themes": [
+                "betrayal",
+                "cultural difference",
+                "job promotion",
+                "wrongful conviction",
+                "rich man",
+                "engagement party",
+                "racial stereotype",
+                "prison"
+              ],
+              "tone": [
+                "dark",
+                "humorous",
+                "conflictual"
+              ],
+              "characters": [
+                "James King (main), Darnell Lewis (sidekick), Alissa (love interest), Martin (mentor), Russell (business partner), Peter Penny (assistant), Bathroom Stall Man (supporting), Alissa's Friend (supporting), Rosa (supporting), Candi Brooks (supporting), Jimmy Fallon (supporting)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie follows a wealthy man's journey through prison and his unexpected partnership with a black business owner, exploring themes of race, class, and redemption.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 13012,
+            "title": "Felon",
+            "year": "2008",
+            "genres": [
+              "Crime",
+              "Drama",
+              "Thriller",
+              "Action"
+            ],
+            "score": 0.5784,
+            "label": {
+              "themes": [
+                "Crime",
+                "Violence",
+                "Family Dynamics",
+                "Rehabilitation"
+              ],
+              "tone": [
+                "Dramatic",
+                "Tense",
+                "Moral"
+              ],
+              "characters": [
+                "Wade Porter (protagonist)",
+                "John Smith (antagonist)",
+                "Lt. Jackson (authority figure)",
+                "Laura Porter (mother)",
+                "Snowman (criminal)",
+                "Sgt. Roberts (law enforcement)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a protagonist's journey through the penal system, involving multiple characters and non-linear storytelling.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 8438,
+            "title": "Murder in the First",
+            "year": "1995",
+            "genres": [
+              "Crime",
+              "Drama"
+            ],
+            "score": 0.577,
+            "label": {
+              "themes": [
+                "Justice",
+                "Inexperience",
+                "Revenge"
+              ],
+              "tone": [
+                "Dramatic",
+                "Suspenseful"
+              ],
+              "characters": [
+                "James Stamphill",
+                "Henri Young",
+                "Mary McCasslin",
+                "Bill McNeill",
+                "Mr. Henkin",
+                "Blanche",
+                "Rosetta Young"
+              ],
+              "narrative_structure": [
+                "Investigation",
+                "Coming-of-age",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a young public defender taking on a high-profile case, making it a coming-of-age story with an investigation and ensemble cast.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 429200,
+            "title": "Good Time",
+            "year": "2017",
+            "genres": [
+              "Crime",
+              "Thriller",
+              "Drama"
+            ],
+            "score": 0.5756,
+            "label": {
+              "themes": [
+                "Crime",
+                "Family Reunification",
+                "Underworld"
+              ],
+              "tone": [
+                "Dark",
+                "Tense",
+                "Dramatic"
+              ],
+              "characters": [
+                "Connie Nikas",
+                "Nick Nikas",
+                "Ray",
+                "Corey Ellman",
+                "Dash the Park Security Guard",
+                "Caliph",
+                "Peter the Psychiatrist",
+                "Agapia Nikas"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The movie follows a brother's journey through the criminal underworld to save his imprisoned sibling, featuring multiple characters and a non-linear narrative.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 209276,
+            "title": "Starred Up",
+            "year": "2014",
+            "genres": [
+              "Drama"
+            ],
+            "score": 0.5532,
+            "label": {
+              "themes": [
+                "Conflict",
+                "Rehabilitation",
+                "Family Dynamics",
+                "Violence"
+              ],
+              "tone": [
+                "Dramatic",
+                "Intense",
+                "Moral"
+              ],
+              "characters": [
+                "Eric Love",
+                "Neville Love",
+                "Oliver Baumer",
+                "Governor Cardew"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The movie follows Eric's journey through prison, dealing with personal conflicts, family issues, and moral dilemmas, presented in a non-linear narrative.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 11038,
+            "title": "Tough Guys",
+            "year": "1986",
+            "genres": [
+              "Comedy",
+              "Crime"
+            ],
+            "score": 0.6479,
+            "label": {
+              "themes": [
+                "crime",
+                "rehabilitation",
+                "freedom",
+                "revenge"
+              ],
+              "tone": [
+                "dark",
+                "humorous",
+                "dramatic"
+              ],
+              "characters": [
+                "Harry Doyle",
+                "Archie Lang",
+                "Deke Yablonski",
+                "Belle",
+                "Richie Evans",
+                "Leon B. Little",
+                "Philly",
+                "Skye",
+                "Gladys Ripps",
+                "Jimmy Ellis"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The synopsis describes a story about two ex-cons who must navigate life after release, blending crime themes with comedic elements.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 5925,
+            "title": "The Great Escape",
+            "year": "1963",
+            "genres": [
+              "Adventure",
+              "Drama",
+              "War"
+            ],
+            "score": 0.6476,
+            "label": {
+              "themes": [
+                "war",
+                "escape",
+                "hope",
+                "dystopia",
+                "prison life",
+                "tragedy",
+                "freedom",
+                "optimism"
+              ],
+              "tone": [
+                "dramatic",
+                "action-packed",
+                "hopeful",
+                "realistic",
+                "serious"
+              ],
+              "characters": [
+                "Steve McQueen",
+                "James Garner",
+                "Richard Attenborough",
+                "James Donald",
+                "Charles Bronson",
+                "Donald Pleasence",
+                "James Coburn",
+                "Hannes Messemer"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie follows a group of prisoners planning an escape from a high-security Nazi camp, showcasing themes of hope, dystopia, and prison life.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 777,
+            "title": "Grand Illusion",
+            "year": "1937",
+            "genres": [
+              "Drama",
+              "History",
+              "War"
+            ],
+            "score": 0.6454,
+            "label": {
+              "themes": [
+                "class conflict",
+                "war",
+                "escape",
+                "humanism",
+                "brotherhood",
+                "captivity",
+                "aristocracy vs commoner"
+              ],
+              "tone": [
+                "dramatic",
+                "humorous",
+                "serious",
+                "hopeful"
+              ],
+              "characters": [
+                "Captain de Boeldieu",
+                "Lieutenant Maréchal",
+                "Elsa",
+                "von Rauffenstein",
+                "Cartier",
+                "Officer",
+                "Sergeant Arthur",
+                "Teacher",
+                "Lieutenant Demolder",
+                "Engineer",
+                "Lieutenant Rosenthal",
+                "British Officer"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie follows a group of soldiers on a quest to escape captivity, showcasing diverse characters and nonlinear storytelling.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 497,
+            "title": "The Green Mile",
+            "year": "1999",
+            "genres": [
+              "Fantasy",
+              "Drama",
+              "Crime"
+            ],
+            "score": 0.6447,
+            "label": {
+              "themes": [
+                "Supernatural",
+                "Justice",
+                "Forgiveness",
+                "Humanity"
+              ],
+              "tone": [
+                "Dramatic",
+                "Thought-provoking",
+                "Emotional"
+              ],
+              "characters": [
+                "Paul Edgecomb (Head Guard)",
+                "John Coffey (Healer)",
+                "Brutus 'Brutal' Howell (Cell Block Head Guard)",
+                "Jan Edgecomb (Wife of Paul Edgecomb)",
+                "Warden Hal Moores (Prison Warden)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a supernatural tale set on death row, involving multiple characters and a nonlinear narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 247,
+            "title": "The Killing",
+            "year": "1956",
+            "genres": [
+              "Crime",
+              "Thriller",
+              "Drama"
+            ],
+            "score": 0.6318,
+            "label": {
+              "themes": [
+                "Crime",
+                "Threats",
+                "Revenge",
+                "Marriage"
+              ],
+              "tone": [
+                "Dramatic",
+                "Thrilling",
+                "Suspenseful"
+              ],
+              "characters": [
+                "Johnny Clay",
+                "Fay",
+                "Val Cannon",
+                "Sherry Peatty",
+                "George Peatty",
+                "Patrolman Randy Kennan",
+                "Mike O'Reilly",
+                "Leo the Loanshark"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear",
+                "Quest"
+              ],
+              "rationale": "The synopsis describes a complex crime drama involving multiple characters and nonlinear plot elements, focusing on a career criminal's final job.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": {
+        "tmdb_id": 603,
+        "title": "The Matrix",
+        "year": "1999",
+        "genres": [
+          "Action",
+          "Science Fiction"
+        ],
+        "label": {
+          "themes": [
+            "Cyberpunk",
+            "Virtual Reality",
+            "Free Will vs. Determinism",
+            "Moral Dilemma",
+            "Resistance Against Authority",
+            "Technology vs. Humanity",
+            "Mind Control",
+            "Existential Crisis"
+          ],
+          "tone": [
+            "Dystopian",
+            "Intense",
+            "Thought-Provoking",
+            "Action-Packed",
+            "Philosophical"
+          ],
+          "characters": [
+            "Protagonist (Neo)",
+            "Mentor (Morpheus)",
+            "Supporting Character (Trinity)",
+            "Antagonist (Agent Smith)",
+            "Oracle",
+            "Rebel (Cypher)",
+            "Companion (Tank)"
+          ],
+          "narrative_structure": [
+            "Quest",
+            "Ensemble Cast",
+            "Nonlinear Storytelling",
+            "Moral Conflict",
+            "Character Development"
+          ],
+          "rationale": "The synopsis and cast list provide a clear picture of a complex narrative involving themes of technology, morality, and human freedom, set against a backdrop of action and philosophical inquiry.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 605,
+            "title": "The Matrix Revolutions",
+            "year": "2003",
+            "genres": [
+              "Action",
+              "Thriller",
+              "Science Fiction"
+            ],
+            "score": 0.8206,
+            "label": {
+              "themes": [
+                "War",
+                "Revenge",
+                "Transformation",
+                "Technology vs. Humanity"
+              ],
+              "tone": [
+                "Dramatic",
+                "Intense",
+                "Mystical"
+              ],
+              "characters": [
+                "Protagonist (Neo)",
+                "Supporting Character (Morpheus)",
+                "Supporting Character (Trinity)",
+                "Antagonist (Agent Smith)",
+                "Supporting Character (Niobe)",
+                "Supporting Character (The Oracle)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving a protagonist's journey, multiple characters working together, and a nonlinear progression through different aspects of the story.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 604,
+            "title": "The Matrix Reloaded",
+            "year": "2003",
+            "genres": [
+              "Action",
+              "Thriller",
+              "Science Fiction"
+            ],
+            "score": 0.8098,
+            "label": {
+              "themes": [
+                "Human rebellion",
+                "Technological oppression",
+                "Superhuman abilities",
+                "Cognitive conflict",
+                "Digital reality",
+                "Power struggle",
+                "Moral ambiguity",
+                "Time constraints"
+              ],
+              "tone": [
+                "Intense",
+                "Dramatic",
+                "Thought-provoking",
+                "Action-packed",
+                "Futuristic"
+              ],
+              "characters": [
+                "Neo (protagonist)",
+                "Morpheus (mentor)",
+                "Trinity (love interest)",
+                "Agent Smith (antagonist)",
+                "The Oracle (wise figure)",
+                "Link (supporting role)",
+                "Persephone (supporting role)",
+                "Commander Lock (supporting role)",
+                "The Merovingian (supporting role)",
+                "Keymaker (supporting role)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving a quest for freedom, multiple characters with distinct roles, and a nonlinear progression through the Matrix's layers.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 624860,
+            "title": "The Matrix Resurrections",
+            "year": "2021",
+            "genres": [
+              "Science Fiction",
+              "Action",
+              "Adventure"
+            ],
+            "score": 0.7627,
+            "label": {
+              "themes": [
+                "Memory and Identity",
+                "Virtual Reality vs. Reality",
+                "Power Struggles"
+              ],
+              "tone": [
+                "Intense",
+                "Mysterious",
+                "Thought-Provoking"
+              ],
+              "characters": [
+                "Neo/Thomas Anderson",
+                "Trinity/Tiffany",
+                "Morpheus/Agent Smith",
+                "Smith",
+                "Bugs",
+                "The Analyst",
+                "Niobe",
+                "Sati",
+                "Gwyn de Vere",
+                "The Merovingian"
+              ],
+              "narrative_structure": [
+                "Nonlinear",
+                "Ensemble",
+                "Quest"
+              ],
+              "rationale": "The synopsis and cast list indicate a complex narrative involving memory, power struggles, and multiple characters, fitting a nonlinear, ensemble quest structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 55931,
+            "title": "The Animatrix",
+            "year": "2003",
+            "genres": [
+              "Animation",
+              "Science Fiction"
+            ],
+            "score": 0.6917,
+            "label": {
+              "themes": [
+                "Science Fiction",
+                "Animation",
+                "Conflict Between Man and Machines"
+              ],
+              "tone": [
+                "Dramatic",
+                "Intense",
+                "Reflective"
+              ],
+              "characters": [
+                "Neo",
+                "Trinity",
+                "The Kid",
+                "Jue",
+                "Alexa",
+                "Thadeus",
+                "Operator",
+                "Pilot"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear",
+                "Quest"
+              ],
+              "rationale": "The Animatrix is an ensemble of short animated films that explore themes of science fiction and conflict between humans and machines, featuring diverse characters and a nonlinear narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 83542,
+            "title": "Cloud Atlas",
+            "year": "2012",
+            "genres": [
+              "Drama",
+              "Science Fiction"
+            ],
+            "score": 0.5723,
+            "label": {
+              "themes": [
+                "time travel",
+                "reincarnation",
+                "love and loss",
+                "revolution",
+                "identity"
+              ],
+              "tone": [
+                "melancholic",
+                "thought-provoking",
+                "emotional"
+              ],
+              "characters": [
+                "Tom Hanks",
+                "Halle Berry",
+                "Jim Sturgess",
+                "Hugo Weaving",
+                "Bae Doona",
+                "Ben Whishaw"
+              ],
+              "narrative_structure": [
+                "ensemble",
+                "nonlinear",
+                "multiple timelines"
+              ],
+              "rationale": "The movie Cloud Atlas spans multiple time periods and features an ensemble cast exploring interconnected stories, making it an ensemble piece with a nonlinear narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 604,
+            "title": "The Matrix Reloaded",
+            "year": "2003",
+            "genres": [
+              "Action",
+              "Thriller",
+              "Science Fiction"
+            ],
+            "score": 0.686,
+            "label": {
+              "themes": [
+                "Human rebellion",
+                "Technological oppression",
+                "Superhuman abilities",
+                "Cognitive conflict",
+                "Digital reality",
+                "Power struggle",
+                "Moral ambiguity",
+                "Time constraints"
+              ],
+              "tone": [
+                "Intense",
+                "Dramatic",
+                "Thought-provoking",
+                "Action-packed",
+                "Futuristic"
+              ],
+              "characters": [
+                "Neo (protagonist)",
+                "Morpheus (mentor)",
+                "Trinity (love interest)",
+                "Agent Smith (antagonist)",
+                "The Oracle (wise figure)",
+                "Link (supporting role)",
+                "Persephone (supporting role)",
+                "Commander Lock (supporting role)",
+                "The Merovingian (supporting role)",
+                "Keymaker (supporting role)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving a quest for freedom, multiple characters with distinct roles, and a nonlinear progression through the Matrix's layers.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 605,
+            "title": "The Matrix Revolutions",
+            "year": "2003",
+            "genres": [
+              "Action",
+              "Thriller",
+              "Science Fiction"
+            ],
+            "score": 0.5971,
+            "label": {
+              "themes": [
+                "War",
+                "Revenge",
+                "Transformation",
+                "Technology vs. Humanity"
+              ],
+              "tone": [
+                "Dramatic",
+                "Intense",
+                "Mystical"
+              ],
+              "characters": [
+                "Protagonist (Neo)",
+                "Supporting Character (Morpheus)",
+                "Supporting Character (Trinity)",
+                "Antagonist (Agent Smith)",
+                "Supporting Character (Niobe)",
+                "Supporting Character (The Oracle)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving a protagonist's journey, multiple characters working together, and a nonlinear progression through different aspects of the story.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 330459,
+            "title": "Rogue One: A Star Wars Story",
+            "year": "2016",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Science Fiction"
+            ],
+            "score": 0.5821,
+            "label": {
+              "themes": [
+                "rebellion",
+                "space adventure",
+                "galactic conflict",
+                "female empowerment",
+                "teamwork",
+                "hope",
+                "technology vs. nature",
+                "suicide missions"
+              ],
+              "tone": [
+                "dramatic",
+                "action-packed",
+                "serious",
+                "heroic"
+              ],
+              "characters": [
+                "Jyn Erso (protagonist)",
+                "Cassian Andor (sidekick)",
+                "K-2SO (robot sidekick)",
+                "Chirrut Imwe (spiritual guide)",
+                "Bodhi Rook (outsider ally)",
+                "Galen Erso (father figure)",
+                "Orson Krennic (opponent)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble cast",
+                "nonlinear storytelling"
+              ],
+              "rationale": "The synopsis and cast list indicate a space adventure film focused on a group of rebels on a dangerous mission, making it suitable for a recommendation system targeting action and science fiction genres.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 18501,
+            "title": "Gamer",
+            "year": "2009",
+            "genres": [
+              "Action",
+              "Thriller",
+              "Science Fiction"
+            ],
+            "score": 0.5657,
+            "label": {
+              "themes": [
+                "Mind Control",
+                "Online Gaming",
+                "Dystopian Society",
+                "Justice System",
+                "Identity Theft",
+                "Power Struggle",
+                "Survival Game",
+                "Revenge"
+              ],
+              "tone": [
+                "Intense",
+                "Horror",
+                "Sci-Fi",
+                "Action-Packed",
+                "Dark"
+              ],
+              "characters": [
+                "Kable (Protagonist)",
+                "Simon (Protagonist's Son)",
+                "Ken Castle (Enemy/Competitor)",
+                "Gina Parker Smith (Supporting Character)",
+                "Trace (Supporting Character)",
+                "Hackman (Supporting Character)",
+                "Humanz Brother (Supporting Character)",
+                "Scotch (Supporting Character)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving mind control, an online game, and a quest for justice set in a dystopian future.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 64635,
+            "title": "Total Recall",
+            "year": "2012",
+            "genres": [
+              "Action",
+              "Science Fiction",
+              "Thriller"
+            ],
+            "score": 0.5635,
+            "label": {
+              "themes": [
+                "Virtual Reality",
+                "Memory Manipulation",
+                "Political Corruption",
+                "Rebellion",
+                "Identity Crisis",
+                "Corporate Espionage",
+                "Underground Resistance",
+                "Corporate Tyranny"
+              ],
+              "tone": [
+                "Dystopian",
+                "Action-Packed",
+                "Thrilling",
+                "Suspenseful",
+                "Thought-Provoking"
+              ],
+              "characters": [
+                "Doug Quaid",
+                "Melina",
+                "Lori Quaid",
+                "Matthias",
+                "Cohaagen",
+                "Hammond",
+                "Terminal Announcer",
+                "Resistance Fighter"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear",
+                "Corporate Intrigue",
+                "Personal Transformation",
+                "Political Conflict"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving corporate manipulation, personal transformation, and political conflict, fitting well into themes of virtual reality, memory manipulation, and corporate intrigue.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": {
+        "tmdb_id": 862,
+        "title": "Toy Story",
+        "year": "1995",
+        "genres": [
+          "Family",
+          "Comedy",
+          "Animation",
+          "Adventure"
+        ],
+        "label": {
+          "themes": [
+            "Friendship",
+            "Coming-of-age",
+            "Adventure",
+            "Parent-child relationship"
+          ],
+          "tone": [
+            "Humorous",
+            "Upbeat",
+            "Educational"
+          ],
+          "characters": [
+            "Woody",
+            "Buzz Lightyear",
+            "Andy",
+            "Sid"
+          ],
+          "narrative_structure": [
+            "Quest",
+            "Ensemble"
+          ],
+          "rationale": "The synopsis describes a coming-of-age adventure where toys form a friendship and learn to work together, fitting a quest and ensemble narrative structure.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 863,
+            "title": "Toy Story 2",
+            "year": "1999",
+            "genres": [
+              "Animation",
+              "Comedy",
+              "Family"
+            ],
+            "score": 0.8603,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Friendship",
+                "Loss",
+                "Discovery",
+                "Rescue"
+              ],
+              "tone": [
+                "Humorous",
+                "Upbeat",
+                "Emotional"
+              ],
+              "characters": [
+                "Woody",
+                "Buzz Lightyear",
+                "Jessie",
+                "Al McWhiggen"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Drama",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a rescue mission and adventure involving various toys, fitting themes and narrative structures suitable for a family comedy.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 301528,
+            "title": "Toy Story 4",
+            "year": "2019",
+            "genres": [
+              "Family",
+              "Comedy",
+              "Animation",
+              "Adventure"
+            ],
+            "score": 0.7909,
+            "label": {
+              "themes": [
+                "Friendship",
+                "Adventure",
+                "Coming-of-Age",
+                "Loyalty",
+                "Purpose"
+              ],
+              "tone": [
+                "Humorous",
+                "Upbeat",
+                "Emotional"
+              ],
+              "characters": [
+                "Woody",
+                "Buzz Lightyear",
+                "Bonnie",
+                "Forky",
+                "Duke Caboom"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a journey where Woody, Buzz, and new characters like Forky and Duke Caboom embark on an adventure with Bonnie, exploring themes of friendship, loyalty, and purpose.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 10193,
+            "title": "Toy Story 3",
+            "year": "2010",
+            "genres": [
+              "Animation",
+              "Family",
+              "Comedy"
+            ],
+            "score": 0.7902,
+            "label": {
+              "themes": [
+                "Friendship",
+                "Adaptation",
+                "Parental Love",
+                "Childhood Memories"
+              ],
+              "tone": [
+                "Humorous",
+                "Upbeat",
+                "Emotional"
+              ],
+              "characters": [
+                "Woody",
+                "Buzz Lightyear",
+                "Jessie",
+                "Mr. Potato Head",
+                "Lotso"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a group of toys on a journey to return home, featuring multiple characters working together.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 23805,
+            "title": "The Toy",
+            "year": "1982",
+            "genres": [
+              "Comedy",
+              "Family"
+            ],
+            "score": 0.6393,
+            "label": {
+              "themes": [
+                "friendship",
+                "class struggle",
+                "laughter therapy",
+                "family dynamics"
+              ],
+              "tone": [
+                "humorous",
+                "heartwarming",
+                "satirical"
+              ],
+              "characters": [
+                "Jack Brown (Richard Pryor)",
+                "U.S. Bates (Jackie Gleason)",
+                "Eric Bates (Scott Schwartz)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "coming-of-age"
+              ],
+              "rationale": "The movie follows a young brat's journey where he learns about friendship and empathy through an unlikely relationship with a janitor at his father's department store.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 2280,
+            "title": "Big",
+            "year": "1988",
+            "genres": [
+              "Fantasy",
+              "Drama",
+              "Comedy"
+            ],
+            "score": 0.5774,
+            "label": {
+              "themes": [
+                "Coming-of-age",
+                "Growth and change",
+                "Friendship and mentorship"
+              ],
+              "tone": [
+                "Humorous",
+                "Serious",
+                "Fantastical"
+              ],
+              "characters": [
+                "Josh",
+                "Susan",
+                "MacMillan",
+                "Paul",
+                "Scotty Brennen",
+                "Young Josh"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Quest",
+                "Coming-of-age"
+              ],
+              "rationale": "The movie follows a young boy's journey of growth and adaptation to adulthood, featuring an ensemble cast and fantastical elements.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 10193,
+            "title": "Toy Story 3",
+            "year": "2010",
+            "genres": [
+              "Animation",
+              "Family",
+              "Comedy"
+            ],
+            "score": 0.8069,
+            "label": {
+              "themes": [
+                "Friendship",
+                "Adaptation",
+                "Parental Love",
+                "Childhood Memories"
+              ],
+              "tone": [
+                "Humorous",
+                "Upbeat",
+                "Emotional"
+              ],
+              "characters": [
+                "Woody",
+                "Buzz Lightyear",
+                "Jessie",
+                "Mr. Potato Head",
+                "Lotso"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a group of toys on a journey to return home, featuring multiple characters working together.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 863,
+            "title": "Toy Story 2",
+            "year": "1999",
+            "genres": [
+              "Animation",
+              "Comedy",
+              "Family"
+            ],
+            "score": 0.7776,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Friendship",
+                "Loss",
+                "Discovery",
+                "Rescue"
+              ],
+              "tone": [
+                "Humorous",
+                "Upbeat",
+                "Emotional"
+              ],
+              "characters": [
+                "Woody",
+                "Buzz Lightyear",
+                "Jessie",
+                "Al McWhiggen"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Drama",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a rescue mission and adventure involving various toys, fitting themes and narrative structures suitable for a family comedy.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 301528,
+            "title": "Toy Story 4",
+            "year": "2019",
+            "genres": [
+              "Family",
+              "Comedy",
+              "Animation",
+              "Adventure"
+            ],
+            "score": 0.7215,
+            "label": {
+              "themes": [
+                "Friendship",
+                "Adventure",
+                "Coming-of-Age",
+                "Loyalty",
+                "Purpose"
+              ],
+              "tone": [
+                "Humorous",
+                "Upbeat",
+                "Emotional"
+              ],
+              "characters": [
+                "Woody",
+                "Buzz Lightyear",
+                "Bonnie",
+                "Forky",
+                "Duke Caboom"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a journey where Woody, Buzz, and new characters like Forky and Duke Caboom embark on an adventure with Bonnie, exploring themes of friendship, loyalty, and purpose.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 46195,
+            "title": "Rio",
+            "year": "2011",
+            "genres": [
+              "Animation",
+              "Adventure",
+              "Comedy",
+              "Family"
+            ],
+            "score": 0.6496,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Family",
+                "Friendship",
+                "Love"
+              ],
+              "tone": [
+                "Humorous",
+                "Upbeat",
+                "Educational"
+              ],
+              "characters": [
+                "Blu",
+                "Jewel",
+                "Linda",
+                "Alice/Goose",
+                "Pedro",
+                "Rafael",
+                "Chloe/Goose",
+                "Nico",
+                "Tulio",
+                "Nigel",
+                "Fernando",
+                "Luiz"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Coming-of-age",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a family adventure involving characters on a journey to find freedom and love, fitting themes of quest, coming-of-age, and ensemble storytelling.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 420814,
+            "title": "Christopher Robin",
+            "year": "2018",
+            "genres": [
+              "Adventure",
+              "Comedy",
+              "Family",
+              "Fantasy"
+            ],
+            "score": 0.6276,
+            "label": {
+              "themes": [
+                "Friendship",
+                "Adventure",
+                "Family",
+                "Childhood",
+                "Fantasy"
+              ],
+              "tone": [
+                "Humorous",
+                "Wistful",
+                "Upbeat"
+              ],
+              "characters": [
+                "Christopher Robin",
+                "Evelyn Robin",
+                "Madeline Robin",
+                "Winnie the Pooh",
+                "Tigger",
+                "Piglet",
+                "Rabbit",
+                "Owl"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Coming-of-age",
+                "Ensemble"
+              ],
+              "rationale": "The movie follows Christopher Robin's journey to rediscover his childhood through the adventures of his stuffed animal friends, encapsulating themes of friendship, family, and coming-of-age.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": {
+        "tmdb_id": 129,
+        "title": "Spirited Away",
+        "year": "2001",
+        "genres": [
+          "Animation",
+          "Family",
+          "Fantasy"
+        ],
+        "label": {
+          "themes": [
+            "family",
+            "spirituality",
+            "courage"
+          ],
+          "tone": [
+            "fantastical",
+            "emotional"
+          ],
+          "characters": [
+            "Chihiro",
+            "Haku",
+            "Yubaba",
+            "Father",
+            "Mother"
+          ],
+          "narrative_structure": [
+            "quest",
+            "coming-of-age"
+          ],
+          "rationale": "The synopsis describes a coming-of-age journey where Chihiro faces challenges and learns about herself and the spirit world, fitting a quest narrative structure.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 4935,
+            "title": "Howl's Moving Castle",
+            "year": "2004",
+            "genres": [
+              "Fantasy",
+              "Animation",
+              "Adventure"
+            ],
+            "score": 0.5808,
+            "label": {
+              "themes": [
+                "magic",
+                "love",
+                "revenge",
+                "coming-of-age",
+                "fate"
+              ],
+              "tone": [
+                "fantastical",
+                "humorous",
+                "melancholic"
+              ],
+              "characters": [
+                "Sophie",
+                "Howl",
+                "Witch of the Waste",
+                "Calcifer",
+                "Markl",
+                "Kosho",
+                "Prince Justin",
+                "King of Ingary"
+              ],
+              "narrative_structure": [
+                "quest",
+                "coming-of-age",
+                "nonlinear"
+              ],
+              "rationale": "The synopsis describes a fantasy adventure where Sophie transforms and embarks on a journey with various characters, showcasing elements of a quest and coming-of-age narrative.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 293670,
+            "title": "The Wailing",
+            "year": "2016",
+            "genres": [
+              "Horror",
+              "Mystery"
+            ],
+            "score": 0.5772,
+            "label": {
+              "themes": [
+                "Mystery",
+                "Horror",
+                "Family"
+              ],
+              "tone": [
+                "Tense",
+                "Suspenseful",
+                "Horrible"
+              ],
+              "characters": [
+                "Jong-goo",
+                "Il-gwang",
+                "Moo-myeong",
+                "The Stranger",
+                "Hyo-jin",
+                "Mother-in-Law",
+                "Jong-goo's Wife",
+                "Yang Yi-sam",
+                "Detective",
+                "Oh Sung-bok",
+                "Kwon Myung-joo",
+                "Police Officer"
+              ],
+              "narrative_structure": [
+                "Investigation",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a mystery horror film involving an investigation into a mysterious sickness and its effects on a small village, featuring an ensemble cast.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 25623,
+            "title": "House",
+            "year": "1977",
+            "genres": [
+              "Comedy",
+              "Fantasy",
+              "Horror"
+            ],
+            "score": 0.5769,
+            "label": {
+              "themes": [
+                "family reunion",
+                "haunted house",
+                "coming-of-age"
+              ],
+              "tone": [
+                "mysterious",
+                "scary",
+                "funny"
+              ],
+              "characters": [
+                "Gorgeous",
+                "Fantasy",
+                "Prof",
+                "Kung Fu",
+                "Melody",
+                "Sweet",
+                "Mac",
+                "Hausu Karei",
+                "Keisuke Togo",
+                "Ryôko Ema"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie combines elements of comedy, fantasy, and horror centered around a family reunion at an eerie house, featuring a mix of characters on a mysterious journey.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 8392,
+            "title": "My Neighbor Totoro",
+            "year": "1988",
+            "genres": [
+              "Fantasy",
+              "Animation",
+              "Family"
+            ],
+            "score": 0.5681,
+            "label": {
+              "themes": [
+                "Magic",
+                "Family",
+                "Nature"
+              ],
+              "tone": [
+                "Whimsical",
+                "Emotional"
+              ],
+              "characters": [
+                "Satsuki Kusakabe",
+                "Mei Kusakabe",
+                "Totoro",
+                "Granny"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The movie follows two sisters on a journey to find their hospitalized mother while encountering magical forest spirits, showcasing a mix of whimsical and emotional tones.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 110420,
+            "title": "Wolf Children",
+            "year": "2012",
+            "genres": [
+              "Animation",
+              "Family",
+              "Drama",
+              "Fantasy"
+            ],
+            "score": 0.5627,
+            "label": {
+              "themes": [
+                "Werewolves",
+                "Parenting",
+                "Adoption",
+                "Magic"
+              ],
+              "tone": [
+                "Mysterious",
+                "Emotional",
+                "Dramatic"
+              ],
+              "characters": [
+                "Hana",
+                "Wolf Man",
+                "Yuki",
+                "Ame",
+                "Sohei",
+                "Keno",
+                "Hosokawa",
+                "Yamaoka"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Coming-of-age",
+                "Ensemble"
+              ],
+              "rationale": "The movie follows a woman raising her children who inherit magical werewolf traits, exploring themes of parenting and magic.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 2309,
+            "title": "Inkheart",
+            "year": "2008",
+            "genres": [
+              "Adventure",
+              "Family",
+              "Fantasy"
+            ],
+            "score": 0.6695,
+            "label": {
+              "themes": [
+                "family bonds",
+                "adventure",
+                "magic and folklore",
+                "reunion"
+              ],
+              "tone": [
+                "fantastical",
+                "emotional"
+              ],
+              "characters": [
+                "father",
+                "daughter",
+                "magician",
+                "witch",
+                "childhood friend",
+                "book character",
+                "relative"
+              ],
+              "narrative_structure": [
+                "quest",
+                "coming-of-age"
+              ],
+              "rationale": "The synopsis describes an adventure involving a father and daughter seeking a magical book to reunite with a missing relative, fitting a quest and coming-of-age narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 149871,
+            "title": "The Tale of The Princess Kaguya",
+            "year": "2013",
+            "genres": [
+              "Animation",
+              "Drama",
+              "Fantasy"
+            ],
+            "score": 0.6166,
+            "label": {
+              "themes": [
+                "love",
+                "fate",
+                "discovery",
+                "magic",
+                "family"
+              ],
+              "tone": [
+                "mysterious",
+                "touching",
+                "fantastical"
+              ],
+              "characters": [
+                "Princess Kaguya",
+                "Sanuki no Miyatsuko",
+                "Ōna",
+                "Sutemaru",
+                "Lady Sagami",
+                "Menowarawa",
+                "Lord Inbe no Akita",
+                "Prince Ishitsukuri"
+              ],
+              "narrative_structure": [
+                "quest",
+                "coming-of-age",
+                "ensemble"
+              ],
+              "rationale": "The synopsis describes a magical coming-of-age story about a found princess's journey and her interactions with various characters, fitting a quest and coming-of-age narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 28032,
+            "title": "Thumbelina",
+            "year": "1994",
+            "genres": [
+              "Animation",
+              "Fantasy",
+              "Romance",
+              "Family"
+            ],
+            "score": 0.6055,
+            "label": {
+              "themes": [
+                "love",
+                "adventure",
+                "magic",
+                "family",
+                "courage",
+                "discovery"
+              ],
+              "tone": [
+                "fantastical",
+                "humorous",
+                "touching"
+              ],
+              "characters": [
+                "Thumbelina",
+                "Prince Cornelius",
+                "Ms. Toad",
+                "Mother",
+                "Grundel"
+              ],
+              "narrative_structure": [
+                "quest",
+                "coming-of-age",
+                "envelope"
+              ],
+              "rationale": "The synopsis describes Thumbelina's journey to find love and escape kidnapping, fitting a quest and coming-of-age narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 1088,
+            "title": "Whale Rider",
+            "year": "2003",
+            "genres": [
+              "Drama",
+              "Family"
+            ],
+            "score": 0.5894,
+            "label": {
+              "themes": [
+                "empowerment",
+                "cultural identity",
+                "grandparent-grandchild relationship",
+                "loss",
+                "tradition",
+                "modern society",
+                "patriarchy",
+                "magic realism"
+              ],
+              "tone": [
+                "emotional",
+                "inspirational",
+                "dramatic"
+              ],
+              "characters": [
+                "Paikea Apirana (protagonist)",
+                "Koro (mentor and antagonist)",
+                "Nanny Flowers (supporting role)",
+                "Porourangi (supporting role)",
+                "Shilo (supporting role)",
+                "Uncle Rawiri (supporting role)",
+                "Hemi (supporting role)",
+                "Maki (supporting role)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "coming-of-age",
+                "ensemble"
+              ],
+              "rationale": "The movie follows a young Māori girl's journey to assert her cultural heritage and challenge societal norms, making it suitable for a recommendation system focusing on themes of empowerment, cultural identity, and coming-of-age.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 16859,
+            "title": "Kiki's Delivery Service",
+            "year": "1989",
+            "genres": [
+              "Animation",
+              "Family",
+              "Fantasy"
+            ],
+            "score": 0.5744,
+            "label": {
+              "themes": [
+                "magic",
+                "coming-of-age",
+                "friendship",
+                "independence",
+                "adventure",
+                "empathy",
+                "innocence",
+                "loss"
+              ],
+              "tone": [
+                "lighthearted",
+                "gentle",
+                "empathetic"
+              ],
+              "characters": [
+                "Kiki",
+                "Jiji",
+                "Tombo",
+                "Osono",
+                "Kokiri",
+                "Okino",
+                "Old Lady",
+                "Bertha",
+                "Maki",
+                "Young Senpai Witch"
+              ],
+              "narrative_structure": [
+                "quest",
+                "coming-of-age",
+                "ensemble"
+              ],
+              "rationale": "The synopsis describes Kiki's journey as a young witch learning independence and supporting herself through an air courier service, which fits a quest and coming-of-age narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": {
+        "tmdb_id": 680,
+        "title": "Pulp Fiction",
+        "year": "1994",
+        "genres": [
+          "Thriller",
+          "Crime",
+          "Comedy"
+        ],
+        "label": {
+          "themes": [
+            "Crime",
+            "Love and Relationships",
+            "Philosophy"
+          ],
+          "tone": [
+            "Darkly Humorous",
+            "Complex"
+          ],
+          "characters": [
+            "Vincent Vega (Hit Man)",
+            "Jules Winnfield (Partner)",
+            "Mia Wallace (Moll)",
+            "Butch Coolidge (Gangster)",
+            "Marsellus Wallace (Boss)",
+            "The Wolf (Friend)",
+            "Lance (Friend)"
+          ],
+          "narrative_structure": [
+            "Nonlinear",
+            "Ensemble"
+          ],
+          "rationale": "The movie combines elements of crime and comedy through a nonlinear narrative featuring an ensemble cast.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 984,
+            "title": "Dirty Harry",
+            "year": "1971",
+            "genres": [
+              "Action",
+              "Crime",
+              "Thriller"
+            ],
+            "score": 0.6308,
+            "label": {
+              "themes": [
+                "gun violence",
+                "law enforcement",
+                "psychological thriller",
+                "urban crime",
+                "detective work",
+                "moral ambiguity",
+                "city setting",
+                "action sequences"
+              ],
+              "tone": [
+                "intense",
+                "dark",
+                "dramatic",
+                "conflictual",
+                "aggressive"
+              ],
+              "characters": [
+                "Harry Callahan",
+                "Bressler",
+                "The Mayor",
+                "Killer",
+                "Chief",
+                "De Georgio",
+                "Mrs. Russell",
+                "Norma"
+              ],
+              "narrative_structure": [
+                "investigation",
+                "conflict resolution",
+                "character development"
+              ],
+              "rationale": "The synopsis and cast list detail a gritty, action-packed crime thriller set in San Francisco, featuring a morally ambiguous protagonist and complex interpersonal dynamics.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 4982,
+            "title": "American Gangster",
+            "year": "2007",
+            "genres": [
+              "Drama",
+              "Crime"
+            ],
+            "score": 0.6233,
+            "label": {
+              "themes": [
+                "ambition",
+                "rise and fall",
+                "organized crime",
+                "family"
+              ],
+              "tone": [
+                "provocative",
+                "brisk",
+                "violent"
+              ],
+              "characters": [
+                "Denzel Washington (Frank Lucas)",
+                "Russell Crowe (Richie Roberts)",
+                "Cuba Gooding Jr. (Nicky Barnes)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie follows Frank Lucas's rise to power in the drug trade and his eventual downfall, involving multiple characters and non-linear storytelling.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 150,
+            "title": "48 Hrs.",
+            "year": "1982",
+            "genres": [
+              "Crime",
+              "Action",
+              "Comedy"
+            ],
+            "score": 0.6192,
+            "label": {
+              "themes": [
+                "Crime",
+                "Teamwork",
+                "Time Pressure"
+              ],
+              "tone": [
+                "Comedic",
+                "Action-Packed"
+              ],
+              "characters": [
+                "Jack Cates (Hard-nosed Cop)",
+                "Reggie Hammond (Wise-cracking Criminal)",
+                "Elaine (Paroled Woman)",
+                "Haden (Law Enforcement Official)",
+                "Albert Ganz (Criminal)",
+                "Luther (Unknown Character)",
+                "Billy Bear (Unknown Character)",
+                "Ben Kehoe (Unknown Character)"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Quest",
+                "Nonlinear"
+              ],
+              "rationale": "The movie is a comedic crime-action film about a cop and a criminal teaming up to solve a case, featuring an ensemble cast and a nonlinear narrative.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 23954,
+            "title": "Atlantic City",
+            "year": "1980",
+            "genres": [
+              "Crime",
+              "Drama",
+              "Romance"
+            ],
+            "score": 0.6083,
+            "label": {
+              "themes": [
+                "corruption",
+                "love",
+                "money",
+                "danger",
+                "drugs",
+                "betrayal",
+                "romance",
+                "crime"
+              ],
+              "tone": [
+                "dark",
+                "dramatic",
+                "suspenseful",
+                "contemporary"
+              ],
+              "characters": [
+                "Lou (gangster)",
+                "Sally (estranged wife)",
+                "Grace (mother)",
+                "Joseph (pot dealer)",
+                "Chrissy (young woman)",
+                "Dave (friend)",
+                "Alfie (neighbor)",
+                "Singer (casino owner)",
+                "Felix (drug supplier)",
+                "Vinnie (partner)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "envelope",
+                "ensemble"
+              ],
+              "rationale": "The movie follows characters navigating a dangerous and complex web of love, money, and crime in a corrupt city, structured around their individual quests and interactions.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 6977,
+            "title": "No Country for Old Men",
+            "year": "2007",
+            "genres": [
+              "Crime",
+              "Thriller",
+              "Western"
+            ],
+            "score": 0.5974,
+            "label": {
+              "themes": [
+                "Crime",
+                "Justice",
+                "Violence",
+                "Pursuit",
+                "Predator-Prey Dynamics",
+                "Money"
+              ],
+              "tone": [
+                "Dramatic",
+                "Violent",
+                "Thrilling",
+                "Mysterious"
+              ],
+              "characters": [
+                "Anton Chigurh (Anti-hero/Villain)",
+                "Ed Tom Bell (Law Enforcement)",
+                "Llewelyn Moss (Victim/Protagonist)",
+                "Carson Wells (Henchman)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The movie follows a nonlinear narrative structure involving a quest for money and justice, featuring an ensemble cast including a protagonist, antagonist, and supporting characters.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 9932,
+            "title": "Analyze That",
+            "year": "2002",
+            "genres": [
+              "Comedy",
+              "Crime"
+            ],
+            "score": 0.6219,
+            "label": {
+              "themes": [
+                "crime",
+                "therapy",
+                "family business",
+                "reincarnation",
+                "gangster culture",
+                "prison life"
+              ],
+              "tone": [
+                "darkly humorous",
+                "satirical",
+                "dramatic"
+              ],
+              "characters": [
+                "Paul Vitti (mafia boss)",
+                "Dr. Ben Sobel (therapist)",
+                "Laura Sobel (Dr. Sobel's daughter)",
+                "Jelly (convict)",
+                "Patti LoPresti (Vitti's ex-wife)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie follows a mafia boss who seeks therapy after release from prison, weaving together personal and professional narratives.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 86838,
+            "title": "Seven Psychopaths",
+            "year": "2012",
+            "genres": [
+              "Comedy",
+              "Crime"
+            ],
+            "score": 0.6121,
+            "label": {
+              "themes": [
+                "Friendship",
+                "Crime",
+                "Humor"
+              ],
+              "tone": [
+                "Dark",
+                "Comedic"
+              ],
+              "characters": [
+                "Marty Faranan",
+                "Billy Bickle",
+                "Charlie Costello"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The movie combines elements of comedy and crime through an ensemble cast with a nonlinear narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 9401,
+            "title": "2 Days in the Valley",
+            "year": "1996",
+            "genres": [
+              "Comedy",
+              "Crime",
+              "Thriller"
+            ],
+            "score": 0.61,
+            "label": {
+              "themes": [
+                "Murder",
+                "Revenge",
+                "Community Dynamics",
+                "Love"
+              ],
+              "tone": [
+                "Dark",
+                "Comedy",
+                "Thriller"
+              ],
+              "characters": [
+                "Dosmo Pizzo (Hit Man)",
+                "Alvin Strayer (Hit Man)",
+                "Becky Foxx (Mistress)",
+                "Helga Svelgen (Hit Woman)",
+                "Lee Woods (Hit Man)",
+                "Wes Taylor (Nurse)",
+                "Susan Parish (Vindictive Ex-Wife)",
+                "Roy Foxx (Art Dealer)"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear",
+                "Quest"
+              ],
+              "rationale": "The movie combines elements of comedy, crime, and thriller genres to tell a complex story about interconnected characters in a small community.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 9535,
+            "title": "Analyze This",
+            "year": "1999",
+            "genres": [
+              "Comedy",
+              "Crime"
+            ],
+            "score": 0.6092,
+            "label": {
+              "themes": [
+                "Comedy",
+                "Crime",
+                "Neurosis",
+                "Family Dynamics",
+                "Mafia"
+              ],
+              "tone": [
+                "Satirical",
+                "Dramatic",
+                "Humorous"
+              ],
+              "characters": [
+                "Paul Vitti (Mafia Racketeer)",
+                "Dr. Ben Sobel (Psychiatrist)",
+                "Laura MacNamara Sobel (Dr. Sobel's Wife)",
+                "Primo Sidone (Mafia Figure)",
+                "Young Vitti, Sr. (Paul Vitti's Father)"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The movie blends comedy and crime themes through an ensemble cast of characters, including a powerful Mafia figure and a psychiatrist, exploring neuroses and family dynamics.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 333385,
+            "title": "Mr. Right",
+            "year": "2016",
+            "genres": [
+              "Comedy",
+              "Romance",
+              "Crime"
+            ],
+            "score": 0.6077,
+            "label": {
+              "themes": [
+                "Love triangle",
+                "Crime thriller",
+                "Revenge"
+              ],
+              "tone": [
+                "Dark",
+                "Humorous",
+                "Suspenseful"
+              ],
+              "characters": [
+                "Mr. Right (Hitman)",
+                "Martha McKay (Girlfriend)",
+                "Hopper / Reynolds (Enemy)"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex love triangle involving a hitman, his girlfriend, and an enemy, with a nonlinear narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": {
+        "tmdb_id": 496243,
+        "title": "Parasite",
+        "year": "2019",
+        "genres": [
+          "Comedy",
+          "Thriller",
+          "Drama"
+        ],
+        "label": {
+          "themes": [
+            "Family dynamics",
+            "Social inequality",
+            "Unexpected events"
+          ],
+          "tone": [
+            "Darkly humorous",
+            "Suspenseful",
+            "Dramatic"
+          ],
+          "characters": [
+            "Kim Ki-taek (father)",
+            "Park Dong-ik (uncle)",
+            "Yeon-kyo (sister-in-law)",
+            "Ki-woo (son)",
+            "Ki-jung (daughter)"
+          ],
+          "narrative_structure": [
+            "Ensemble",
+            "Nonlinear"
+          ],
+          "rationale": "The synopsis describes a family's involvement with a wealthy family, leading to unexpected events, fitting a nonlinear ensemble narrative.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 11423,
+            "title": "Memories of Murder",
+            "year": "2003",
+            "genres": [
+              "Crime",
+              "Drama",
+              "Thriller"
+            ],
+            "score": 0.5939,
+            "label": {
+              "themes": [
+                "Crime",
+                "Detective work",
+                "Murder investigation",
+                "Psychological thriller"
+              ],
+              "tone": [
+                "Thrilling",
+                "Dramatic",
+                "Horror"
+              ],
+              "characters": [
+                "Detective Park Doo-man",
+                "Detective Seo Tae-yoon",
+                "Detective Cho Yong-koo",
+                "Sergeant Shin Dong-chul",
+                "Sergeant Koo Hee-bong",
+                "Officer Kwon Kwi-ok",
+                "Jo Byung-soon",
+                "Baek Kwang-ho",
+                "Park Hyeon-gyu",
+                "Kwok Seol-yung",
+                "Eon Deok-nyeo",
+                "Kim So-hyun"
+              ],
+              "narrative_structure": [
+                "Investigation",
+                "Nonlinear storytelling",
+                "Ensemble cast"
+              ],
+              "rationale": "The synopsis describes a crime drama/thriller involving a detective investigation into a series of murders, featuring an ensemble cast and nonlinear storytelling.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 396535,
+            "title": "Train to Busan",
+            "year": "2016",
+            "genres": [
+              "Action",
+              "Horror",
+              "Thriller",
+              "Adventure"
+            ],
+            "score": 0.5912,
+            "label": {
+              "themes": [
+                "zombie outbreak",
+                "survival",
+                "social dynamics",
+                "emergency response"
+              ],
+              "tone": [
+                "intense",
+                "horror",
+                "thrilling"
+              ],
+              "characters": [
+                "Seok-woo (protagonist)",
+                "Soo-ahn (love interest)",
+                "Sung-gyeong (supporting character)",
+                "Yong-gook (supporting character)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble"
+              ],
+              "rationale": "The movie follows a group of passengers on a train during a zombie outbreak, focusing on survival and social interactions.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 670,
+            "title": "Oldboy",
+            "year": "2003",
+            "genres": [
+              "Thriller",
+              "Mystery"
+            ],
+            "score": 0.5746,
+            "label": {
+              "themes": [
+                "Revenge",
+                "Prison Life",
+                "Torture"
+              ],
+              "tone": [
+                "Dramatic",
+                "Mysterious",
+                "Violent"
+              ],
+              "characters": [
+                "Oh Dae-su (protagonist)",
+                "Lee Woo-jin (friend)",
+                "Mi-do (girlfriend)",
+                "Mr. Han (captor)",
+                "Young Dae-su (son)"
+              ],
+              "narrative_structure": [
+                "Nonlinear",
+                "Investigation",
+                "Revenge"
+              ],
+              "rationale": "The synopsis describes a protagonist seeking revenge after a long imprisonment, which aligns with the themes of revenge, prison life, and torture.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 1255,
+            "title": "The Host",
+            "year": "2006",
+            "genres": [
+              "Horror",
+              "Drama",
+              "Science Fiction"
+            ],
+            "score": 0.5625,
+            "label": {
+              "themes": [
+                "Mutant Threat",
+                "Family Bonding",
+                "Toxic Waste"
+              ],
+              "tone": [
+                "Horror",
+                "Drama"
+              ],
+              "characters": [
+                "Park Gang-du",
+                "Park Hie-bong",
+                "Park Nam-il",
+                "Park Nam-joo",
+                "The Monster",
+                "Se-jin",
+                "Se-joo"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a horror-drama about a family's quest to find their daughter amidst a mutant threat, fitting a quest and ensemble narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 13855,
+            "title": "The Chaser",
+            "year": "2008",
+            "genres": [
+              "Crime",
+              "Thriller",
+              "Action"
+            ],
+            "score": 0.5582,
+            "label": {
+              "themes": [
+                "crime",
+                "psychological horror",
+                "social issues"
+              ],
+              "tone": [
+                "tense",
+                "dark",
+                "gritty"
+              ],
+              "characters": [
+                "Eom Jung-ho (Jung-ho)",
+                "Ji Young-min (Young-min)",
+                "Kim Mi-jin (Mi-jin)"
+              ],
+              "narrative_structure": [
+                "investigation",
+                "conflict resolution",
+                "character development"
+              ],
+              "rationale": "The synopsis and genre list indicate a crime thriller with elements of psychological horror and social issues, focusing on an investigation into the disappearance of prostitutes.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 505192,
+            "title": "Shoplifters",
+            "year": "2018",
+            "genres": [
+              "Drama",
+              "Crime",
+              "Thriller"
+            ],
+            "score": 0.6526,
+            "label": {
+              "themes": [
+                "family dynamics",
+                "social issues",
+                "love and loss",
+                "revelation of secrets"
+              ],
+              "tone": [
+                "dramatic",
+                "melancholic",
+                "suspenseful"
+              ],
+              "characters": [
+                "Osamu Shibata",
+                "Nobuyo Shibata",
+                "Aki Shibata",
+                "Shota Shibata",
+                "Yuri",
+                "Hatsue Shibata",
+                "Takumi Maezono"
+              ],
+              "narrative_structure": [
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex family drama with elements of suspense and social critique, fitting an ensemble nonlinear narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 25538,
+            "title": "Yi Yi",
+            "year": "2000",
+            "genres": [
+              "Drama"
+            ],
+            "score": 0.6459,
+            "label": {
+              "themes": [
+                "family dynamics",
+                "morality and ethics",
+                "personal growth"
+              ],
+              "tone": [
+                "melancholic",
+                "reflective",
+                "humorous"
+              ],
+              "characters": [
+                "NJ",
+                "Mr. Ota",
+                "Min-Min",
+                "Ting-Ting",
+                "Yang-Yang",
+                "A-Di",
+                "Sherry Chang-Breitner",
+                "Dada",
+                "Xiao-Yan",
+                "Lili"
+              ],
+              "narrative_structure": [
+                "nonlinear",
+                "ensemble"
+              ],
+              "rationale": "The synopsis describes a family facing personal and financial challenges, suggesting themes of family dynamics and personal growth, while the nonlinear narrative structure and multiple characters interacting reflect an ensemble approach.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 290098,
+            "title": "The Handmaiden",
+            "year": "2016",
+            "genres": [
+              "Thriller",
+              "Drama",
+              "Romance"
+            ],
+            "score": 0.6445,
+            "label": {
+              "themes": [
+                "Romance",
+                "Threatening Relationships",
+                "Social Inequality"
+              ],
+              "tone": [
+                "Suspenseful",
+                "Mysterious",
+                "Dark"
+              ],
+              "characters": [
+                "Lady Hideko",
+                "Sook-hee",
+                "Count Fujiwara",
+                "Uncle Kouzuki"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving multiple characters and nonlinear storytelling, set against a backdrop of social inequality and romance.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 164457,
+            "title": "Out of the Furnace",
+            "year": "2013",
+            "genres": [
+              "Thriller",
+              "Drama",
+              "Crime"
+            ],
+            "score": 0.608,
+            "label": {
+              "themes": [
+                "Crime",
+                "Family Dynamics",
+                "Economic Hardship"
+              ],
+              "tone": [
+                "Dramatic",
+                "Violent",
+                "Dark"
+              ],
+              "characters": [
+                "Russell Baze",
+                "Lena Taylor",
+                "Harlan DeGroat",
+                "Gerald 'Red' Baze",
+                "John Petty",
+                "Chief Wesley Barnes",
+                "Rodney Baze Jr.",
+                "Tattooed Guy"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Nonlinear",
+                "Quest"
+              ],
+              "rationale": "The synopsis describes a complex narrative involving multiple characters and events, spanning different time periods and themes.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 11658,
+            "title": "Tae Guk Gi: The Brotherhood of War",
+            "year": "2004",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Drama",
+              "History",
+              "War"
+            ],
+            "score": 0.6049,
+            "label": {
+              "themes": [
+                "War",
+                "Family",
+                "Risk-taking"
+              ],
+              "tone": [
+                "Dramatic",
+                "Moral"
+              ],
+              "characters": [
+                "Lee Jin-tae",
+                "Lee Jin-seok",
+                "Kim Young-shin",
+                "Yong-man",
+                "Mother",
+                "Old Lee Jin-seok",
+                "Jin-seok's Grandaughter",
+                "Sergeant Huh"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a brotherly conflict during the Korean War, involving multiple characters and non-linear storytelling.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": {
+        "tmdb_id": 120467,
+        "title": "The Grand Budapest Hotel",
+        "year": "2014",
+        "genres": [
+          "Comedy",
+          "Drama"
+        ],
+        "label": {
+          "themes": [
+            "Historical events",
+            "Professional rivalry",
+            "Friendship"
+          ],
+          "tone": [
+            "Mildly satirical",
+            "Romantic"
+          ],
+          "characters": [
+            "M. Gustave (Concierge)",
+            "Zero (Young Employee)",
+            "Mr. Moustafa (Old Employee)"
+          ],
+          "narrative_structure": [
+            "Quest",
+            "Ensemble"
+          ],
+          "rationale": "The synopsis describes a story involving historical events, professional relationships, and a quest for a priceless painting, featuring a diverse cast of characters.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 33680,
+            "title": "Grand Hotel",
+            "year": "1932",
+            "genres": [
+              "Drama",
+              "Romance"
+            ],
+            "score": 0.586,
+            "label": {
+              "themes": [
+                "heartache",
+                "scandal",
+                "tragedy"
+              ],
+              "tone": [
+                "dramatic",
+                "romantic"
+              ],
+              "characters": [
+                "Greta Garbo (Grusinskaya)",
+                "John Barrymore (Baron Felix von Gaigern)",
+                "Joan Crawford (Flämmchen)"
+              ],
+              "narrative_structure": [
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie features a diverse group of characters dealing with complex personal issues in a hotel setting, following a non-linear narrative.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 824,
+            "title": "Moulin Rouge!",
+            "year": "2001",
+            "genres": [
+              "Drama",
+              "Romance",
+              "Music"
+            ],
+            "score": 0.53,
+            "label": {
+              "themes": [
+                "Love",
+                "Inspiration",
+                "Celebration",
+                "Glamour",
+                "Intrigue",
+                "Romance",
+                "Music",
+                "Power Dynamics"
+              ],
+              "tone": [
+                "Epic",
+                "Romantic",
+                "Glamorous",
+                "Mysterious",
+                "Exciting"
+              ],
+              "characters": [
+                "Christian",
+                "Satine",
+                "Toulouse-Lautrec",
+                "Harold Zidler",
+                "The Duke",
+                "The Doctor",
+                "Satie",
+                "Nini"
+              ],
+              "narrative_structure": [
+                "Ensemble",
+                "Quest",
+                "Coming-of-Age"
+              ],
+              "rationale": "The synopsis describes a romantic drama set in a glamorous Parisian nightclub, featuring an ensemble cast navigating love, creativity, and power dynamics.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 310593,
+            "title": "Youth",
+            "year": "2015",
+            "genres": [
+              "Comedy",
+              "Drama",
+              "Romance"
+            ],
+            "score": 0.5144,
+            "label": {
+              "themes": [
+                "friendship",
+                "retirement",
+                "career choices",
+                "inspiration",
+                "romance",
+                "muse",
+                "performance"
+              ],
+              "tone": [
+                "reflective",
+                "nostalgic",
+                "thoughtful"
+              ],
+              "characters": [
+                "Fred Ballinger",
+                "Mick Boyle",
+                "Lena Ballinger",
+                "Jimmy Tree",
+                "Brenda Morel",
+                "Mark Kozelek",
+                "Luca Moroder",
+                "Queen's Emissary"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble",
+                "nonlinear"
+              ],
+              "rationale": "The movie explores themes of friendship, career choices, and retirement through a nonlinear narrative featuring an ensemble cast.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 37710,
+            "title": "The Tourist",
+            "year": "2010",
+            "genres": [
+              "Action",
+              "Thriller",
+              "Romance"
+            ],
+            "score": 0.4937,
+            "label": {
+              "themes": [
+                "romantic relationship",
+                "mystery",
+                "tourism"
+              ],
+              "tone": [
+                "exciting",
+                "suspenseful",
+                "romantic"
+              ],
+              "characters": [
+                "Frank Tupelo",
+                "Elise Clifton-Ward",
+                "Inspector John Acheson",
+                "Chief Inspector Jones",
+                "Reginald Shaw",
+                "The Englishman"
+              ],
+              "narrative_structure": [
+                "quest",
+                "envelope"
+              ],
+              "rationale": "The synopsis describes a romantic thriller involving a tourist and a mysterious woman, suggesting a narrative structure of a quest for truth and a romantic entanglement.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 591,
+            "title": "The Da Vinci Code",
+            "year": "2006",
+            "genres": [
+              "Thriller",
+              "Mystery"
+            ],
+            "score": 0.492,
+            "label": {
+              "themes": [
+                "Religion",
+                "Mystery",
+                "Art"
+              ],
+              "tone": [
+                "Thrilling",
+                "Suspenseful"
+              ],
+              "characters": [
+                "Robert Langdon",
+                "Sophie Neveu",
+                "Sir Leigh Teabing",
+                "Silas",
+                "Bishop Manuel Aringarosa"
+              ],
+              "narrative_structure": [
+                "Investigation",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a thriller-mystery involving an investigation into a religious mystery, featuring an ensemble cast.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 10563,
+            "title": "Three to Tango",
+            "year": "1999",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "score": 0.5637,
+            "label": {
+              "themes": [
+                "love",
+                "deception",
+                "business rivalry",
+                "identity",
+                "dance"
+              ],
+              "tone": [
+                "humorous",
+                "romantic"
+              ],
+              "characters": [
+                "Oscar Novak (businessman)",
+                "Amy Post (mistress)",
+                "Charles Newman (business rival)",
+                "Peter Steinberg (partner)"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble"
+              ],
+              "rationale": "The movie follows a quest-like narrative where Oscar and Amy navigate a complex web of deception and romance while dealing with business rivalries.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 70670,
+            "title": "Headhunters",
+            "year": "2011",
+            "genres": [
+              "Thriller",
+              "Crime",
+              "Action"
+            ],
+            "score": 0.5615,
+            "label": {
+              "themes": [
+                "Threats and survival",
+                "Art and ownership",
+                "Professional rivalry"
+              ],
+              "tone": [
+                "Dramatic",
+                "Suspenseful",
+                "Dark"
+              ],
+              "characters": [
+                "Roger Brown (headhunter)",
+                "Diana Brown (Roger's wife)",
+                "Clas Greve (former mercenary)"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a thriller where a headhunter risks his life to obtain a valuable painting, involving multiple characters in a complex pursuit.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 12178,
+            "title": "Miss Pettigrew Lives for a Day",
+            "year": "2008",
+            "genres": [
+              "Drama",
+              "Comedy",
+              "Romance"
+            ],
+            "score": 0.556,
+            "label": {
+              "themes": [
+                "love",
+                "discovery",
+                "fashion",
+                "career",
+                "war"
+              ],
+              "tone": [
+                "romantic",
+                "humorous",
+                "dramatic"
+              ],
+              "characters": [
+                "Governess Guinevere Pettigrew",
+                "Jazz Singer Delysia LaFosse",
+                "Michael Pardew",
+                "Joe Blomfield",
+                "Nick Caldarelli"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble"
+              ],
+              "rationale": "The movie follows a governess's chance encounter with a jazz singer that leads to personal growth and discovery, set against the backdrop of pre-WWII London.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 11873,
+            "title": "The Color of Money",
+            "year": "1986",
+            "genres": [
+              "Drama"
+            ],
+            "score": 0.5504,
+            "label": {
+              "themes": [
+                "Education",
+                "Professional rivalry",
+                "Pool hall culture",
+                "Personal growth"
+              ],
+              "tone": [
+                "Dramatic",
+                "Sarcastic",
+                "Critical"
+              ],
+              "characters": [
+                "Eddie Felson",
+                "Vincent Lauria",
+                "Carmen"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The movie follows two men's journey through pool hustling, showcasing their personal growth and professional rivalry.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 14030,
+            "title": "Hello, Dolly!",
+            "year": "1969",
+            "genres": [
+              "Comedy",
+              "Romance"
+            ],
+            "score": 0.5477,
+            "label": {
+              "themes": [
+                "love",
+                "matchmaking",
+                "money",
+                "travel",
+                "city life"
+              ],
+              "tone": [
+                "humorous",
+                "romantic"
+              ],
+              "characters": [
+                "Dolly Levi",
+                "Horace Vandergelder",
+                "Cornelius Hackl",
+                "Irene Molloy",
+                "Barnaby Tucker"
+              ],
+              "narrative_structure": [
+                "quest",
+                "ensemble"
+              ],
+              "rationale": "The movie follows Dolly Levi's journey to Yonkers to matchmake, involving multiple characters and scenes set in a city setting.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": {
+        "tmdb_id": 120,
+        "title": "The Lord of the Rings: The Fellowship of the Ring",
+        "year": "2001",
+        "genres": [
+          "Adventure",
+          "Fantasy",
+          "Action"
+        ],
+        "label": {
+          "themes": [
+            "Adventure",
+            "Fantasy",
+            "Friendship",
+            "Hero's Journey",
+            "Good vs. Evil"
+          ],
+          "tone": [
+            "Dramatic",
+            "Mystical",
+            "Serious"
+          ],
+          "characters": [
+            "Frodo Baggins",
+            "Gandalf",
+            "Aragorn",
+            "Samwise Gamgee",
+            "Bilbo Baggins",
+            "Arwen",
+            "Saruman",
+            "Boromir",
+            "Pippin",
+            "Merry"
+          ],
+          "narrative_structure": [
+            "Quest",
+            "Ensemble Cast",
+            "Nonlinear Storytelling"
+          ],
+          "rationale": "The synopsis describes a quest narrative involving an ensemble cast of characters, set against a backdrop of fantasy and adventure.",
+          "model_name": "Qwen/Qwen2.5-3B-Instruct",
+          "prompt_version": "v1"
+        }
+      },
+      "recommendations": {
+        "single": [
+          {
+            "tmdb_id": 121,
+            "title": "The Lord of the Rings: The Two Towers",
+            "year": "2002",
+            "genres": [
+              "Adventure",
+              "Fantasy",
+              "Action"
+            ],
+            "score": 0.8489,
+            "label": {
+              "themes": [
+                "Quest",
+                "Friendship",
+                "Power Struggle",
+                "Transformation",
+                "Duty"
+              ],
+              "tone": [
+                "Serious",
+                "Mystical",
+                "Heroic"
+              ],
+              "characters": [
+                "Frodo Baggins",
+                "Gandalf",
+                "Aragorn",
+                "Saruman",
+                "Gollum",
+                "Éowyn"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Conflict"
+              ],
+              "rationale": "The synopsis describes a complex quest involving multiple characters and conflicts, fitting the themes and narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 122,
+            "title": "The Lord of the Rings: The Return of the King",
+            "year": "2003",
+            "genres": [
+              "Adventure",
+              "Fantasy",
+              "Action"
+            ],
+            "score": 0.8229,
+            "label": {
+              "themes": [
+                "War",
+                "Quest",
+                "Friendship",
+                "Transformation",
+                "Darkness vs. Light"
+              ],
+              "tone": [
+                "Dramatic",
+                "Mystical",
+                "Heroic"
+              ],
+              "characters": [
+                "Frodo Baggins",
+                "Gandalf the Grey",
+                "Aragorn",
+                "Samwise Gamgee",
+                "Gollum",
+                "Éowyn",
+                "Théoden"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Conflict"
+              ],
+              "rationale": "The synopsis describes a quest narrative involving a group of characters working together against dark forces.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 123,
+            "title": "The Lord of the Rings",
+            "year": "1978",
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Fantasy"
+            ],
+            "score": 0.8153,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Fantasy",
+                "Friendship",
+                "Good vs. Evil"
+              ],
+              "tone": [
+                "Serious",
+                "Mystical"
+              ],
+              "characters": [
+                "Frodo Baggins",
+                "Gandalf",
+                "Sam",
+                "Aragorn",
+                "Merry",
+                "Pippin",
+                "Bilbo",
+                "Saruman"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a quest narrative involving a fellowship of characters, fitting the themes of adventure and fantasy.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 49051,
+            "title": "The Hobbit: An Unexpected Journey",
+            "year": "2012",
+            "genres": [
+              "Adventure",
+              "Fantasy",
+              "Action"
+            ],
+            "score": 0.752,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Fantasy",
+                "Friendship"
+              ],
+              "tone": [
+                "Exciting",
+                "Mystical",
+                "Humorous"
+              ],
+              "characters": [
+                "Bilbo Baggins",
+                "Gandalf the Grey",
+                "Thorin Oakenshield",
+                "Smaug",
+                "Radagast the Brown"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a quest narrative involving a group of characters, including Bilbo Baggins, Gandalf, and Thorin Oakenshield, against the backdrop of fantasy elements and a dragon.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 122917,
+            "title": "The Hobbit: The Battle of the Five Armies",
+            "year": "2014",
+            "genres": [
+              "Action",
+              "Adventure",
+              "Fantasy"
+            ],
+            "score": 0.7034,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Fantasy",
+                "War",
+                "Friendship",
+                "Leadership",
+                "Treasure"
+              ],
+              "tone": [
+                "Dramatic",
+                "Serious",
+                "Heroic"
+              ],
+              "characters": [
+                "Bilbo Baggins",
+                "Thorin Oakenshield",
+                "Gandalf the Grey",
+                "Smaug",
+                "Azog the Defiler",
+                "Legolas",
+                "Tauriel",
+                "Bard",
+                "King Thranduil"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Conflict"
+              ],
+              "rationale": "The synopsis describes a quest-like narrative involving multiple factions and characters, set in a fantasy world with elements of war and conflict.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ],
+        "multi": [
+          {
+            "tmdb_id": 123,
+            "title": "The Lord of the Rings",
+            "year": "1978",
+            "genres": [
+              "Adventure",
+              "Animation",
+              "Fantasy"
+            ],
+            "score": 0.8411,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Fantasy",
+                "Friendship",
+                "Good vs. Evil"
+              ],
+              "tone": [
+                "Serious",
+                "Mystical"
+              ],
+              "characters": [
+                "Frodo Baggins",
+                "Gandalf",
+                "Sam",
+                "Aragorn",
+                "Merry",
+                "Pippin",
+                "Bilbo",
+                "Saruman"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble"
+              ],
+              "rationale": "The synopsis describes a quest narrative involving a fellowship of characters, fitting the themes of adventure and fantasy.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 122,
+            "title": "The Lord of the Rings: The Return of the King",
+            "year": "2003",
+            "genres": [
+              "Adventure",
+              "Fantasy",
+              "Action"
+            ],
+            "score": 0.748,
+            "label": {
+              "themes": [
+                "War",
+                "Quest",
+                "Friendship",
+                "Transformation",
+                "Darkness vs. Light"
+              ],
+              "tone": [
+                "Dramatic",
+                "Mystical",
+                "Heroic"
+              ],
+              "characters": [
+                "Frodo Baggins",
+                "Gandalf the Grey",
+                "Aragorn",
+                "Samwise Gamgee",
+                "Gollum",
+                "Éowyn",
+                "Théoden"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Conflict"
+              ],
+              "rationale": "The synopsis describes a quest narrative involving a group of characters working together against dark forces.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 57158,
+            "title": "The Hobbit: The Desolation of Smaug",
+            "year": "2013",
+            "genres": [
+              "Fantasy",
+              "Adventure",
+              "Action"
+            ],
+            "score": 0.7439,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Fantasy",
+                "Friendship",
+                "Hero's Journey"
+              ],
+              "tone": [
+                "Exciting",
+                "Mystical",
+                "Dramatic"
+              ],
+              "characters": [
+                "Gandalf the Grey",
+                "Bilbo Baggins",
+                "Thorin Oakenshield",
+                "Smaug",
+                "Legolas",
+                "Tauriel",
+                "King Thranduil",
+                "Bard"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a fantasy adventure involving a quest to reclaim stolen gold from a dragon, featuring an ensemble cast and nonlinear storytelling.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 121,
+            "title": "The Lord of the Rings: The Two Towers",
+            "year": "2002",
+            "genres": [
+              "Adventure",
+              "Fantasy",
+              "Action"
+            ],
+            "score": 0.7329,
+            "label": {
+              "themes": [
+                "Quest",
+                "Friendship",
+                "Power Struggle",
+                "Transformation",
+                "Duty"
+              ],
+              "tone": [
+                "Serious",
+                "Mystical",
+                "Heroic"
+              ],
+              "characters": [
+                "Frodo Baggins",
+                "Gandalf",
+                "Aragorn",
+                "Saruman",
+                "Gollum",
+                "Éowyn"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Conflict"
+              ],
+              "rationale": "The synopsis describes a complex quest involving multiple characters and conflicts, fitting the themes and narrative structure.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          },
+          {
+            "tmdb_id": 49051,
+            "title": "The Hobbit: An Unexpected Journey",
+            "year": "2012",
+            "genres": [
+              "Adventure",
+              "Fantasy",
+              "Action"
+            ],
+            "score": 0.7156,
+            "label": {
+              "themes": [
+                "Adventure",
+                "Fantasy",
+                "Friendship"
+              ],
+              "tone": [
+                "Exciting",
+                "Mystical",
+                "Humorous"
+              ],
+              "characters": [
+                "Bilbo Baggins",
+                "Gandalf the Grey",
+                "Thorin Oakenshield",
+                "Smaug",
+                "Radagast the Brown"
+              ],
+              "narrative_structure": [
+                "Quest",
+                "Ensemble",
+                "Nonlinear"
+              ],
+              "rationale": "The synopsis describes a quest narrative involving a group of characters, including Bilbo Baggins, Gandalf, and Thorin Oakenshield, against the backdrop of fantasy elements and a dragon.",
+              "model_name": "Qwen/Qwen2.5-3B-Instruct",
+              "prompt_version": "v1"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
